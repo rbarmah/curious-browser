@@ -14,9 +14,9 @@ import heroCollage5 from "@/assets/hero-collage-5.jpg";
 import heroCollage6 from "@/assets/hero-collage-6.jpg";
 import heroCollage7 from "@/assets/hero-collage-7.jpg";
 import heroCollage8 from "@/assets/hero-collage-8.jpg";
-import pillarDuplicate from "@/assets/pillar-duplicate.jpg";
-import pillarReform from "@/assets/pillar-reform.jpg";
-import pillarJustice from "@/assets/pillar-justice.jpg";
+import pillarDuplicate from "@/assets/pillar-duplicate.png";
+import pillarReform from "@/assets/pillar-reform.png";
+import pillarJustice from "@/assets/pillar-justice.png";
 import innofemmeLabs from "@/assets/innofemme-labs.jpg";
 import hack4equity from "@/assets/hack4equity.jpg";
 
