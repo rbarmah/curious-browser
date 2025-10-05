@@ -74,43 +74,51 @@ const About = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[60vh] flex items-center">
-        {/* Background with gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--purple-deep))] via-primary to-[hsl(var(--coral))]"></div>
+      <section className="relative overflow-hidden h-screen">
+        {/* Comic Panel Collage Background */}
+        <div className="absolute inset-0 grid grid-cols-5 grid-rows-2">
+          <img src={comicPanel1} alt="Algorithmic bias introduction" className="w-full h-full object-cover" />
+          <img src={comicPanel2} alt="Facial recognition bias" className="w-full h-full object-cover" />
+          <img src={comicPanel3} alt="Hiring algorithm bias" className="w-full h-full object-cover" />
+          <img src={comicPanel4} alt="Healthcare algorithm bias" className="w-full h-full object-cover" />
+          <img src={comicPanel5} alt="Social media algorithm bias" className="w-full h-full object-cover" />
+          <img src={comicPanel6} alt="Credit algorithm bias" className="w-full h-full object-cover" />
+          <img src={comicPanel7} alt="AI workforce diversity" className="w-full h-full object-cover" />
+          <img src={comicPanel8} alt="Algorithmic oppression cycle" className="w-full h-full object-cover" />
+          <img src={comicPanel9} alt="Diverse teams reduce bias" className="w-full h-full object-cover" />
+          <img src={comicPanel10} alt="Innofemme solution" className="w-full h-full object-cover" />
+        </div>
         
-        {/* Animated decorative elements */}
-        <div className="absolute top-20 right-20 w-64 h-64 bg-[hsl(var(--peach))]/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[hsl(var(--coral))]/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
         
-        {/* Content */}
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+        {/* Text Overlay at Left */}
+        <div className="absolute inset-y-0 left-0 flex items-center container mx-auto px-4">
+          <div className="max-w-5xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
               <div className="w-2 h-2 rounded-full bg-[hsl(var(--peach))]"></div>
-              <span className="text-sm font-semibold text-primary-foreground uppercase tracking-wider">Our Story</span>
+              <span className="text-sm font-semibold text-white uppercase tracking-wider">Our Story</span>
             </div>
             
-            <h1 className="hero-text text-primary-foreground">
-              <span className="inline-block animate-typing">About</span>{" "}
-              <span className="inline-block bg-gradient-to-r from-[hsl(var(--peach-light))] to-[hsl(var(--coral-light))] bg-clip-text text-transparent animate-typing" style={{ animationDelay: "0.5s" }}>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+              <span className="inline-block text-[hsl(var(--peach-light))] animate-typing">
+                About
+              </span>{" "}
+              <span className="inline-block text-[hsl(var(--coral))] animate-typing" style={{ animationDelay: "0.5s" }}>
                 Innofemme
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
               A non-profit organization committed to centering the innovative capacity of women, 
               ensuring that technology and innovation works for everyone—not just the privileged few.
             </p>
-            
-            {/* Animated dots */}
-            <div className="flex justify-center gap-2 pt-4">
-              <div className="w-2 h-2 rounded-full bg-[hsl(var(--peach))] animate-pulse"></div>
-              <div className="w-2 h-2 rounded-full bg-[hsl(var(--coral))] animate-pulse" style={{ animationDelay: "0.2s" }}></div>
-              <div className="w-2 h-2 rounded-full bg-primary-foreground animate-pulse" style={{ animationDelay: "0.4s" }}></div>
-            </div>
           </div>
         </div>
       </section>
+
+      {/* Gradient Transition Zone */}
+      <div className="h-32 bg-gradient-to-b from-black/60 via-[hsl(var(--purple-deep))]/40 to-background"></div>
 
       {/* Comic Strip Section */}
       <section className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))]">
