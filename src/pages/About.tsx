@@ -16,6 +16,7 @@ import comicPanel7 from "@/assets/comic-panel-7.jpg";
 import comicPanel8 from "@/assets/comic-panel-8.jpg";
 import comicPanel9 from "@/assets/comic-panel-9.jpg";
 import comicPanel10 from "@/assets/comic-panel-10.jpg";
+import aboutHero from "@/assets/about-hero.jpg";
 
 const comicPanels = [
   {
@@ -75,18 +76,9 @@ const About = () => {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden h-screen">
-        {/* Comic Panel Collage Background */}
-        <div className="absolute inset-0 grid grid-cols-5 grid-rows-2">
-          <img src={comicPanel1} alt="Algorithmic bias introduction" className="w-full h-full object-cover" />
-          <img src={comicPanel2} alt="Facial recognition bias" className="w-full h-full object-cover" />
-          <img src={comicPanel3} alt="Hiring algorithm bias" className="w-full h-full object-cover" />
-          <img src={comicPanel4} alt="Healthcare algorithm bias" className="w-full h-full object-cover" />
-          <img src={comicPanel5} alt="Social media algorithm bias" className="w-full h-full object-cover" />
-          <img src={comicPanel6} alt="Credit algorithm bias" className="w-full h-full object-cover" />
-          <img src={comicPanel7} alt="AI workforce diversity" className="w-full h-full object-cover" />
-          <img src={comicPanel8} alt="Algorithmic oppression cycle" className="w-full h-full object-cover" />
-          <img src={comicPanel9} alt="Diverse teams reduce bias" className="w-full h-full object-cover" />
-          <img src={comicPanel10} alt="Innofemme solution" className="w-full h-full object-cover" />
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <img src={aboutHero} alt="African women in technology" className="w-full h-full object-cover" />
         </div>
         
         {/* Dark Overlay */}
@@ -110,7 +102,7 @@ const About = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
-              A non-profit organization committed to centering the innovative capacity of women, 
+              A non-profit collective committed to centering the innovative capacity of women, 
               ensuring that technology and innovation works for everyone—not just the privileged few.
             </p>
           </div>
@@ -140,7 +132,7 @@ const About = () => {
             <div className="space-y-6">
               <h2 className="section-title text-center">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed text-center">
-                Innofemme is a non-profit organization committed to centering the innovative capacity of women, 
+                Innofemme is a non-profit collective committed to centering the innovative capacity of women, 
                 ensuring that technology and innovation works for everyone—not just the privileged few.
               </p>
             </div>
