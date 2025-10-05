@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PillarCard } from "@/components/PillarCard";
-import { SplitScreenProgram } from "@/components/SplitScreenProgram";
+import { StackedCardCarousel } from "@/components/StackedCardCarousel";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ManifestoCard } from "@/components/ManifestoCard";
 import { Button } from "@/components/ui/button";
@@ -229,74 +229,82 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Programs Section - Split-Screen Immersive Layout */}
-      <section className="relative bg-background overflow-hidden">
+      {/* Programs Section - Stacked Card Carousel */}
+      <section className="relative bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background overflow-hidden">
         {/* Section Header */}
-        <div className="container mx-auto px-4 pt-20 pb-12">
+        <div className="container mx-auto px-4 pt-20 pb-8">
           <ScrollReveal>
             <div className="text-center max-w-4xl mx-auto">
               <h2 className="section-title mb-6">Our Programs</h2>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Transforming innovation through immersive experiences designed for African women in tech
+                Explore our transformative programs designed to empower African women in tech
               </p>
             </div>
           </ScrollReveal>
         </div>
 
-        {/* Split-Screen Program Sections */}
-        <SplitScreenProgram
-          title="Innofemme Labs"
-          description="Our flagship training and incubation program connecting talented women technologists with women-led startups that need them. We provide mentorship, resources, and a community of support to help women excel in their tech careers while building solutions for real-world challenges."
-          image={innofemmeLabs}
-          accentColor="hsl(var(--primary))"
-          icon={<Sparkles className="w-full h-full" />}
-          index={0}
-        >
-          <Button variant="default" size="lg">
-            Join as a Fellow
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button variant="outline" size="lg">
-            Apply as a Startup
-          </Button>
-        </SplitScreenProgram>
-
-        <SplitScreenProgram
-          title="Hack4Equity"
-          description="Targeted hackathons designed to bring women together to address the issues they face using their collective skills and lived experiences. We create spaces where innovation meets social justice, and where solutions are built by those who understand the problems best."
-          image={hack4equity}
-          accentColor="hsl(var(--coral))"
-          icon={<Zap className="w-full h-full" />}
-          index={1}
-        >
-          <Button variant="default" size="lg">
-            View Upcoming Events
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button variant="outline" size="lg">
-            Past Hackathons
-          </Button>
-        </SplitScreenProgram>
-
-        <SplitScreenProgram
-          title="Wellness & Community"
-          description="Holistic support programs ensuring mental wellness, community building, and sustainable growth for women in tech. Because innovation thrives when innovators are supported, connected, and empowered to bring their whole selves to their work."
-          image={innofemmeLabs}
-          accentColor="hsl(var(--peach))"
-          icon={<Heart className="w-full h-full" />}
-          index={2}
-        >
-          <Button variant="default" size="lg">
-            Join Our Community
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button variant="outline" size="lg">
-            Wellness Resources
-          </Button>
-        </SplitScreenProgram>
+        {/* Stacked Card Carousel */}
+        <StackedCardCarousel
+          programs={[
+            {
+              id: 1,
+              title: "Innofemme Labs",
+              description:
+                "Our flagship training and incubation program connecting talented women technologists with women-led startups that need them. We provide mentorship, resources, and a community of support to help women excel in their tech careers.",
+              image: innofemmeLabs,
+              accentColor: "hsl(var(--primary))",
+              icon: <Sparkles className="w-full h-full" />,
+              stats: [
+                { value: "500+", label: "Fellows" },
+                { value: "50+", label: "Startups" },
+                { value: "95%", label: "Success Rate" },
+              ],
+              buttons: [
+                { label: "Join as a Fellow", variant: "default" },
+                { label: "Apply as a Startup", variant: "outline" },
+              ],
+            },
+            {
+              id: 2,
+              title: "Hack4Equity",
+              description:
+                "Targeted hackathons designed to bring women together to address the issues they face using their collective skills and lived experiences. We create spaces where innovation meets social justice.",
+              image: hack4equity,
+              accentColor: "hsl(var(--coral))",
+              icon: <Zap className="w-full h-full" />,
+              stats: [
+                { value: "20+", label: "Hackathons" },
+                { value: "1000+", label: "Participants" },
+                { value: "150+", label: "Solutions" },
+              ],
+              buttons: [
+                { label: "View Events", variant: "default" },
+                { label: "Past Hackathons", variant: "outline" },
+              ],
+            },
+            {
+              id: 3,
+              title: "Wellness & Community",
+              description:
+                "Holistic support programs ensuring mental wellness, community building, and sustainable growth for women in tech. Because innovation thrives when innovators are supported and empowered.",
+              image: innofemmeLabs,
+              accentColor: "hsl(var(--peach))",
+              icon: <Heart className="w-full h-full" />,
+              stats: [
+                { value: "300+", label: "Members" },
+                { value: "50+", label: "Events" },
+                { value: "24/7", label: "Support" },
+              ],
+              buttons: [
+                { label: "Join Community", variant: "default" },
+                { label: "Wellness Resources", variant: "outline" },
+              ],
+            },
+          ]}
+        />
 
         {/* Bottom CTA */}
-        <div className="container mx-auto px-4 py-20">
+        <div className="container mx-auto px-4 pb-20">
           <ScrollReveal>
             <div className="text-center">
               <Button variant="hero" size="lg" asChild>
@@ -307,28 +315,6 @@ const Index = () => {
               </Button>
             </div>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="section-title">Ready to Transform Innovation?</h2>
-            <p className="text-xl text-primary-foreground/90">
-              Join us in centering African women at the heart of technological innovation. 
-              Whether you're a tech professional, entrepreneur, or supporter—there's a place for you.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg">
-                Get Involved
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-                Learn More
-              </Button>
-            </div>
-          </div>
         </div>
       </section>
 
