@@ -19,7 +19,7 @@ export const PillarCard = ({ icon, title, description }: PillarCardProps) => {
         <div className="pillar-card-face pillar-card-front">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5 rounded-2xl"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full p-8 text-center space-y-6">
-            <div className="w-24 h-24 flex items-center justify-center">
+            <div className="w-20 h-20 flex items-center justify-center">
               {icon}
             </div>
             <h3 className="text-3xl font-bold text-foreground">{title}</h3>
