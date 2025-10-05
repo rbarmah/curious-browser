@@ -139,12 +139,12 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
                   {/* Text overlay - bottom positioned */}
                   <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-8 text-white">
                     <div className="w-full max-w-4xl space-y-4">
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-xs md:text-sm font-semibold bg-primary/90 text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full">
+                      <div className="hidden md:flex items-center justify-between mb-4">
+                        <span className="text-sm font-semibold bg-primary/90 text-white px-4 py-2 rounded-full">
                           Panel {index + 1} of {panels.length}
                         </span>
                         {panel.data && (
-                          <span className="text-xs md:text-sm font-bold bg-white/90 text-black px-3 md:px-4 py-1.5 md:py-2 rounded-full">
+                          <span className="text-sm font-bold bg-white/90 text-black px-4 py-2 rounded-full">
                             {panel.data}
                           </span>
                         )}
@@ -161,8 +161,8 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-4" />
-        <CarouselNext className="right-4" />
+        <CarouselPrevious className="hidden md:flex left-4" />
+        <CarouselNext className="hidden md:flex right-4" />
       </Carousel>
       
       {/* Dot indicators */}
