@@ -86,13 +86,6 @@ const Programs = () => {
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center space-y-8 mb-20">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-secondary/20 to-[hsl(var(--yellow))]/20 rounded-full border border-secondary/20">
-                <Zap className="w-5 h-5 text-secondary" />
-                <span className="text-sm font-semibold text-secondary uppercase tracking-wider">
-                  Community Impact
-                </span>
-              </div>
-              
               <h2 className="text-5xl md:text-7xl font-bold leading-tight">
                 <span className="text-secondary">Hack4Equity:</span>
                 <br />
