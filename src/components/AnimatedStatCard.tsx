@@ -105,10 +105,10 @@ export const AnimatedStatCard = ({
       <div className="relative z-10 h-full flex flex-col justify-between">
         {/* Image badge */}
         <div className="flex justify-between items-start mb-4">
-          <div className="p-3 rounded-2xl bg-muted/50 transition-all duration-500 group-hover:scale-110">
+          <div className="rounded-2xl overflow-hidden transition-all duration-500 group-hover:scale-110">
             <img src={image} alt="" className={cn(
-              "transition-all duration-500 object-contain",
-              size === "featured" ? "w-12 h-12" : size === "large" ? "w-10 h-10" : "w-8 h-8"
+              "transition-all duration-500 object-cover",
+              size === "featured" ? "w-16 h-16" : size === "large" ? "w-14 h-14" : "w-12 h-12"
             )} />
           </div>
           
