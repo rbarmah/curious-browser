@@ -2,10 +2,12 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PillarCard } from "@/components/PillarCard";
 import { ComicCarousel } from "@/components/ComicCarousel";
-import { RefreshCw, Lightbulb, Heart } from "lucide-react";
-import handsCollaborate from "@/assets/hands-collaborate.svg";
-import handsIdea from "@/assets/hands-idea.svg";
-import handsHeart from "@/assets/hands-heart.svg";
+import { StatCard } from "@/components/StatCard";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { Lightbulb, Sparkles, Users, Heart, Zap } from "lucide-react";
+import pillarDuplicate from "@/assets/pillar-duplicate.png";
+import pillarReform from "@/assets/pillar-reform.png";
+import pillarJustice from "@/assets/pillar-justice.png";
 import comicPanel1 from "@/assets/comic-panel-1.jpg";
 import comicPanel2 from "@/assets/comic-panel-2.jpg";
 import comicPanel3 from "@/assets/comic-panel-3.jpg";
@@ -228,115 +230,255 @@ const About = () => {
         </div>
       </section>
 
-      {/* Three Pillars Section */}
-      <section className="py-32 bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background overflow-hidden">
+      {/* Three-Pillar Approach */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-foreground">Our Three-Pillar</span>
-              <br />
-              <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--coral-glow))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer" 
-                style={{ 
-                  backgroundSize: '200% auto',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Approach
-              </span>
-            </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <h2 className="section-title mb-4">Our Three-Pillar Approach</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Empowering African women to transform technology through creation, reform, and justice-driven innovation
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <PillarCard
-              icon={<img src={handsCollaborate} alt="Collaborate" className="w-full h-full" />}
+              icon={<img src={pillarDuplicate} alt="Duplicate and Upgrade" className="w-full h-full object-cover rounded-full" />}
               title="Duplicate and Upgrade"
               description="We empower women to create alternatives to existing tech systems—alternatives built without the biases, exclusions, and oppressions embedded in current platforms."
             />
             <PillarCard
-              icon={<RefreshCw className="w-16 h-16 text-primary" />}
+              icon={<img src={pillarReform} alt="Reform from Within" className="w-full h-full object-cover rounded-full" />}
               title="Reform from Within"
-              description="African women working in tech and innovation spaces shouldn't have to accept the status quo. We equip them with the tools, networks, and confidence to demand change."
+              description="We equip women working in tech with the tools, networks, and confidence to demand change in how systems are built, pushing for equity from the inside out."
             />
             <PillarCard
-              icon={<img src={handsIdea} alt="Innovation" className="w-full h-full" />}
+              icon={<img src={pillarJustice} alt="Invent for Justice" className="w-full h-full object-cover rounded-full" />}
               title="Invent for Justice"
-              description="Profit isn't the only measure of value. We ensure African women can create innovations that address neglected social issues—the problems others overlook."
+              description="We ensure African women can create innovations that address neglected social issues—the problems others overlook because they're not 'marketable.'"
             />
-          </div>
-
-          {/* Detailed Explanations */}
-          <div className="max-w-5xl mx-auto space-y-8">
-            <div className="bg-card p-8 rounded-2xl shadow-md border border-border">
-              <h4 className="text-2xl font-bold mb-4 text-primary">1. Duplicate and Upgrade</h4>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Can we redesign social media algorithms that amplify rather than erase marginalized voices? 
-                Yes, we can, and we will. We empower women to create alternatives to existing tech systems—alternatives 
-                built without the biases, exclusions, and oppressions embedded in current platforms.
-              </p>
-            </div>
-
-            <div className="bg-card p-8 rounded-2xl shadow-md border border-border">
-              <h4 className="text-2xl font-bold mb-4 text-primary">2. Reform from Within</h4>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                African women working in tech and innovation spaces shouldn't have to accept the status quo. 
-                We equip them with the tools, networks, and confidence to demand change in how systems are built, 
-                pushing for equity and the dismantling of algorithmic oppression from the inside out.
-              </p>
-            </div>
-
-            <div className="bg-card p-8 rounded-2xl shadow-md border border-border">
-              <h4 className="text-2xl font-bold mb-4 text-primary">3. Invent for Justice</h4>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Profit isn't the only measure of value. We ensure African women can create innovations that 
-                address neglected social issues—the problems others overlook because they're not "marketable." 
-                Innovation should serve justice, not just venture capital.
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="relative py-32 bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background overflow-hidden">
+      {/* Impact & Achievements Section */}
+      <section className="py-32 bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background"></div>
+        
         {/* Decorative Elements */}
-        <div className="absolute top-20 right-20 w-64 h-64 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-40 left-10 w-96 h-96 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
-            <div>
-              <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                <span className="text-primary">Our</span>{" "}
-                <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--coral-glow))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer" 
+          <ScrollReveal>
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--coral-glow))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer"
                   style={{ 
                     backgroundSize: '200% auto',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent'
                   }}
                 >
-                  Team
+                  Our Impact
                 </span>
               </h2>
-              <div className="h-1 w-32 bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] mx-auto rounded-full"></div>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Measurable change driven by empowering African women in technology
+              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-br from-[hsl(var(--coral))]/5 via-[hsl(var(--peach))]/5 to-card p-8 md:p-10 rounded-3xl shadow-lg border border-border hover:shadow-2xl transition-all duration-500 group">
-                <div className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[hsl(var(--coral))] to-primary bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-500">5</div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Advisory Board Members</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Distinguished leaders guiding our strategic vision and ensuring our work creates lasting impact.
-                </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <StatCard
+              number="4"
+              label="Active Programs"
+              description="Comprehensive initiatives empowering women in tech"
+            />
+            <StatCard
+              number="400+"
+              label="Research Participants"
+              description="Women engaged in product market research"
+            />
+            <StatCard
+              number="150+"
+              label="Wellness Outreach"
+              description="Women supported through wellness initiatives"
+            />
+            <StatCard
+              number="2"
+              label="Tech Products Launched"
+              description="Innovation-driven solutions built by African women"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values Section */}
+      <section className="py-32 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background"></div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-20 w-64 h-64 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-40 left-10 w-96 h-96 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal>
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--coral-glow))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer"
+                  style={{ 
+                    backgroundSize: '200% auto',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}
+                >
+                  Our Core Values
+                </span>
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                The principles that guide everything we do
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Value 1 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--coral))]/20 to-[hsl(var(--peach))]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
+              <div className="relative bg-card p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all border-l-4 border-[hsl(var(--coral))]">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-[hsl(var(--coral))]/10 to-[hsl(var(--peach))]/10 rounded-full">
+                    <Users className="w-8 h-8 text-[hsl(var(--coral))]" />
+                  </div>
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-bold text-foreground">Inclusivity</h3>
+                    <p className="text-foreground/80 leading-relaxed">
+                      We center African women's voices and experiences in every aspect of technology innovation, ensuring representation at the heart of creation.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="bg-gradient-to-br from-[hsl(var(--peach))]/5 via-[hsl(var(--coral))]/5 to-card p-8 md:p-10 rounded-3xl shadow-lg border border-border hover:shadow-2xl transition-all duration-500 group">
-                <div className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[hsl(var(--peach))] to-[hsl(var(--coral))] bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-500">8</div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Team Professionals</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Dedicated experts committed to transforming the innovation landscape for African women.
-                </p>
+            </div>
+
+            {/* Value 2 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--peach))]/20 to-[hsl(var(--coral))]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
+              <div className="relative bg-card p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all border-l-4 border-[hsl(var(--peach))]">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-[hsl(var(--peach))]/10 to-[hsl(var(--coral))]/10 rounded-full">
+                    <Lightbulb className="w-8 h-8 text-[hsl(var(--peach))]" />
+                  </div>
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-bold text-foreground">Innovation</h3>
+                    <p className="text-foreground/80 leading-relaxed">
+                      We foster creative solutions that challenge existing systems and build technology that truly serves diverse communities and addresses real-world needs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Value 3 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-[hsl(var(--coral))]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
+              <div className="relative bg-card p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all border-l-4 border-primary">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-[hsl(var(--coral))]/10 rounded-full">
+                    <Heart className="w-8 h-8 text-primary" />
+                  </div>
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-bold text-foreground">Justice</h3>
+                    <p className="text-foreground/80 leading-relaxed">
+                      We are committed to equity and fairness, creating technology that addresses systemic inequalities and empowers marginalized communities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Value 4 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--coral-glow))]/20 to-primary/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
+              <div className="relative bg-card p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all border-l-4 border-[hsl(var(--coral-glow))]">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-[hsl(var(--coral-glow))]/10 to-primary/10 rounded-full">
+                    <Zap className="w-8 h-8 text-[hsl(var(--coral-glow))]" />
+                  </div>
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-bold text-foreground">Empowerment</h3>
+                    <p className="text-foreground/80 leading-relaxed">
+                      We provide resources, mentorship, and platforms that enable women to lead, innovate, and transform the technology landscape.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partnerships Section */}
+      <section className="py-32 bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background"></div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-20 left-10 w-64 h-64 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal>
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--coral-glow))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer"
+                  style={{ 
+                    backgroundSize: '200% auto',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}
+                >
+                  Our Partners
+                </span>
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Collaborating with leading organizations to amplify our impact
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Google Workspace */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--coral))]/20 to-[hsl(var(--peach))]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
+              <div className="relative bg-card p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-[hsl(var(--coral))]/10 to-[hsl(var(--peach))]/10 rounded-lg">
+                      <Sparkles className="w-6 h-6 text-[hsl(var(--coral))]" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-foreground">Google Workspace for Nonprofits</h3>
+                  </div>
+                  <p className="text-foreground/80 leading-relaxed">
+                    Empowering our team with collaborative tools to coordinate programs and support our growing community effectively.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Canva */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--peach))]/20 to-[hsl(var(--coral))]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
+              <div className="relative bg-card p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-[hsl(var(--peach))]/10 to-[hsl(var(--coral))]/10 rounded-lg">
+                      <Sparkles className="w-6 h-6 text-[hsl(var(--peach))]" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-foreground">Canva for Nonprofits</h3>
+                  </div>
+                  <p className="text-foreground/80 leading-relaxed">
+                    Creating compelling visual content to share our story and inspire African women to join the tech revolution.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
