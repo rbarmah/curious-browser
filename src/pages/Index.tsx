@@ -38,7 +38,7 @@ const Index = () => {
         </div>
         
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[hsl(256,45%,30%)]/70"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         
         {/* Text Overlay at Bottom Left */}
         <div className="absolute inset-y-0 left-0 flex items-center container mx-auto px-4">
