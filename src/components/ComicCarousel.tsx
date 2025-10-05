@@ -173,12 +173,12 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
         <CarouselContent>
           {panels.map((panel, index) => (
             <CarouselItem key={index}>
-              <Card className="overflow-hidden border-2 border-primary/20 bg-black">
-                <div className="relative aspect-video max-h-[70vh] bg-gradient-to-br from-background to-muted">
+              <Card className="overflow-hidden border-2 border-primary/20">
+                <div className="relative w-full max-h-[70vh] bg-gradient-to-br from-background to-muted">
                   <img
                     src={panel.image}
                     alt={`Comic panel ${index + 1}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full max-h-[70vh] object-contain"
                   />
                   
                   {/* Overlay gradient for text readability */}
