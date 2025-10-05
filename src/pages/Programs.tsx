@@ -6,6 +6,7 @@ import { ArrowRight, Zap, Heart, Users } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { BentoGrid, BentoCard } from "@/components/BentoGrid";
 import { InnofemmeCarousel } from "@/components/InnofemmeCarousel";
+import { Hack4EquityCarousel } from "@/components/Hack4EquityCarousel";
 import { InterestModal } from "@/components/InterestModal";
 import innofemmeLabs from "@/assets/innofemme-labs.jpg";
 import handsHeart from "@/assets/hands-heart.svg";
@@ -78,38 +79,14 @@ const Programs = () => {
       </div>
 
       {/* Hack4Equity Section */}
-      <section id="hack4equity" className="py-32 bg-background relative overflow-hidden">
-        {/* Decorative Elements */}
-        <div className="absolute top-20 right-10 w-80 h-80 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 left-10 w-64 h-64 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+      <section id="hack4equity" className="py-20 bg-background relative overflow-hidden">
+        {/* Decorative floating orbs */}
+        <div className="absolute top-40 left-20 w-3 h-3 rounded-full bg-secondary/40 animate-pulse"></div>
+        <div className="absolute bottom-60 right-32 w-2 h-2 rounded-full bg-[hsl(var(--yellow))]/50 animate-pulse" style={{ animationDelay: '1s' }}></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal>
-            <div className="max-w-4xl mx-auto text-center space-y-8 mb-20">
-              <h2 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span className="text-secondary">Hack4Equity:</span>
-                <br />
-                <span className="text-foreground">Hackathons with Purpose</span>
-              </h2>
-              
-              <div className="h-1 w-32 bg-gradient-to-r from-secondary via-[hsl(var(--yellow))] to-secondary mx-auto rounded-full"></div>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Our series of targeted hackathons designed to bring women together to address the issues 
-                they face using their collective skills and lived experiences.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                <Button variant="coral" size="lg">
-                  Nominate a Challenge
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button variant="outline" size="lg">
-                  Participate as Mentor
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </div>
-            </div>
+            <Hack4EquityCarousel />
           </ScrollReveal>
         </div>
       </section>
