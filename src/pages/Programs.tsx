@@ -7,6 +7,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { BentoGrid, BentoCard } from "@/components/BentoGrid";
 import { InnofemmeCarousel } from "@/components/InnofemmeCarousel";
 import { Hack4EquityCarousel } from "@/components/Hack4EquityCarousel";
+import { EquityClinicCarousel } from "@/components/EquityClinicCarousel";
 import { InterestModal } from "@/components/InterestModal";
 import innofemmeLabs from "@/assets/innofemme-labs.jpg";
 import handsHeart from "@/assets/hands-heart.svg";
@@ -93,6 +94,24 @@ const Programs = () => {
 
       {/* Transition Zone */}
       <div className="h-32 bg-gradient-to-b from-background via-[hsl(var(--purple-deep))]/10 to-[hsl(var(--warm-bg))] relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[hsl(var(--primary))]/10 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Equity Clinic Section */}
+      <section id="equity-clinic" className="py-20 bg-[hsl(var(--warm-bg))] relative overflow-hidden">
+        {/* Decorative floating orbs */}
+        <div className="absolute top-40 left-20 w-3 h-3 rounded-full bg-primary/40 animate-pulse"></div>
+        <div className="absolute bottom-60 right-32 w-2 h-2 rounded-full bg-[hsl(var(--purple-light))]/50 animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal>
+            <EquityClinicCarousel />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Transition Zone */}
+      <div className="h-32 bg-gradient-to-b from-[hsl(var(--warm-bg))] via-[hsl(var(--coral))]/10 to-[hsl(var(--warm-bg))] relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[hsl(var(--primary))]/10 rounded-full blur-3xl"></div>
       </div>
 
