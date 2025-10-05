@@ -2,19 +2,31 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Briefcase, Heart, HandHeart } from "lucide-react";
+import getInvolvedHeroAbstract from "@/assets/get-involved-hero-abstract.jpg";
 
 const GetInvolved = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
 
-      <section className="py-20 bg-gradient-to-b from-primary to-[hsl(var(--purple-light))] text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="hero-text">Get Involved</h1>
-            <p className="text-xl md:text-2xl text-primary-foreground/90">
-              Join us in transforming innovation for African women
-            </p>
+      <section className="relative overflow-hidden h-screen">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <img src={getInvolvedHeroAbstract} alt="Abstract representation of community collaboration and involvement" className="w-full h-full object-cover" />
+        </div>
+        
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+        
+        {/* Content */}
+        <div className="relative h-full flex items-center justify-center">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <h1 className="hero-text text-white">Get Involved</h1>
+              <p className="text-xl md:text-2xl text-white/90">
+                Join us in transforming innovation for African women
+              </p>
+            </div>
           </div>
         </div>
       </section>

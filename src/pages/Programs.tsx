@@ -5,6 +5,7 @@ import { ArrowRight, Code, Zap, Heart, CheckCircle } from "lucide-react";
 import innofemmeLabs from "@/assets/innofemme-labs.jpg";
 import hack4equity from "@/assets/hack4equity.jpg";
 import handsHeart from "@/assets/hands-heart.svg";
+import programsHeroAbstract from "@/assets/programs-hero-abstract.jpg";
 
 const Programs = () => {
   return (
@@ -12,13 +13,24 @@ const Programs = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-primary to-[hsl(var(--purple-light))] text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="hero-text">Our Programs</h1>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
-              Empowering African women through training, hackathons, and holistic wellness support
-            </p>
+      <section className="relative overflow-hidden h-screen">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <img src={programsHeroAbstract} alt="Abstract representation of innovation and technology programs" className="w-full h-full object-cover" />
+        </div>
+        
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+        
+        {/* Content */}
+        <div className="relative h-full flex items-center justify-center">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <h1 className="hero-text text-white">Our Programs</h1>
+              <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+                Empowering African women through training, hackathons, and holistic wellness support
+              </p>
+            </div>
           </div>
         </div>
       </section>
