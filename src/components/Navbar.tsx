@@ -11,10 +11,10 @@ export const Navbar = () => {
   const leftLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
+    { name: "Programs", path: "/programs" },
   ];
 
   const rightLinks = [
-    { name: "Programs", path: "/programs" },
     { name: "Team", path: "/team" },
     { name: "Get Involved", path: "/get-involved" },
   ];
