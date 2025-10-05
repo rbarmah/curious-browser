@@ -151,7 +151,25 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
+        <CarouselPrevious className="left-4" />
+        <CarouselNext className="right-4" />
       </Carousel>
+      
+      {/* Dot indicators */}
+      <div className="flex justify-center gap-2 mt-6">
+        {panels.map((_, index) => (
+          <button
+            key={index}
+            className={`w-2 h-2 rounded-full transition-all ${
+              index === currentIndex
+                ? "bg-primary w-8"
+                : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+            }`}
+            onClick={() => api?.scrollTo(index)}
+            aria-label={`Go to panel ${index + 1}`}
+          />
+        ))}
+      </div>
     </div>
   );
 };
