@@ -295,28 +295,15 @@ export const ValueCard = ({
           </span>
         </div>
 
-        {/* Title with gradient */}
-        <h3 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-          <span 
-            className="bg-gradient-to-r bg-clip-text text-transparent"
-            style={{
-              backgroundImage: `linear-gradient(135deg, ${accentColor}, ${accentColor}cc)`,
-            }}
-          >
-            {title}
-          </span>
+        {/* Title */}
+        <h3 className="text-3xl md:text-4xl font-bold mb-4 leading-tight text-foreground">
+          {title}
         </h3>
 
         {/* Description */}
         <p className="text-base md:text-lg text-foreground/80 leading-relaxed flex-grow">
           {description}
         </p>
-
-        {/* Reveal indicator */}
-        <div className="mt-6 flex items-center gap-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="w-12 h-px" style={{ backgroundColor: accentColor }}></div>
-          <span className="text-muted-foreground font-medium">Explore</span>
-        </div>
       </div>
 
       {/* Floating decorative elements */}
