@@ -9,7 +9,11 @@ export const GurlzWellnessCarousel = () => {
 
   const slides = [
     {
-      type: "main",
+      type: "intro",
+      title: "Gurlz Wellness",
+    },
+    {
+      type: "connect",
       title: "Monthly Gurlz Connect",
       description: "Safe, supportive spaces where urban women gather to discuss their shared challenges with expert facilitators. From menstrual health to mental wellness, workplace stress to reproductive rights—no topic is off-limits.",
     },
@@ -32,8 +36,67 @@ export const GurlzWellnessCarousel = () => {
     <div className="relative max-w-6xl mx-auto">
       {/* Carousel Container */}
       <div className="relative overflow-hidden rounded-3xl">
-        {/* Monthly Gurlz Connect Slide */}
+        {/* Intro Slide */}
         {activeIndex === 0 && (
+          <div 
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] p-10 md:p-16 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center items-center text-center"
+            style={{ 
+              boxShadow: '0 4px 8px hsl(var(--primary), 0.08), 0 12px 24px hsl(var(--primary), 0.12), 0 24px 48px hsl(var(--primary), 0.16)',
+            }}
+          >
+            {/* Decorative Pattern Overlay */}
+            <div className="absolute inset-0 opacity-10"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            ></div>
+
+            {/* Floating Hearts */}
+            <div className="absolute top-20 left-20 w-8 h-8 opacity-30 animate-float">
+              <Heart className="w-full h-full text-white" fill="white" />
+            </div>
+            <div className="absolute bottom-32 right-24 w-6 h-6 opacity-20 animate-float" style={{ animationDelay: '1s' }}>
+              <Heart className="w-full h-full text-white" fill="white" />
+            </div>
+            <div className="absolute top-40 right-32 w-5 h-5 opacity-25 animate-float" style={{ animationDelay: '2s' }}>
+              <Heart className="w-full h-full text-white" fill="white" />
+            </div>
+
+            <div className="relative z-10 space-y-8 max-w-4xl text-white">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
+                <Heart className="w-5 h-5" />
+                <span className="text-sm font-semibold uppercase tracking-wider">
+                  Holistic Support
+                </span>
+              </div>
+              
+              <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+                Gurlz Wellness
+              </h2>
+              
+              <div className="h-1 w-32 bg-white/60 mx-auto rounded-full"></div>
+              
+              <p className="text-xl md:text-2xl leading-relaxed text-white/95 max-w-3xl mx-auto">
+                Physical, mental, and sexual reproductive health barriers should never impede African women's 
+                ability to innovate. Gurlz Wellness ensures that women have the support they need to thrive 
+                in every dimension of their lives.
+              </p>
+
+              <div className="pt-4">
+                <p className="text-lg md:text-xl font-semibold text-white/90">
+                  Because wellness isn't a luxury—it's a prerequisite for innovation.
+                </p>
+              </div>
+            </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute bottom-12 right-12 w-3 h-3 rounded-full bg-white/40 animate-pulse"></div>
+            <div className="absolute top-1/2 right-16 w-2 h-2 rounded-full bg-white/30 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          </div>
+        )}
+
+        {/* Monthly Gurlz Connect Slide */}
+        {activeIndex === 1 && (
           <div 
             className="group relative overflow-hidden rounded-3xl transition-all duration-700"
             style={{ 
@@ -96,7 +159,7 @@ export const GurlzWellnessCarousel = () => {
                     textShadow: '0 2px 10px rgba(0, 0, 0, 0.4), 0 4px 20px rgba(0, 0, 0, 0.3)',
                   }}
                 >
-                  {slides[0].title}
+                  {slides[1].title}
                 </h3>
                 
                 <p className="text-xl md:text-2xl text-white/95 leading-relaxed font-medium"
@@ -104,7 +167,7 @@ export const GurlzWellnessCarousel = () => {
                     textShadow: '0 1px 4px rgba(0, 0, 0, 0.4)',
                   }}
                 >
-                  {slides[0].description}
+                  {slides[1].description}
                 </p>
                 
                 <p className="text-lg md:text-xl text-white/90 leading-relaxed"
@@ -138,7 +201,7 @@ export const GurlzWellnessCarousel = () => {
         )}
 
         {/* Gurlz Wellness App Slide */}
-        {activeIndex === 1 && (
+        {activeIndex === 2 && (
           <div 
             className="group relative overflow-hidden rounded-3xl transition-all duration-700"
             style={{ 
@@ -207,7 +270,7 @@ export const GurlzWellnessCarousel = () => {
                     textShadow: '0 2px 10px rgba(0, 0, 0, 0.4), 0 4px 20px rgba(0, 0, 0, 0.3)',
                   }}
                 >
-                  {slides[1].title}
+                  {slides[2].title}
                 </h3>
                 
                 <p className="text-xl md:text-2xl text-white/95 leading-relaxed font-medium"
@@ -215,7 +278,7 @@ export const GurlzWellnessCarousel = () => {
                     textShadow: '0 1px 4px rgba(0, 0, 0, 0.4)',
                   }}
                 >
-                  {slides[1].description}
+                  {slides[2].description}
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-3 pt-6">

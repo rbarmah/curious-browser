@@ -117,53 +117,14 @@ const Programs = () => {
       </div>
 
       {/* Gurlz Wellness Section */}
-      <section id="gurlz-wellness" className="py-32 bg-[hsl(var(--warm-bg))] relative overflow-hidden">
+      <section id="gurlz-wellness" className="py-20 bg-[hsl(var(--warm-bg))] relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute top-20 left-10 w-64 h-64 bg-[hsl(var(--primary))]/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal>
-            <div className="max-w-4xl mx-auto text-center space-y-8 mb-20">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
-                <Heart className="w-5 h-5 text-primary" />
-                <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-                  Holistic Support
-                </span>
-              </div>
-              
-              <h2 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer"
-                  style={{ 
-                    backgroundSize: '200% auto',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}
-                >
-                  Gurlz Wellness
-                </span>
-              </h2>
-              
-              <div className="h-1 w-32 bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] mx-auto rounded-full"></div>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Physical, mental, and sexual reproductive health barriers should never impede African women's 
-                ability to innovate. Gurlz Wellness ensures that women have the support they need to thrive 
-                in every dimension of their lives.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={200}>
             <GurlzWellnessCarousel />
-          </ScrollReveal>
-
-          <ScrollReveal delay={400}>
-            <div className="text-center max-w-3xl mx-auto mt-16">
-              <p className="text-2xl md:text-3xl font-bold text-foreground">
-                Because wellness isn't a luxury—it's a prerequisite for innovation.
-              </p>
-            </div>
           </ScrollReveal>
         </div>
       </section>
