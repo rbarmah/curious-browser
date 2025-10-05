@@ -1,12 +1,11 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PillarCard } from "@/components/PillarCard";
-import { FeaturedProgramCard } from "@/components/FeaturedProgramCard";
-import { SupportingProgramCard } from "@/components/SupportingProgramCard";
+import { BentoGrid, BentoCard } from "@/components/BentoGrid";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ManifestoCard } from "@/components/ManifestoCard";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Lightbulb, RefreshCw, Sparkles } from "lucide-react";
+import { ArrowRight, Lightbulb, RefreshCw, Sparkles, Users, Heart, Zap } from "lucide-react";
 import heroCollage1 from "@/assets/hero-collage-1.jpg";
 import heroCollage2 from "@/assets/hero-collage-2.jpg";
 import heroCollage3 from "@/assets/hero-collage-3.jpg";
@@ -230,59 +229,117 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Programs Preview Section - Featured + Supporting Layout */}
+      {/* Programs Section - Bento Grid Layout */}
       <section className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))]">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="section-title mb-4">Our Programs</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Building the future together through Labs, Hackathons, and Wellness
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="section-title mb-4">Our Programs</h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Building the future together through Labs, Hackathons, and Wellness
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="max-w-7xl mx-auto space-y-8">
-            {/* Featured Program Card */}
-            <FeaturedProgramCard
-              title="Innofemme Labs"
-              description="Our flagship training and incubation program connecting talented women technologists with women-led startups that need them."
-              image={innofemmeLabs}
-              gradient="bg-gradient-to-t from-primary/95 via-primary/70 to-transparent"
-              buttons={[
-                { label: "Join as a Fellow", variant: "coral" },
-                { label: "Apply as a Startup", variant: "outline" },
-              ]}
-            />
+          <ScrollReveal delay={200}>
+            <BentoGrid className="max-w-7xl mx-auto">
+              {/* Featured Program - Large Card */}
+              <BentoCard
+                title="Innofemme Labs"
+                description="Our flagship training and incubation program connecting talented women technologists with women-led startups that need them. We provide mentorship, resources, and a community of support to help women excel in their tech careers."
+                image={innofemmeLabs}
+                icon={<Sparkles className="w-full h-full text-white" />}
+                accentColor="hsl(var(--primary))"
+                size="large"
+              >
+                <Button variant="secondary" size="lg">
+                  Join as a Fellow
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                  Apply as a Startup
+                </Button>
+              </BentoCard>
 
-            {/* Supporting Program Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <SupportingProgramCard
+              {/* Hack4Equity - Medium Card */}
+              <BentoCard
                 title="Hack4Equity"
                 description="Targeted hackathons designed to bring women together to address the issues they face using their collective skills and lived experiences."
                 image={hack4equity}
-                gradient="bg-gradient-to-t from-[hsl(var(--coral))]/90 via-[hsl(var(--coral))]/60 to-transparent"
+                icon={<Zap className="w-full h-full text-white" />}
                 accentColor="hsl(var(--coral))"
-                button={{ label: "View Hackathons", variant: "outline" }}
-              />
+                size="small"
+              >
+                <Button variant="outline" size="default" className="border-white text-white hover:bg-white hover:text-foreground">
+                  View Events
+                </Button>
+              </BentoCard>
 
-              <SupportingProgramCard
+              {/* Wellness & Community - Medium Card */}
+              <BentoCard
                 title="Wellness & Community"
                 description="Holistic support programs ensuring mental wellness, community building, and sustainable growth for women in tech."
                 image={innofemmeLabs}
-                gradient="bg-gradient-to-t from-[hsl(var(--peach))]/90 via-[hsl(var(--peach))]/60 to-transparent"
+                icon={<Heart className="w-full h-full text-white" />}
                 accentColor="hsl(var(--peach))"
-                button={{ label: "Learn More", variant: "outline" }}
-              />
-            </div>
-          </div>
+                size="medium"
+              >
+                <Button variant="outline" size="default" className="border-white text-white hover:bg-white hover:text-foreground">
+                  Learn More
+                </Button>
+              </BentoCard>
 
-          <div className="text-center mt-12">
-            <Button variant="hero" size="lg" asChild>
-              <a href="/programs">
-                Explore All Programs
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-          </div>
+              {/* Mentorship Program - Small Card */}
+              <BentoCard
+                title="Mentorship Network"
+                description="Connect with experienced professionals who understand your journey and can guide your growth in tech."
+                icon={<Users className="w-full h-full text-primary" />}
+                accentColor="hsl(var(--purple-medium))"
+                size="medium"
+              >
+                <Button variant="default" size="default">
+                  Find a Mentor
+                </Button>
+              </BentoCard>
+
+              {/* Skills Development - Small Card */}
+              <BentoCard
+                title="Skills Lab"
+                description="Hands-on workshops and courses designed to build cutting-edge technical skills and leadership capabilities."
+                icon={<Lightbulb className="w-full h-full text-primary" />}
+                accentColor="hsl(var(--coral-light))"
+                size="small"
+              >
+                <Button variant="default" size="default">
+                  Explore Courses
+                </Button>
+              </BentoCard>
+
+              {/* Innovation Hub - Small Card */}
+              <BentoCard
+                title="Innovation Hub"
+                description="A collaborative space for ideation, prototyping, and bringing your tech innovations to life."
+                icon={<RefreshCw className="w-full h-full text-primary" />}
+                accentColor="hsl(var(--peach-light))"
+                size="small"
+              >
+                <Button variant="default" size="default">
+                  Join Hub
+                </Button>
+              </BentoCard>
+            </BentoGrid>
+          </ScrollReveal>
+
+          <ScrollReveal delay={400}>
+            <div className="text-center mt-12">
+              <Button variant="hero" size="lg" asChild>
+                <a href="/programs">
+                  Explore All Programs
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
