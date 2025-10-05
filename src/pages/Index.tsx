@@ -5,7 +5,14 @@ import { PillarCard } from "@/components/PillarCard";
 import { ProgramCard } from "@/components/ProgramCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Lightbulb, RefreshCw, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-women-engineers.jpg";
+import heroCollage1 from "@/assets/hero-collage-1.jpg";
+import heroCollage2 from "@/assets/hero-collage-2.jpg";
+import heroCollage3 from "@/assets/hero-collage-3.jpg";
+import heroCollage4 from "@/assets/hero-collage-4.jpg";
+import heroCollage5 from "@/assets/hero-collage-5.jpg";
+import heroCollage6 from "@/assets/hero-collage-6.jpg";
+import heroCollage7 from "@/assets/hero-collage-7.jpg";
+import heroCollage8 from "@/assets/hero-collage-8.jpg";
 import handsCollaborate from "@/assets/hands-collaborate.svg";
 import handsIdea from "@/assets/hands-idea.svg";
 import handsHeart from "@/assets/hands-heart.svg";
@@ -18,35 +25,43 @@ const Index = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="African women engineers in different professions"
-            className="w-full h-full object-cover"
-          />
+      <section className="relative overflow-hidden h-screen">
+        {/* Collage Background */}
+        <div className="absolute inset-0 grid grid-cols-4 grid-rows-2">
+          <img src={heroCollage1} alt="Software Engineer" className="w-full h-full object-cover" />
+          <img src={heroCollage2} alt="Mechanical Engineer" className="w-full h-full object-cover" />
+          <img src={heroCollage3} alt="Construction Engineer" className="w-full h-full object-cover" />
+          <img src={heroCollage4} alt="Electrical Engineer" className="w-full h-full object-cover" />
+          <img src={heroCollage5} alt="Data Scientist" className="w-full h-full object-cover" />
+          <img src={heroCollage6} alt="Civil Engineer" className="w-full h-full object-cover" />
+          <img src={heroCollage7} alt="Robotics Engineer" className="w-full h-full object-cover" />
+          <img src={heroCollage8} alt="Biomedical Engineer" className="w-full h-full object-cover" />
         </div>
         
-        <div className="relative container mx-auto px-4 py-32 md:py-48">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-              <span className="inline-block bg-gradient-to-r from-[hsl(var(--purple-deep))] to-[hsl(var(--primary))] bg-clip-text text-transparent animate-[fade-in_0.5s_ease-out]">
+        {/* Text Overlay at Bottom Left */}
+        <div className="absolute bottom-12 left-0 container mx-auto px-4">
+          <div className="max-w-5xl">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-[fade-in_0.5s_ease-out]">
                 Centering
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-[fade-in_0.7s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent animate-[fade-in_0.7s_ease-out]">
                 African
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-[hsl(var(--yellow))] to-[hsl(var(--coral))] bg-clip-text text-transparent animate-[fade-in_0.9s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent animate-[fade-in_0.9s_ease-out]">
                 Women
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-[hsl(var(--teal-deep))] to-[hsl(var(--teal))] bg-clip-text text-transparent animate-[fade-in_1.1s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-[fade-in_1.1s_ease-out]">
                 at the
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] to-[hsl(var(--purple-deep))] bg-clip-text text-transparent animate-[fade-in_1.3s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent animate-[fade-in_1.3s_ease-out]">
                 Heart
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--yellow))] bg-clip-text text-transparent animate-[fade-in_1.5s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent animate-[fade-in_1.5s_ease-out]">
                 of Innovation
+              </span>
+              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-[fade-in_1.7s_ease-out]">
+                .
               </span>
             </h1>
           </div>
