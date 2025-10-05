@@ -192,12 +192,12 @@ export const InnofemmeCarousel = ({ onJoinAsFellow, onApplyAsStartup }: Innofemm
         )}
       </div>
 
-      {/* Navigation Buttons */}
+      {/* Navigation Buttons - Hidden on mobile, visible on desktop */}
       <Button
         variant="outline"
         size="icon"
         onClick={handlePrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border-2 border-white/80 hover:bg-white shadow-lg"
+        className="hidden lg:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border-2 border-white/80 hover:bg-white shadow-lg"
       >
         <ChevronLeft className="h-6 w-6 text-[hsl(var(--primary))]" />
       </Button>
@@ -206,7 +206,7 @@ export const InnofemmeCarousel = ({ onJoinAsFellow, onApplyAsStartup }: Innofemm
         variant="outline"
         size="icon"
         onClick={handleNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border-2 border-white/80 hover:bg-white shadow-lg"
+        className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border-2 border-white/80 hover:bg-white shadow-lg"
       >
         <ChevronRight className="h-6 w-6 text-[hsl(var(--primary))]" />
       </Button>
