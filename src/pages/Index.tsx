@@ -38,29 +38,32 @@ const Index = () => {
           <img src={heroCollage8} alt="Biomedical Engineer" className="w-full h-full object-cover" />
         </div>
         
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
         {/* Text Overlay at Bottom Left */}
         <div className="absolute bottom-12 left-0 container mx-auto px-4">
           <div className="max-w-5xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-[fade-in_0.5s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-typing">
                 Centering
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent animate-[fade-in_0.7s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "0.5s" }}>
                 African
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent animate-[fade-in_0.9s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "1s" }}>
                 Women
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-[fade-in_1.1s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "1.5s" }}>
                 at the
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent animate-[fade-in_1.3s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "2s" }}>
                 Heart
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent animate-[fade-in_1.5s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "2.5s" }}>
                 of Innovation
               </span>
-              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-[fade-in_1.7s_ease-out]">
+              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "3s" }}>
                 .
               </span>
             </h1>
