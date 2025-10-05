@@ -72,10 +72,10 @@ const Index = () => {
       </section>
 
       {/* Gradient Transition Zone */}
-      <div className="h-32 bg-gradient-to-b from-black/60 via-[hsl(var(--purple-deep))]/40 to-[hsl(var(--warm-bg))]"></div>
+      <div className="h-16 md:h-24 bg-gradient-to-b from-black/60 via-[hsl(var(--purple-deep))]/40 to-[hsl(var(--warm-bg))]"></div>
 
       {/* Introduction Section - Scroll-Triggered Story */}
-      <section className="relative py-32 bg-gradient-to-b from-[hsl(var(--warm-bg))] via-background to-background overflow-hidden">
+      <section className="relative py-12 md:py-20 bg-gradient-to-b from-[hsl(var(--warm-bg))] via-background to-background overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 opacity-10">
           <img src={heroCollage2} alt="" className="w-full h-full object-cover" />
@@ -87,7 +87,7 @@ const Index = () => {
         <div className="absolute bottom-40 left-10 w-96 h-96 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto space-y-32">
+          <div className="max-w-6xl mx-auto space-y-12 md:space-y-20">
             
             {/* Act 1: The Problem - Enhanced 3D Card with Particles */}
             <ScrollReveal delay={0}>
@@ -97,7 +97,7 @@ const Index = () => {
                     <div className="w-2 h-2 rounded-full bg-[hsl(var(--coral))]"></div>
                     <span className="text-sm font-semibold bg-gradient-to-r from-[hsl(var(--coral))] to-[hsl(var(--peach))] bg-clip-text text-transparent uppercase tracking-wider">The Reality</span>
                   </div>
-                  <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+                  <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
                     <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--coral-glow))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer" 
                       style={{ 
                         backgroundSize: '200% auto',
@@ -157,9 +157,9 @@ const Index = () => {
 
             {/* Act 2: The Solution - Bold Statement */}
             <ScrollReveal delay={200}>
-              <div className="text-center space-y-8 py-16">
+              <div className="text-center space-y-8 py-8 md:py-12">
                 <div className="space-y-4">
-                  <h3 className="text-5xl md:text-7xl font-bold emphasized leading-tight">
+                  <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
                     It's Time to<br />Rebuild It.
                   </h3>
                   <div className="h-1 w-32 bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--teal))] mx-auto rounded-full"></div>
@@ -193,7 +193,7 @@ const Index = () => {
 
             {/* Act 4: The Vision - Grand Finale */}
             <ScrollReveal delay={400}>
-              <div className="text-center py-16 space-y-8">
+              <div className="text-center py-8 md:py-12 space-y-8">
                 <h3 className="text-4xl md:text-7xl font-bold leading-tight">
                   <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--teal))] bg-clip-text text-transparent">
                     Technology reclaimed.
@@ -214,7 +214,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-      <section className="py-20 bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="section-title mb-4">Our Three-Pillar Approach</h2>
@@ -244,7 +244,7 @@ const Index = () => {
       </section>
 
       {/* Programs Preview Section */}
-      <section className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))]">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="section-title mb-4">Our Programs</h2>
@@ -288,7 +288,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-12 md:py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="section-title">Ready to Transform Innovation?</h2>
