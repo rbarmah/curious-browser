@@ -15,6 +15,7 @@ export const Navbar = () => {
 
   const rightLinks = [
     { name: "Programs", path: "/programs" },
+    { name: "Team", path: "/team" },
     { name: "Get Involved", path: "/get-involved" },
   ];
 
@@ -23,15 +24,15 @@ export const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-sm">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-center h-24 relative">
+        <div className="flex items-center justify-center h-24 relative max-w-5xl mx-auto">
           {/* Left Navigation - Desktop */}
-          <div className="hidden lg:flex items-center gap-2 absolute left-0">
+          <div className="hidden lg:flex items-center gap-1 mr-8">
             {leftLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={`
-                  group relative px-5 py-2.5 rounded-full font-medium transition-all duration-300
+                  group relative px-4 py-2.5 rounded-full font-medium transition-all duration-300
                   ${isActive(link.path)
                     ? "text-primary"
                     : "text-foreground/80 hover:text-primary"
@@ -100,13 +101,13 @@ export const Navbar = () => {
           </Link>
 
           {/* Right Navigation - Desktop */}
-          <div className="hidden lg:flex items-center gap-2 absolute right-0">
+          <div className="hidden lg:flex items-center gap-1 ml-8">
             {rightLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={`
-                  group relative px-5 py-2.5 rounded-full font-medium transition-all duration-300
+                  group relative px-4 py-2.5 rounded-full font-medium transition-all duration-300
                   ${isActive(link.path)
                     ? "text-primary"
                     : "text-foreground/80 hover:text-primary"
@@ -131,10 +132,14 @@ export const Navbar = () => {
                 `} />
               </Link>
             ))}
+          </div>
+
+          {/* Donate Button - Desktop */}
+          <div className="hidden lg:block ml-6">
             <Button 
               variant="coral" 
               size="default" 
-              className="ml-3 relative overflow-hidden group"
+              className="relative overflow-hidden group"
             >
               <span className="relative z-10">Donate</span>
               <div className="absolute inset-0 bg-gradient-to-r from-accent via-secondary to-accent bg-[length:200%_100%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer" />
