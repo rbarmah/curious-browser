@@ -36,8 +36,8 @@ export const ManifestoCard = () => {
             </defs>
             
             {/* Blob 1 with Image */}
-            <g className="animate-[float_20s_ease-in-out_infinite] transition-all duration-700" style={{ transformOrigin: 'center' }}>
-              <image
+            <g className="animate-[float_8s_ease-in-out_infinite]" style={{ transformOrigin: 'center' }}>
+              <image 
                 href={heroCollage1}
                 x="50" 
                 y="20" 
@@ -45,16 +45,12 @@ export const ManifestoCard = () => {
                 height="280" 
                 clipPath="url(#blob-clip-1)"
                 preserveAspectRatio="xMidYMid slice"
-                style={{ 
-                  filter: isHovered ? 'grayscale(0%)' : 'grayscale(100%)',
-                  transition: 'filter 0.7s ease'
-                }}
               />
             </g>
             
             {/* Blob 2 with Image */}
-            <g className="animate-[float_25s_ease-in-out_infinite_reverse] transition-all duration-700" style={{ transformOrigin: 'center', animationDelay: '1s' }}>
-              <image
+            <g className="animate-[float_10s_ease-in-out_infinite_reverse]" style={{ transformOrigin: 'center', animationDelay: '1s' }}>
+              <image 
                 href={heroCollage2}
                 x="90" 
                 y="70" 
@@ -62,17 +58,12 @@ export const ManifestoCard = () => {
                 height="300" 
                 clipPath="url(#blob-clip-2)"
                 preserveAspectRatio="xMidYMid slice"
-                style={{ 
-                  filter: isHovered ? 'grayscale(0%)' : 'grayscale(100%)',
-                  transition: 'filter 0.7s ease',
-                  transitionDelay: '0.1s'
-                }}
               />
             </g>
             
             {/* Blob 3 with Image */}
-            <g className="animate-[float_30s_ease-in-out_infinite] transition-all duration-700" style={{ transformOrigin: 'center', animationDelay: '2s' }}>
-              <image
+            <g className="animate-[float_12s_ease-in-out_infinite]" style={{ transformOrigin: 'center', animationDelay: '2s' }}>
+              <image 
                 href={heroCollage3}
                 x="70" 
                 y="120" 
@@ -80,11 +71,6 @@ export const ManifestoCard = () => {
                 height="220" 
                 clipPath="url(#blob-clip-3)"
                 preserveAspectRatio="xMidYMid slice"
-                style={{ 
-                  filter: isHovered ? 'grayscale(0%)' : 'grayscale(100%)',
-                  transition: 'filter 0.7s ease',
-                  transitionDelay: '0.2s'
-                }}
               />
             </g>
           </svg>
