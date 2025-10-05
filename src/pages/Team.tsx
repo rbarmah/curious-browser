@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
 import { TeamMemberDialog, TeamMember } from "@/components/TeamMemberDialog";
 import ruthieArmahPhoto from "@/assets/ruthie-armah.png";
-import heroWomenEngineers from "@/assets/hero-women-engineers.jpg";
+import teamHeroAbstract from "@/assets/team-hero-abstract.jpg";
 
 const managementTeam: TeamMember[] = [
   { 
@@ -132,7 +132,7 @@ const Team = () => {
       <section className="relative overflow-hidden h-screen">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <img src={heroWomenEngineers} alt="Team of innovative women leaders" className="w-full h-full object-cover" />
+          <img src={teamHeroAbstract} alt="Abstract representation of leadership" className="w-full h-full object-cover" />
         </div>
         
         {/* Dark Overlay */}
