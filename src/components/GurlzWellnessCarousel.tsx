@@ -96,13 +96,6 @@ export const GurlzWellnessCarousel = () => {
               <div className="w-24 h-1.5 bg-gradient-to-r from-white to-white/40 rounded-full mb-8 group-hover:w-40 transition-all duration-500"></div>
 
               <div className="space-y-6 max-w-3xl">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-4">
-                  <Heart className="w-5 h-5" />
-                  <span className="text-sm font-semibold uppercase tracking-wider">
-                    Holistic Support
-                  </span>
-                </div>
-                
                 <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight"
                   style={{
                     textShadow: '0 2px 10px rgba(0, 0, 0, 0.4), 0 4px 20px rgba(0, 0, 0, 0.3)',
