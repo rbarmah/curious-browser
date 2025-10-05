@@ -1,19 +1,34 @@
+import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, Zap, Heart, CheckCircle, Sparkles, Users, Target } from "lucide-react";
+import { ArrowRight, Zap, Heart, Users } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { BentoGrid, BentoCard } from "@/components/BentoGrid";
-import { FeaturedProgramCard } from "@/components/FeaturedProgramCard";
+import { InnofemmeCarousel } from "@/components/InnofemmeCarousel";
+import { InterestModal } from "@/components/InterestModal";
 import innofemmeLabs from "@/assets/innofemme-labs.jpg";
-import hack4equity from "@/assets/hack4equity.jpg";
 import handsHeart from "@/assets/hands-heart.svg";
 import programsHeroAbstract from "@/assets/programs-hero-abstract.jpg";
 
 const Programs = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState<"fellow" | "startup">("fellow");
+
+  const handleOpenModal = (type: "fellow" | "startup") => {
+    setModalType(type);
+    setIsModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen">
       <Navbar />
+      
+      <InterestModal 
+        open={isModalOpen} 
+        onOpenChange={setIsModalOpen}
+        type={modalType}
+      />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden h-screen">
@@ -41,73 +56,19 @@ const Programs = () => {
       {/* Gradient Transition Zone */}
       <div className="h-32 bg-gradient-to-b from-black/40 via-[hsl(var(--purple-deep))]/20 to-background"></div>
 
-      {/* Innofemme Labs - Featured Program */}
+      {/* Innofemme Labs Section */}
       <section id="innofemme-labs" className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))] relative overflow-hidden">
         {/* Decorative floating orbs */}
         <div className="absolute top-40 left-20 w-3 h-3 rounded-full bg-[hsl(var(--coral))]/40 animate-pulse"></div>
         <div className="absolute bottom-60 right-32 w-2 h-2 rounded-full bg-[hsl(var(--peach))]/50 animate-pulse" style={{ animationDelay: '1s' }}></div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto space-y-16">
-            <ScrollReveal>
-              <FeaturedProgramCard
-                title="Innofemme Labs"
-                description="Our flagship training and incubation program connecting talented women technologists with women-led startups."
-                image={innofemmeLabs}
-                gradient="bg-gradient-to-t from-[hsl(var(--primary))]/90 via-[hsl(var(--primary))]/50 to-transparent"
-                buttons={[
-                  { label: "Join as a Fellow", variant: "coral" },
-                  { label: "Apply as a Startup", variant: "outline" },
-                ]}
-              />
-            </ScrollReveal>
-
-            <ScrollReveal delay={200}>
-              <div className="space-y-12">
-                {/* How It Works */}
-                <div 
-                  className="group relative max-w-5xl mx-auto"
-                  style={{ perspective: "1200px" }}
-                >
-                  {/* Floating Particles */}
-                  <div className="absolute -top-4 -left-4 w-3 h-3 rounded-full bg-[hsl(var(--coral))] animate-particle"></div>
-                  <div className="absolute top-10 -right-6 w-2 h-2 rounded-full bg-[hsl(var(--peach))] animate-particle" style={{ animationDelay: '1s' }}></div>
-                  
-                  <div className="relative bg-gradient-to-br from-[hsl(var(--coral))]/5 via-[hsl(var(--peach))]/5 to-[hsl(var(--coral))]/10 border-l-4 border-[hsl(var(--primary))] p-10 md:p-12 rounded-r-2xl shadow-2xl transform transition-all duration-700 hover:scale-[1.02] group-hover:shadow-[0_20px_60px_-10px_hsl(var(--coral-glow)/0.4)]">
-                    {/* Shimmer Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--coral))]/20 via-transparent to-[hsl(var(--peach))]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-r-2xl animate-shimmer" 
-                      style={{ backgroundSize: '200% 200%' }}
-                    ></div>
-                    
-                    <div className="relative space-y-6">
-                      <div className="flex items-center gap-3 mb-6">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--coral))] flex items-center justify-center shadow-lg">
-                          <Code className="w-6 h-6 text-white" />
-                        </div>
-                        <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] bg-clip-text text-transparent">
-                          How It Works
-                        </h3>
-                      </div>
-                      
-                      <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                        We recruit <strong className="text-foreground">Innofemme Fellows</strong>—software engineers, product designers, 
-                        AI engineers, data scientists, and other tech professionals—and provide them with cutting-edge training 
-                        and mentorship. Simultaneously, we open applications for women-led startups seeking to build software systems.
-                      </p>
-                      
-                      <p className="text-lg md:text-xl font-semibold text-foreground leading-relaxed">
-                        Here's where the magic happens: Our fellows build these systems for startups completely free of charge, 
-                        gaining real-world experience while ensuring women entrepreneurs have access to the technology they need to succeed.
-                      </p>
-                    </div>
-
-                    {/* Glow Elements */}
-                    <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-[hsl(var(--primary))]/20 rounded-full blur-3xl group-hover:blur-2xl group-hover:bg-[hsl(var(--coral-glow))]/30 transition-all duration-700"></div>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
+          <ScrollReveal>
+            <InnofemmeCarousel 
+              onJoinAsFellow={() => handleOpenModal("fellow")}
+              onApplyAsStartup={() => handleOpenModal("startup")}
+            />
+          </ScrollReveal>
         </div>
       </section>
 
