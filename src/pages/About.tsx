@@ -4,7 +4,8 @@ import { PillarCard } from "@/components/PillarCard";
 import { ComicCarousel } from "@/components/ComicCarousel";
 import { AnimatedStatCard } from "@/components/AnimatedStatCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Lightbulb, Sparkles, Users, Heart, Zap } from "lucide-react";
+import { CoreValuesSection } from "@/components/CoreValuesSection";
+import { Sparkles } from "lucide-react";
 import pillarDuplicate from "@/assets/pillar-duplicate.png";
 import pillarReform from "@/assets/pillar-reform.png";
 import pillarJustice from "@/assets/pillar-justice.png";
@@ -337,108 +338,7 @@ const About = () => {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-32 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background"></div>
-        
-        {/* Decorative Elements */}
-        <div className="absolute top-20 right-20 w-64 h-64 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-40 left-10 w-96 h-96 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <ScrollReveal>
-            <div className="text-center mb-20">
-              <h2 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--coral-glow))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer"
-                  style={{ 
-                    backgroundSize: '200% auto',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}
-                >
-                  Our Core Values
-                </span>
-              </h2>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                The principles that guide everything we do
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Value 1 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--coral))]/20 to-[hsl(var(--peach))]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
-              <div className="relative bg-card p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all border-l-4 border-[hsl(var(--coral))]">
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-[hsl(var(--coral))]/10 to-[hsl(var(--peach))]/10 rounded-full">
-                    <Users className="w-8 h-8 text-[hsl(var(--coral))]" />
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-2xl font-bold text-foreground">Inclusivity</h3>
-                    <p className="text-foreground/80 leading-relaxed">
-                      We center African women's voices and experiences in every aspect of technology innovation, ensuring representation at the heart of creation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Value 2 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--peach))]/20 to-[hsl(var(--coral))]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
-              <div className="relative bg-card p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all border-l-4 border-[hsl(var(--peach))]">
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-[hsl(var(--peach))]/10 to-[hsl(var(--coral))]/10 rounded-full">
-                    <Lightbulb className="w-8 h-8 text-[hsl(var(--peach))]" />
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-2xl font-bold text-foreground">Innovation</h3>
-                    <p className="text-foreground/80 leading-relaxed">
-                      We foster creative solutions that challenge existing systems and build technology that truly serves diverse communities and addresses real-world needs.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Value 3 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-[hsl(var(--coral))]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
-              <div className="relative bg-card p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all border-l-4 border-primary">
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-[hsl(var(--coral))]/10 rounded-full">
-                    <Heart className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-2xl font-bold text-foreground">Justice</h3>
-                    <p className="text-foreground/80 leading-relaxed">
-                      We are committed to equity and fairness, creating technology that addresses systemic inequalities and empowers marginalized communities.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Value 4 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--coral-glow))]/20 to-primary/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
-              <div className="relative bg-card p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all border-l-4 border-[hsl(var(--coral-glow))]">
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-[hsl(var(--coral-glow))]/10 to-primary/10 rounded-full">
-                    <Zap className="w-8 h-8 text-[hsl(var(--coral-glow))]" />
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-2xl font-bold text-foreground">Empowerment</h3>
-                    <p className="text-foreground/80 leading-relaxed">
-                      We provide resources, mentorship, and platforms that enable women to lead, innovate, and transform the technology landscape.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CoreValuesSection />
 
       {/* Partnerships Section */}
       <section className="py-32 bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background relative overflow-hidden">
