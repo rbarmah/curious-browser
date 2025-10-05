@@ -1,7 +1,10 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, Zap, Heart, CheckCircle } from "lucide-react";
+import { ArrowRight, Code, Zap, Heart, CheckCircle, Sparkles, Users, Target } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { BentoGrid, BentoCard } from "@/components/BentoGrid";
+import { FeaturedProgramCard } from "@/components/FeaturedProgramCard";
 import innofemmeLabs from "@/assets/innofemme-labs.jpg";
 import hack4equity from "@/assets/hack4equity.jpg";
 import handsHeart from "@/assets/hands-heart.svg";
@@ -35,241 +38,339 @@ const Programs = () => {
         </div>
       </section>
 
-      {/* Innofemme Labs */}
-      <section id="innofemme-labs" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full">
-                  <Code className="h-5 w-5 text-primary" />
-                  <span className="font-semibold text-primary">Flagship Program</span>
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold">
-                  Innofemme Labs: <span className="text-primary">Building the Future, Together</span>
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Our flagship training and incubation program that connects talented women technologists 
-                  with women-led startups that need them.
-                </p>
+      {/* Gradient Transition Zone */}
+      <div className="h-32 bg-gradient-to-b from-black/40 via-[hsl(var(--purple-deep))]/20 to-background"></div>
+
+      {/* Programs Overview Section */}
+      <section className="py-20 bg-background relative overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-20 w-64 h-64 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-40 left-10 w-96 h-96 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto text-center space-y-8 mb-20">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[hsl(var(--coral))]/10 to-[hsl(var(--peach))]/10 rounded-full border border-[hsl(var(--coral))]/20">
+                <Sparkles className="w-5 h-5 text-[hsl(var(--coral))]" />
+                <span className="text-sm font-semibold bg-gradient-to-r from-[hsl(var(--coral))] to-[hsl(var(--peach))] bg-clip-text text-transparent uppercase tracking-wider">
+                  Transformative Initiatives
+                </span>
               </div>
-              <div className="rounded-3xl overflow-hidden shadow-2xl">
-                <img src={innofemmeLabs} alt="Innofemme Labs" className="w-full h-full object-cover" />
-              </div>
+              
+              <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+                <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--coral-glow))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer"
+                  style={{ 
+                    backgroundSize: '200% auto',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}
+                >
+                  Programs That
+                </span>
+                <br />
+                <span className="text-foreground">Empower Change</span>
+              </h2>
+              
+              <div className="h-1 w-32 bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] mx-auto rounded-full"></div>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                Three flagship initiatives designed to unlock the innovative potential of African women 
+                through hands-on training, community problem-solving, and holistic wellness support.
+              </p>
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
-            <div className="bg-gradient-to-br from-card to-[hsl(var(--warm-bg))] p-8 md:p-12 rounded-3xl shadow-lg border border-border space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-primary">How It Works</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  We recruit <strong>Innofemme Fellows</strong>—software engineers, product designers, AI engineers, 
-                  data scientists, and other tech professionals—and provide them with cutting-edge training and mentorship. 
-                  Simultaneously, we open applications for women-led startups seeking to build software systems.
-                </p>
-                <p className="text-lg font-semibold text-foreground">
-                  Here's where the magic happens: Our fellows build these systems for startups completely free of charge, 
-                  gaining real-world experience while ensuring women entrepreneurs have access to the technology they need to succeed.
-                </p>
-              </div>
+      {/* Innofemme Labs - Featured Program */}
+      <section id="innofemme-labs" className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))] relative overflow-hidden">
+        {/* Decorative floating orbs */}
+        <div className="absolute top-40 left-20 w-3 h-3 rounded-full bg-[hsl(var(--coral))]/40 animate-pulse"></div>
+        <div className="absolute bottom-60 right-32 w-2 h-2 rounded-full bg-[hsl(var(--peach))]/50 animate-pulse" style={{ animationDelay: '1s' }}></div>
 
-              <div>
-                <h3 className="text-2xl font-bold mb-6 text-primary">Current Project: Inploy</h3>
-                <p className="text-lg text-muted-foreground mb-6">
-                  A revolutionary job search and applicant tracking portal featuring:
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-background p-6 rounded-xl shadow-md">
-                    <CheckCircle className="h-8 w-8 text-primary mb-3" />
-                    <h4 className="font-bold mb-2">Transparency</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Applicants can see their qualification scores and keyword matches exactly as employers see them
-                    </p>
-                  </div>
-                  <div className="bg-background p-6 rounded-xl shadow-md">
-                    <CheckCircle className="h-8 w-8 text-primary mb-3" />
-                    <h4 className="font-bold mb-2">Bias Evaluation</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Understand how your demographics might disadvantage you in the hiring process
-                    </p>
-                  </div>
-                  <div className="bg-background p-6 rounded-xl shadow-md">
-                    <CheckCircle className="h-8 w-8 text-primary mb-3" />
-                    <h4 className="font-bold mb-2">Equity by Design</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Built from the ground up to expose and combat systemic biases in recruitment
-                    </p>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto space-y-16">
+            <ScrollReveal>
+              <FeaturedProgramCard
+                title="Innofemme Labs"
+                description="Our flagship training and incubation program connecting talented women technologists with women-led startups."
+                image={innofemmeLabs}
+                gradient="bg-gradient-to-t from-[hsl(var(--primary))]/90 via-[hsl(var(--primary))]/50 to-transparent"
+                buttons={[
+                  { label: "Join as a Fellow", variant: "coral" },
+                  { label: "Apply as a Startup", variant: "outline" },
+                ]}
+              />
+            </ScrollReveal>
+
+            <ScrollReveal delay={200}>
+              <div className="space-y-12">
+                {/* How It Works */}
+                <div 
+                  className="group relative max-w-5xl mx-auto"
+                  style={{ perspective: "1200px" }}
+                >
+                  {/* Floating Particles */}
+                  <div className="absolute -top-4 -left-4 w-3 h-3 rounded-full bg-[hsl(var(--coral))] animate-particle"></div>
+                  <div className="absolute top-10 -right-6 w-2 h-2 rounded-full bg-[hsl(var(--peach))] animate-particle" style={{ animationDelay: '1s' }}></div>
+                  
+                  <div className="relative bg-gradient-to-br from-[hsl(var(--coral))]/5 via-[hsl(var(--peach))]/5 to-[hsl(var(--coral))]/10 border-l-4 border-[hsl(var(--primary))] p-10 md:p-12 rounded-r-2xl shadow-2xl transform transition-all duration-700 hover:scale-[1.02] group-hover:shadow-[0_20px_60px_-10px_hsl(var(--coral-glow)/0.4)]">
+                    {/* Shimmer Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--coral))]/20 via-transparent to-[hsl(var(--peach))]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-r-2xl animate-shimmer" 
+                      style={{ backgroundSize: '200% 200%' }}
+                    ></div>
+                    
+                    <div className="relative space-y-6">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--coral))] flex items-center justify-center shadow-lg">
+                          <Code className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] bg-clip-text text-transparent">
+                          How It Works
+                        </h3>
+                      </div>
+                      
+                      <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                        We recruit <strong className="text-foreground">Innofemme Fellows</strong>—software engineers, product designers, 
+                        AI engineers, data scientists, and other tech professionals—and provide them with cutting-edge training 
+                        and mentorship. Simultaneously, we open applications for women-led startups seeking to build software systems.
+                      </p>
+                      
+                      <p className="text-lg md:text-xl font-semibold text-foreground leading-relaxed">
+                        Here's where the magic happens: Our fellows build these systems for startups completely free of charge, 
+                        gaining real-world experience while ensuring women entrepreneurs have access to the technology they need to succeed.
+                      </p>
+                    </div>
+
+                    {/* Glow Elements */}
+                    <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-[hsl(var(--primary))]/20 rounded-full blur-3xl group-hover:blur-2xl group-hover:bg-[hsl(var(--coral-glow))]/30 transition-all duration-700"></div>
                   </div>
                 </div>
-              </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button variant="hero" size="lg">
-                  Join as a Fellow
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button variant="outline" size="lg">
-                  Apply as a Startup
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                {/* Current Project: Inploy - Bento Grid */}
+                <div className="space-y-8">
+                  <div className="text-center">
+                    <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                      <span className="text-primary">Current Project:</span> Inploy
+                    </h3>
+                    <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                      A revolutionary job search and applicant tracking portal built for transparency and equity
+                    </p>
+                  </div>
+
+                  <BentoGrid className="max-w-6xl mx-auto">
+                    <BentoCard
+                      size="small"
+                      title="Transparency"
+                      description="Applicants can see their qualification scores and keyword matches exactly as employers see them"
+                      icon={<CheckCircle className="w-8 h-8 text-[hsl(var(--coral))]" />}
+                      accentColor="hsl(var(--coral))"
+                    />
+                    <BentoCard
+                      size="small"
+                      title="Bias Evaluation"
+                      description="Understand how your demographics might disadvantage you in the hiring process"
+                      icon={<Target className="w-8 h-8 text-[hsl(var(--peach))]" />}
+                      accentColor="hsl(var(--peach))"
+                    />
+                    <BentoCard
+                      size="small"
+                      title="Equity by Design"
+                      description="Built from the ground up to expose and combat systemic biases in recruitment"
+                      icon={<Sparkles className="w-8 h-8 text-[hsl(var(--primary))]" />}
+                      accentColor="hsl(var(--primary))"
+                    />
+                  </BentoGrid>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Hack4Equity */}
-      <section id="hack4equity" className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))]">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-              <div className="order-2 lg:order-1 rounded-3xl overflow-hidden shadow-2xl">
-                <img src={hack4equity} alt="Hack4Equity Hackathon" className="w-full h-full object-cover" />
+      {/* Transition Zone */}
+      <div className="h-32 bg-gradient-to-b from-[hsl(var(--warm-bg))] via-[hsl(var(--warm-bg))]/50 to-background relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Hack4Equity Section */}
+      <section id="hack4equity" className="py-32 bg-background relative overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-10 w-80 h-80 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 left-10 w-64 h-64 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto text-center space-y-8 mb-20">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-secondary/20 to-[hsl(var(--yellow))]/20 rounded-full border border-secondary/20">
+                <Zap className="w-5 h-5 text-secondary" />
+                <span className="text-sm font-semibold text-secondary uppercase tracking-wider">
+                  Community Impact
+                </span>
               </div>
-              <div className="order-1 lg:order-2 space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 rounded-full">
-                  <Zap className="h-5 w-5 text-secondary" />
-                  <span className="font-semibold text-secondary">Community Impact</span>
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold">
-                  Hack4Equity: <span className="text-secondary">Hackathons with Purpose</span>
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Our series of targeted hackathons designed to bring women together to address the issues 
-                  they face using their collective skills and lived experiences.
-                </p>
-              </div>
+              
+              <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+                <span className="text-secondary">Hack4Equity:</span>
+                <br />
+                <span className="text-foreground">Hackathons with Purpose</span>
+              </h2>
+              
+              <div className="h-1 w-32 bg-gradient-to-r from-secondary via-[hsl(var(--yellow))] to-secondary mx-auto rounded-full"></div>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                Our series of targeted hackathons designed to bring women together to address the issues 
+                they face using their collective skills and lived experiences.
+              </p>
             </div>
+          </ScrollReveal>
 
-            <div className="space-y-8">
-              {/* Mobile Money Fraud Hackathon */}
-              <div className="bg-card p-8 md:p-12 rounded-3xl shadow-lg border border-border">
-                <h3 className="text-3xl font-bold mb-4 text-primary">Mobile Money Fraud Hackathon</h3>
-                <div className="flex flex-wrap gap-4 mb-6">
-                  <span className="px-4 py-2 bg-primary/10 rounded-full text-sm font-semibold text-primary">
-                    When: April 2026
-                  </span>
-                  <span className="px-4 py-2 bg-secondary/10 rounded-full text-sm font-semibold text-secondary">
-                    In Partnership With: MTN Mobile Money Ltd.
-                  </span>
-                </div>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Mobile money has transformed financial inclusion across Africa, but with it comes new vulnerabilities. 
-                  This hackathon challenges participants to develop innovative solutions to combat mobile money fraud, 
-                  protecting the financial security of millions of African women who rely on these systems.
-                </p>
-              </div>
+          <div className="max-w-6xl mx-auto space-y-12">
+            <ScrollReveal delay={200}>
+              <BentoGrid>
+                {/* Mobile Money Fraud Hackathon */}
+                <BentoCard
+                  size="medium"
+                  title="Mobile Money Fraud Hackathon"
+                  description="Mobile money has transformed financial inclusion across Africa, but with it comes new vulnerabilities. This hackathon challenges participants to develop innovative solutions to combat mobile money fraud, protecting the financial security of millions of African women."
+                  icon={<Zap className="w-10 h-10 text-[hsl(var(--coral))]" />}
+                  accentColor="hsl(var(--coral))"
+                  className="bg-gradient-to-br from-card to-[hsl(var(--coral))]/5"
+                >
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    <span className="px-4 py-2 bg-primary/10 rounded-full text-sm font-semibold text-primary">
+                      When: April 2026
+                    </span>
+                    <span className="px-4 py-2 bg-secondary/10 rounded-full text-sm font-semibold text-secondary">
+                      Partner: MTN Mobile Money Ltd.
+                    </span>
+                  </div>
+                </BentoCard>
 
-              {/* Rural Women Hackathon */}
-              <div className="bg-gradient-to-br from-secondary/10 to-[hsl(var(--yellow))]/10 p-8 md:p-12 rounded-3xl shadow-lg border border-secondary/20">
-                <h3 className="text-3xl font-bold mb-4 text-secondary">Rural Women Hackathon</h3>
-                <p className="text-xl font-semibold text-foreground mb-6">
-                  Our Bold Challenge: We reject the assumption that women with little to no formal education 
-                  lack the understanding to solve their own problems.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  We identify the most pressing challenges facing rural women—irrigation in agriculture, energy access, 
-                  food preservation, and more. Then we bring together the women most affected by these issues and pair 
-                  them with women who have formal training in relevant fields. Together, they plan and build viable, 
-                  community-centered solutions.
-                </p>
-                <p className="text-lg font-semibold text-foreground mb-6">
+                {/* Rural Women Hackathon */}
+                <BentoCard
+                  size="medium"
+                  title="Rural Women Hackathon"
+                  description="We reject the assumption that women with little to no formal education lack the understanding to solve their own problems. We identify pressing challenges facing rural women and pair them with women who have formal training in relevant fields. Together, they build viable, community-centered solutions."
+                  icon={<Users className="w-10 h-10 text-secondary" />}
+                  accentColor="hsl(var(--yellow))"
+                  className="bg-gradient-to-br from-secondary/5 to-[hsl(var(--yellow))]/5"
+                >
+                  <div className="flex flex-col sm:flex-row gap-3 mt-4">
+                    <Button variant="coral" size="lg">
+                      Nominate a Challenge
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                    <Button variant="outline" size="lg">
+                      Participate as Mentor
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </div>
+                </BentoCard>
+              </BentoGrid>
+            </ScrollReveal>
+
+            <ScrollReveal delay={400}>
+              <div className="text-center max-w-3xl mx-auto">
+                <p className="text-xl md:text-2xl font-semibold text-foreground">
                   This isn't charity. This is recognition that rural women are innovators, problem-solvers, 
                   and experts in their own lives.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button variant="coral" size="lg">
-                    Nominate a Challenge
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button variant="outline" size="lg">
-                    Participate as a Mentor
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Gurlz Wellness */}
-      <section id="gurlz-wellness" className="py-20 bg-[hsl(var(--warm-bg))]">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
-                <Heart className="h-5 w-5 text-primary" />
-                <span className="font-semibold text-primary">Holistic Support</span>
+      {/* Transition Zone */}
+      <div className="h-32 bg-gradient-to-b from-background via-[hsl(var(--purple-deep))]/10 to-[hsl(var(--warm-bg))] relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[hsl(var(--primary))]/10 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Gurlz Wellness Section */}
+      <section id="gurlz-wellness" className="py-32 bg-[hsl(var(--warm-bg))] relative overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute top-20 left-10 w-64 h-64 bg-[hsl(var(--primary))]/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto text-center space-y-8 mb-20">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
+                <Heart className="w-5 h-5 text-primary" />
+                <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                  Holistic Support
+                </span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Gurlz Wellness: <span className="text-primary">Innovation Starts with Wellbeing</span>
+              
+              <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+                <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer"
+                  style={{ 
+                    backgroundSize: '200% auto',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}
+                >
+                  Gurlz Wellness
+                </span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              
+              <div className="h-1 w-32 bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] mx-auto rounded-full"></div>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 Physical, mental, and sexual reproductive health barriers should never impede African women's 
                 ability to innovate. Gurlz Wellness ensures that women have the support they need to thrive 
                 in every dimension of their lives.
               </p>
             </div>
+          </ScrollReveal>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Monthly Gurlz Connect */}
-              <div className="bg-card p-8 rounded-2xl shadow-lg border border-border">
-                <div className="mb-6">
-                  <img src={handsHeart} alt="Community Support" className="w-20 h-20" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Monthly Gurlz Connect</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Safe, supportive spaces where urban women gather to discuss their shared challenges with 
-                  expert facilitators. From menstrual health to mental wellness, workplace stress to reproductive 
-                  rights—no topic is off-limits. These monthly gatherings build community, break isolation, 
-                  and provide access to professional guidance.
-                </p>
-                <Button variant="hero">
-                  RSVP for Next Session
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-
-              {/* Gurlz Wellness App */}
-              <div className="bg-gradient-to-br from-primary to-[hsl(var(--purple-light))] p-8 rounded-2xl shadow-lg text-primary-foreground">
-                <h3 className="text-2xl font-bold mb-4">Gurlz Wellness App</h3>
-                <p className="text-primary-foreground/90 leading-relaxed mb-6">
-                  Your anonymous companion for holistic health. The Gurlz Wellness app provides:
-                </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 mt-1 flex-shrink-0" />
-                    <span><strong>Anonymous Chat:</strong> Share your story and get support without fear of judgment</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 mt-1 flex-shrink-0" />
-                    <span><strong>Community Stories:</strong> Read about other women's experiences</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 mt-1 flex-shrink-0" />
-                    <span><strong>Expert Resources:</strong> Educational content on physical, mental, and reproductive health</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 mt-1 flex-shrink-0" />
-                    <span><strong>Professional Help:</strong> Connect with healthcare providers and counselors</span>
-                  </li>
-                </ul>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button variant="secondary" className="bg-background text-primary hover:bg-background/90">
-                    Download on iOS
+          <div className="max-w-6xl mx-auto space-y-12">
+            <ScrollReveal delay={200}>
+              <BentoGrid>
+                {/* Monthly Gurlz Connect */}
+                <BentoCard
+                  size="medium"
+                  title="Monthly Gurlz Connect"
+                  description="Safe, supportive spaces where urban women gather to discuss their shared challenges with expert facilitators. From menstrual health to mental wellness, workplace stress to reproductive rights—no topic is off-limits. These monthly gatherings build community, break isolation, and provide access to professional guidance."
+                  icon={<img src={handsHeart} alt="Community Support" className="w-16 h-16" />}
+                  accentColor="hsl(var(--coral))"
+                  className="bg-gradient-to-br from-card to-[hsl(var(--peach))]/5"
+                >
+                  <Button variant="hero" className="mt-4">
+                    RSVP for Next Session
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                  <Button variant="secondary" className="bg-background text-primary hover:bg-background/90">
-                    Download on Android
-                  </Button>
-                </div>
-              </div>
-            </div>
+                </BentoCard>
 
-            <div className="mt-12 text-center">
-              <p className="text-xl font-semibold text-foreground">
-                Because wellness isn't a luxury—it's a prerequisite for innovation.
-              </p>
-            </div>
+                {/* Gurlz Wellness App */}
+                <BentoCard
+                  size="medium"
+                  title="Gurlz Wellness App"
+                  description="Your anonymous companion for holistic health. The Gurlz Wellness app provides anonymous chat support, community stories, expert resources on physical, mental, and reproductive health, plus connections to healthcare providers and counselors."
+                  icon={<Heart className="w-10 h-10 text-white" />}
+                  accentColor="hsl(var(--primary))"
+                  image={innofemmeLabs}
+                  className="bg-gradient-to-br from-primary to-[hsl(var(--purple-light))]"
+                >
+                  <div className="flex flex-col sm:flex-row gap-3 mt-4">
+                    <Button variant="secondary" className="bg-background text-primary hover:bg-background/90">
+                      Download on iOS
+                    </Button>
+                    <Button variant="secondary" className="bg-background text-primary hover:bg-background/90">
+                      Download on Android
+                    </Button>
+                  </div>
+                </BentoCard>
+              </BentoGrid>
+            </ScrollReveal>
+
+            <ScrollReveal delay={400}>
+              <div className="text-center max-w-3xl mx-auto mt-16">
+                <p className="text-2xl md:text-3xl font-bold text-foreground">
+                  Because wellness isn't a luxury—it's a prerequisite for innovation.
+                </p>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
