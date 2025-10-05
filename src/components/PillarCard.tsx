@@ -29,10 +29,21 @@ export const PillarCard = ({ icon, title, description }: PillarCardProps) => {
 
         {/* Back Side */}
         <div className="pillar-card-face pillar-card-back">
-          <div className="absolute inset-0 bg-primary rounded-2xl"></div>
+          <div className="absolute inset-0 bg-card rounded-2xl"></div>
+          
+          {/* Floating visual elements */}
+          <div className="absolute inset-0 overflow-hidden rounded-2xl">
+            <div className="absolute top-[10%] left-[15%] w-16 h-16 rounded-full bg-[hsl(var(--purple-light))] opacity-20 animate-particle" style={{ animationDelay: '0s' }}></div>
+            <div className="absolute top-[60%] right-[10%] w-12 h-12 rounded-full bg-[hsl(var(--coral))] opacity-25 animate-particle" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute bottom-[20%] left-[20%] w-10 h-10 rounded-full bg-[hsl(var(--peach))] opacity-20 animate-particle" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-[30%] right-[25%] w-8 h-8 rounded-full bg-[hsl(var(--purple-medium))] opacity-15 animate-particle" style={{ animationDelay: '1.5s' }}></div>
+            <div className="absolute bottom-[40%] right-[15%] w-14 h-14 rounded-full bg-[hsl(var(--coral-light))] opacity-20 animate-particle" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute top-[50%] left-[10%] w-6 h-6 rounded-full bg-[hsl(var(--peach-light))] opacity-25 animate-particle" style={{ animationDelay: '2.5s' }}></div>
+          </div>
+          
           <div className="relative z-10 flex flex-col items-center justify-center h-full p-8 text-center">
-            <h3 className="text-2xl font-bold text-primary-foreground mb-6">{title}</h3>
-            <p className="text-primary-foreground/90 leading-relaxed text-lg">{description}</p>
+            <h3 className="text-2xl font-bold text-foreground mb-6">{title}</h3>
+            <p className="text-foreground/80 leading-relaxed text-lg">{description}</p>
           </div>
         </div>
       </div>
