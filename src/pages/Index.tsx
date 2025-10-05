@@ -90,7 +90,7 @@ const Index = () => {
               innovation to create systems that truly serve everyone.
             </p>
             <p className="text-2xl font-bold text-primary">
-              We don't just want women at the table. We're building new tables altogether.
+              Technology reclaimed. By women. For everyone.
             </p>
           </div>
         </div>
