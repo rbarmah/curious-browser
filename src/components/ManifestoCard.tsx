@@ -1,6 +1,5 @@
 import { Heart, Zap, Users } from "lucide-react";
 import { useState } from "react";
-import heroWomenEngineers from "@/assets/hero-women-engineers.jpg";
 
 export const ManifestoCard = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -17,32 +16,22 @@ export const ManifestoCard = () => {
       {/* Grid Layout: Left Visual | Right Content */}
       <div className="relative grid md:grid-cols-2 gap-0 min-h-[500px]">
         
-        {/* LEFT SIDE: Image with Flowing Shapes Overlay */}
-        <div className="relative overflow-hidden">
-          {/* Background Image */}
-          <img 
-            src={heroWomenEngineers} 
-            alt="African women in technology" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-transparent"></div>
-
-          {/* Flowing SVG Blobs Overlay */}
-          <svg className="absolute inset-0 w-full h-full mix-blend-soft-light" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        {/* LEFT SIDE: Abstract Visual with Flowing Shapes */}
+        <div className="relative overflow-hidden p-12 flex items-center justify-center">
+          {/* Flowing SVG Blobs */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="blob-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{ stopColor: 'hsl(var(--coral))', stopOpacity: 0.4 }} />
-                <stop offset="100%" style={{ stopColor: 'hsl(var(--peach))', stopOpacity: 0.3 }} />
+                <stop offset="0%" style={{ stopColor: 'hsl(var(--coral))', stopOpacity: 0.3 }} />
+                <stop offset="100%" style={{ stopColor: 'hsl(var(--peach))', stopOpacity: 0.2 }} />
               </linearGradient>
               <linearGradient id="blob-gradient-2" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style={{ stopColor: 'hsl(var(--peach-light))', stopOpacity: 0.4 }} />
-                <stop offset="100%" style={{ stopColor: 'hsl(var(--coral-light))', stopOpacity: 0.3 }} />
+                <stop offset="0%" style={{ stopColor: 'hsl(var(--teal))', stopOpacity: 0.3 }} />
+                <stop offset="100%" style={{ stopColor: 'hsl(var(--coral-light))', stopOpacity: 0.2 }} />
               </linearGradient>
               <linearGradient id="blob-gradient-3" x1="50%" y1="0%" x2="50%" y2="100%">
-                <stop offset="0%" style={{ stopColor: 'hsl(var(--peach))', stopOpacity: 0.35 }} />
-                <stop offset="100%" style={{ stopColor: 'hsl(var(--coral-glow))', stopOpacity: 0.25 }} />
+                <stop offset="0%" style={{ stopColor: 'hsl(var(--peach-light))', stopOpacity: 0.25 }} />
+                <stop offset="100%" style={{ stopColor: 'hsl(var(--coral-glow))', stopOpacity: 0.15 }} />
               </linearGradient>
             </defs>
             
@@ -54,7 +43,7 @@ export const ManifestoCard = () => {
               style={{ transformOrigin: 'center' }}
             />
             
-            {/* Blob 2 - Peach Light */}
+            {/* Blob 2 - Teal */}
             <path 
               d="M280,100 Q350,140 340,220 T240,340 Q160,320 120,240 T280,100" 
               fill="url(#blob-gradient-2)"
@@ -62,7 +51,7 @@ export const ManifestoCard = () => {
               style={{ transformOrigin: 'center', animationDelay: '1s' }}
             />
             
-            {/* Blob 3 - Peach/Coral */}
+            {/* Blob 3 - Peach Light */}
             <path 
               d="M200,150 Q260,180 250,240 T180,320 Q120,300 100,230 T200,150" 
               fill="url(#blob-gradient-3)"
@@ -72,7 +61,7 @@ export const ManifestoCard = () => {
           </svg>
 
           {/* Floating Icon Elements with Parallax */}
-          <div className="relative z-10 p-12 space-y-8 h-full flex flex-col justify-center">
+          <div className="relative z-10 space-y-8">
             {/* Hands/Connection Icon */}
             <div 
               className="transition-transform duration-700"
@@ -81,7 +70,7 @@ export const ManifestoCard = () => {
               }}
             >
               <div className="relative">
-                <Users className="w-24 h-24 text-white/80" strokeWidth={1.5} />
+                <Users className="w-24 h-24 text-[hsl(var(--coral))]" strokeWidth={1.5} />
                 {/* Connecting Lines */}
                 <svg className="absolute -right-8 top-1/2 w-16 h-16" viewBox="0 0 60 60">
                   <path 
@@ -104,7 +93,7 @@ export const ManifestoCard = () => {
               }}
             >
               <div className="relative">
-                <Heart className="w-20 h-20 text-white/70 fill-white/20" strokeWidth={1.5} />
+                <Heart className="w-20 h-20 text-[hsl(var(--peach))] fill-[hsl(var(--peach))]/20" strokeWidth={1.5} />
                 {/* Circuit Lines */}
                 <div className="absolute -left-6 top-1/2 w-6 h-0.5 bg-gradient-to-r from-transparent to-[hsl(var(--peach))]"></div>
                 <div className="absolute -left-6 top-1/2 w-2 h-2 rounded-full bg-[hsl(var(--peach))] animate-pulse"></div>
@@ -119,7 +108,7 @@ export const ManifestoCard = () => {
                 transitionDelay: '200ms'
               }}
             >
-              <Zap className="w-16 h-16 text-white/60 fill-white/10" strokeWidth={1.5} />
+              <Zap className="w-16 h-16 text-[hsl(var(--teal))] fill-[hsl(var(--teal))]/20" strokeWidth={1.5} />
             </div>
           </div>
 
@@ -130,15 +119,15 @@ export const ManifestoCard = () => {
               stroke="hsl(var(--coral-light))" 
               strokeWidth="1" 
               fill="none" 
-              opacity="0.4"
+              opacity="0.3"
               className="animate-[float_6s_ease-in-out_infinite]"
             />
             <path 
               d="M50,250 Q150,300 250,250 T450,250" 
-              stroke="hsl(var(--peach))" 
+              stroke="hsl(var(--teal))" 
               strokeWidth="1" 
               fill="none" 
-              opacity="0.4"
+              opacity="0.3"
               className="animate-[float_8s_ease-in-out_infinite_reverse]"
             />
           </svg>
@@ -147,17 +136,19 @@ export const ManifestoCard = () => {
         {/* RIGHT SIDE: Content */}
         <div className="relative p-12 md:p-16 flex flex-col justify-center space-y-8">
           {/* Decorative Accent Line */}
-          <div className="w-16 h-1 bg-gradient-to-r from-[hsl(var(--coral))] to-[hsl(var(--peach))] rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--peach))] to-[hsl(var(--teal))] rounded-full"></div>
           
           {/* Main Typography - "Innofeminism" */}
           <div className="space-y-4">
-            <h3 className="text-6xl md:text-7xl font-bold leading-none text-[hsl(var(--coral))]">
-              Innofeminism
+            <h3 className="text-6xl md:text-7xl font-bold leading-none">
+              <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--peach))] to-[hsl(var(--teal))] bg-clip-text text-transparent">
+                Innofeminism
+              </span>
             </h3>
             
             {/* Decorative Underline */}
             <div className="relative w-48 h-2">
-              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--coral))] to-transparent rounded-full"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--peach))] to-transparent rounded-full"></div>
               <div 
                 className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--coral-glow))] to-transparent rounded-full transition-transform duration-500"
                 style={{ 
@@ -186,10 +177,18 @@ export const ManifestoCard = () => {
                 opacity: isHovered ? 1 : 0 
               }}
             >
-              <div className="pt-4 border-t border-[hsl(var(--coral))]/20">
+              <div className="pt-4 space-y-4 border-t border-[hsl(var(--coral))]/20">
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   We center the lived experiences of African women, weaving humanity, care, and collective power into every innovation.
                 </p>
+                <div className="flex gap-4 flex-wrap">
+                  <span className="px-4 py-2 rounded-full text-sm bg-[hsl(var(--coral))]/10 text-[hsl(var(--coral))] border border-[hsl(var(--coral))]/20">
+                    Technology + Humanity
+                  </span>
+                  <span className="px-4 py-2 rounded-full text-sm bg-[hsl(var(--teal))]/10 text-[hsl(var(--teal))] border border-[hsl(var(--teal))]/20">
+                    African Womanhood
+                  </span>
+                </div>
               </div>
             </div>
           </div>
