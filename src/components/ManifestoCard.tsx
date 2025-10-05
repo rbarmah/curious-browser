@@ -103,10 +103,8 @@ export const ManifestoCard = () => {
           
           {/* Main Typography - "Innofeminism" */}
           <div className="space-y-4">
-            <h3 className="text-6xl md:text-7xl font-bold leading-none">
-              <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--peach))] to-[hsl(var(--teal))] bg-clip-text text-transparent">
-                Innofeminism
-              </span>
+            <h3 className="text-6xl md:text-7xl font-bold leading-none text-foreground">
+              Innofeminism
             </h3>
             
             {/* Decorative Underline */}
@@ -140,18 +138,10 @@ export const ManifestoCard = () => {
                 opacity: isHovered ? 1 : 0 
               }}
             >
-              <div className="pt-4 space-y-4 border-t border-[hsl(var(--coral))]/20">
+              <div className="pt-4 border-t border-[hsl(var(--coral))]/20">
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   We center the lived experiences of African women, weaving humanity, care, and collective power into every innovation.
                 </p>
-                <div className="flex gap-4 flex-wrap">
-                  <span className="px-4 py-2 rounded-full text-sm bg-[hsl(var(--coral))]/10 text-[hsl(var(--coral))] border border-[hsl(var(--coral))]/20">
-                    Technology + Humanity
-                  </span>
-                  <span className="px-4 py-2 rounded-full text-sm bg-[hsl(var(--teal))]/10 text-[hsl(var(--teal))] border border-[hsl(var(--teal))]/20">
-                    African Womanhood
-                  </span>
-                </div>
               </div>
             </div>
           </div>

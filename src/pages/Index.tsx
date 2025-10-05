@@ -160,7 +160,7 @@ const Index = () => {
             <ScrollReveal delay={200}>
               <div className="text-center space-y-8 py-16">
                 <div className="space-y-4">
-                  <h3 className="text-5xl md:text-7xl font-bold emphasized leading-tight">
+                  <h3 className="text-5xl md:text-7xl font-bold text-foreground leading-tight">
                     It's Time to<br />Rebuild It.
                   </h3>
                   <div className="h-1 w-32 bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--teal))] mx-auto rounded-full"></div>
