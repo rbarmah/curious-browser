@@ -17,39 +17,33 @@ export const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 border-b border-border/50 shadow-sm">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="group flex items-center space-x-3 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center transform group-hover:rotate-6 transition-transform">
-              <span className="text-2xl font-black text-white">I</span>
-            </div>
+          <Link to="/" className="flex items-center space-x-2">
             <div className="flex flex-col">
-              <span className="text-2xl font-black text-primary tracking-tight">INNOFEMME</span>
-              <span className="text-[10px] text-muted-foreground tracking-widest uppercase">Transforming Innovation</span>
+              <span className="text-2xl font-bold text-primary">INNOFEMME</span>
+              <span className="text-xs text-muted-foreground tracking-wider">CENTERING WOMEN · TRANSFORMING INNOVATION</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative px-5 py-2.5 rounded-xl font-semibold text-sm transition-all group ${
+                className={`px-4 py-2 rounded-lg font-medium transition-all ${
                   isActive(link.path)
-                    ? "text-primary"
-                    : "text-foreground hover:text-primary"
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground hover:bg-muted"
                 }`}
               >
                 {link.name}
-                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent rounded-full transform origin-left transition-transform ${
-                  isActive(link.path) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                }`}></span>
               </Link>
             ))}
-            <Button variant="coral" size="lg" className="ml-6 shadow-lg hover:shadow-xl transition-shadow">
+            <Button variant="coral" size="default" className="ml-4">
               Donate
             </Button>
           </div>
