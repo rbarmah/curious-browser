@@ -76,8 +76,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="section-title text-foreground">
-              Technology shapes our world, but{" "}
-              <span className="emphasized">who shapes technology?</span>
+              Technology Isn't Neutral. {" "}
+              <span className="emphasized">It's Time to Rebuild It.
+</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               At Innofemme, we believe that innovation is incomplete without the voices, experiences, 
