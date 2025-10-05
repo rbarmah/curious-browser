@@ -42,10 +42,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-black/40"></div>
         
         {/* Text Overlay at Bottom Left */}
-        <div className="absolute bottom-12 left-0 container mx-auto px-4">
+        <div className="absolute bottom-24 left-0 container mx-auto px-4">
           <div className="max-w-5xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              <span className="inline-block text-[hsl(var(--purple-deep))] animate-typing">
+              <span className="inline-block text-[hsl(var(--peach-light))] animate-typing">
                 Centering
               </span>{" "}
               <span className="inline-block text-[hsl(var(--coral))] animate-typing" style={{ animationDelay: "0.5s" }}>
@@ -54,16 +54,16 @@ const Index = () => {
               <span className="inline-block text-[hsl(var(--peach))] animate-typing" style={{ animationDelay: "1s" }}>
                 Women
               </span>{" "}
-              <span className="inline-block text-[hsl(var(--purple-medium))] animate-typing" style={{ animationDelay: "1.5s" }}>
+              <span className="inline-block text-[hsl(var(--coral-light))] animate-typing" style={{ animationDelay: "1.5s" }}>
                 at the
               </span>{" "}
-              <span className="inline-block text-[hsl(var(--coral-light))] animate-typing" style={{ animationDelay: "2s" }}>
+              <span className="inline-block text-[hsl(var(--peach-light))] animate-typing" style={{ animationDelay: "2s" }}>
                 Heart
               </span>{" "}
-              <span className="inline-block text-[hsl(var(--peach-light))] animate-typing" style={{ animationDelay: "2.5s" }}>
+              <span className="inline-block text-[hsl(var(--coral))] animate-typing" style={{ animationDelay: "2.5s" }}>
                 of Innovation
               </span>
-              <span className="inline-block text-[hsl(var(--purple-light))] animate-typing" style={{ animationDelay: "3s" }}>
+              <span className="inline-block text-[hsl(var(--peach))] animate-typing" style={{ animationDelay: "3s" }}>
                 .
               </span>
             </h1>
