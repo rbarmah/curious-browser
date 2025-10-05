@@ -4,10 +4,14 @@ import { PillarCard } from "@/components/PillarCard";
 import { ComicCarousel } from "@/components/ComicCarousel";
 import { AnimatedStatCard } from "@/components/AnimatedStatCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Lightbulb, Sparkles, Users, Heart, Zap, TrendingUp, Target, Rocket } from "lucide-react";
+import { Lightbulb, Sparkles, Users, Heart, Zap } from "lucide-react";
 import pillarDuplicate from "@/assets/pillar-duplicate.png";
 import pillarReform from "@/assets/pillar-reform.png";
 import pillarJustice from "@/assets/pillar-justice.png";
+import statParticipants from "@/assets/stat-participants.png";
+import statPrograms from "@/assets/stat-programs.png";
+import statWellness from "@/assets/stat-wellness.png";
+import statProducts from "@/assets/stat-products.png";
 import comicPanel1 from "@/assets/comic-panel-1.jpg";
 import comicPanel2 from "@/assets/comic-panel-2.jpg";
 import comicPanel3 from "@/assets/comic-panel-3.jpg";
@@ -293,11 +297,10 @@ const About = () => {
             {/* Featured Stat - 400+ Participants */}
             <AnimatedStatCard
               number="400+"
-              label="Research Participants"
+              label="Women Reached"
               description="Women actively engaged in product market research, shaping the future of tech innovation"
-              icon={Users}
+              image={statParticipants}
               size="featured"
-              accentColor="from-[hsl(var(--coral))]/30 to-[hsl(var(--peach))]/30"
               delay={0}
             />
             
@@ -306,19 +309,17 @@ const About = () => {
               number="4"
               label="Active Programs"
               description="Comprehensive initiatives across education, innovation, and advocacy"
-              icon={Target}
+              image={statPrograms}
               size="medium"
-              accentColor="from-primary/20 to-[hsl(var(--coral))]/20"
               delay={200}
             />
             
             <AnimatedStatCard
               number="150+"
-              label="Wellness Outreach"
-              description="Women supported through holistic wellness and empowerment initiatives"
-              icon={Heart}
+              label="Women Reached"
+              description="Women supported through holistic wellness and empowerment initiatives in Wellness Outreach"
+              image={statWellness}
               size="medium"
-              accentColor="from-[hsl(var(--peach))]/20 to-secondary/20"
               delay={300}
             />
             
@@ -327,9 +328,8 @@ const About = () => {
               number="2"
               label="Tech Products Launched"
               description="Justice-driven technology solutions built by and for African women"
-              icon={Rocket}
+              image={statProducts}
               size="large"
-              accentColor="from-secondary/20 to-primary/20"
               delay={400}
             />
           </div>
