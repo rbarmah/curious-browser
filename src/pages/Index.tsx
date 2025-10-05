@@ -1,7 +1,8 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PillarCard } from "@/components/PillarCard";
-import { ProgramCard } from "@/components/ProgramCard";
+import { FeaturedProgramCard } from "@/components/FeaturedProgramCard";
+import { SupportingProgramCard } from "@/components/SupportingProgramCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ManifestoCard } from "@/components/ManifestoCard";
 import { Button } from "@/components/ui/button";
@@ -229,7 +230,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Programs Preview Section */}
+      {/* Programs Preview Section - Featured + Supporting Layout */}
       <section className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -239,8 +240,9 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-            <ProgramCard
+          <div className="max-w-7xl mx-auto space-y-8">
+            {/* Featured Program Card */}
+            <FeaturedProgramCard
               title="Innofemme Labs"
               description="Our flagship training and incubation program connecting talented women technologists with women-led startups that need them."
               image={innofemmeLabs}
@@ -251,15 +253,26 @@ const Index = () => {
               ]}
             />
 
-            <ProgramCard
-              title="Hack4Equity"
-              description="Targeted hackathons designed to bring women together to address the issues they face using their collective skills and lived experiences."
-              image={hack4equity}
-              gradient="bg-gradient-to-t from-[hsl(var(--coral))]/95 via-[hsl(var(--coral))]/70 to-transparent"
-              buttons={[
-                { label: "View Hackathons", variant: "outline" },
-              ]}
-            />
+            {/* Supporting Program Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <SupportingProgramCard
+                title="Hack4Equity"
+                description="Targeted hackathons designed to bring women together to address the issues they face using their collective skills and lived experiences."
+                image={hack4equity}
+                gradient="bg-gradient-to-t from-[hsl(var(--coral))]/90 via-[hsl(var(--coral))]/60 to-transparent"
+                accentColor="hsl(var(--coral))"
+                button={{ label: "View Hackathons", variant: "outline" }}
+              />
+
+              <SupportingProgramCard
+                title="Wellness & Community"
+                description="Holistic support programs ensuring mental wellness, community building, and sustainable growth for women in tech."
+                image={innofemmeLabs}
+                gradient="bg-gradient-to-t from-[hsl(var(--peach))]/90 via-[hsl(var(--peach))]/60 to-transparent"
+                accentColor="hsl(var(--peach))"
+                button={{ label: "Learn More", variant: "outline" }}
+              />
+            </div>
           </div>
 
           <div className="text-center mt-12">
