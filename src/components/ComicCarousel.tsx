@@ -27,10 +27,12 @@ const TypewriterText = ({ text, delay = 50 }: { text: string; delay?: number }) 
 
   useEffect(() => {
     setDisplayedText("");
+    setShowCursor(true);
     let index = 0;
+    
     const timer = setInterval(() => {
       if (index < text.length) {
-        setDisplayedText((prev) => prev + text.charAt(index));
+        setDisplayedText(text.substring(0, index + 1));
         index++;
       } else {
         clearInterval(timer);
@@ -100,7 +102,7 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
       <audio
         ref={audioRef}
         loop
-        src="https://assets.mixkit.co/active_storage/sfx/2495/2495-preview.mp3"
+        src="/thoughtful-music.mp3"
       />
       
       <Button
