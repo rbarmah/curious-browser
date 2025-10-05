@@ -42,7 +42,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-black/40"></div>
         
         {/* Text Overlay at Bottom Left */}
-        <div className="absolute bottom-24 left-0 container mx-auto px-4">
+        <div className="absolute inset-y-0 left-0 flex items-center container mx-auto px-4">
           <div className="max-w-5xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
               <span className="inline-block text-[hsl(var(--peach-light))] animate-typing">
