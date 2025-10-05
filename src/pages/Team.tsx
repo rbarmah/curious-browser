@@ -4,12 +4,14 @@ import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
 import { TeamMemberDialog, TeamMember } from "@/components/TeamMemberDialog";
+import ruthieArmahPhoto from "@/assets/ruthie-armah.png";
 
 const managementTeam: TeamMember[] = [
   { 
     name: "Ruthie Armah", 
     role: "Executive Director", 
     initials: "RA",
+    image: ruthieArmahPhoto,
     bio: "Ruthie Armah is a visionary leader dedicated to empowering women and girls across Africa through technology and innovation. With over a decade of experience in nonprofit leadership and social entrepreneurship, she has championed numerous initiatives that bridge the gender gap in STEM fields.\n\nUnder her leadership, InnoFemme has grown from a grassroots organization to a continent-wide movement, impacting thousands of lives through education, mentorship, and community building. Her approach combines strategic thinking with deep empathy, creating programs that are both scalable and deeply personal.\n\nRuthie believes that true innovation comes from diversity of thought and lived experience, and she works tirelessly to create spaces where African women can lead, innovate, and transform their communities.",
     achievements: [
       "Led InnoFemme to impact over 5,000 women and girls across 8 African countries",
