@@ -8,6 +8,7 @@ import { BentoGrid, BentoCard } from "@/components/BentoGrid";
 import { InnofemmeCarousel } from "@/components/InnofemmeCarousel";
 import { Hack4EquityCarousel } from "@/components/Hack4EquityCarousel";
 import { EquityClinicCarousel } from "@/components/EquityClinicCarousel";
+import { GurlzWellnessCarousel } from "@/components/GurlzWellnessCarousel";
 import { InterestModal } from "@/components/InterestModal";
 import innofemmeLabs from "@/assets/innofemme-labs.jpg";
 import handsHeart from "@/assets/hands-heart.svg";
@@ -153,54 +154,17 @@ const Programs = () => {
             </div>
           </ScrollReveal>
 
-          <div className="max-w-6xl mx-auto space-y-12">
-            <ScrollReveal delay={200}>
-              <BentoGrid>
-                {/* Monthly Gurlz Connect */}
-                <BentoCard
-                  size="medium"
-                  title="Monthly Gurlz Connect"
-                  description="Safe, supportive spaces where urban women gather to discuss their shared challenges with expert facilitators. From menstrual health to mental wellness, workplace stress to reproductive rights—no topic is off-limits. These monthly gatherings build community, break isolation, and provide access to professional guidance."
-                  icon={<img src={handsHeart} alt="Community Support" className="w-16 h-16" />}
-                  accentColor="hsl(var(--coral))"
-                  className="bg-gradient-to-br from-card to-[hsl(var(--peach))]/5"
-                >
-                  <Button variant="hero" className="mt-4">
-                    RSVP for Next Session
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </BentoCard>
+          <ScrollReveal delay={200}>
+            <GurlzWellnessCarousel />
+          </ScrollReveal>
 
-                {/* Gurlz Wellness App */}
-                <BentoCard
-                  size="medium"
-                  title="Gurlz Wellness App"
-                  description="Your anonymous companion for holistic health. The Gurlz Wellness app provides anonymous chat support, community stories, expert resources on physical, mental, and reproductive health, plus connections to healthcare providers and counselors."
-                  icon={<Heart className="w-10 h-10 text-white" />}
-                  accentColor="hsl(var(--primary))"
-                  image={innofemmeLabs}
-                  className="bg-gradient-to-br from-primary to-[hsl(var(--purple-light))]"
-                >
-                  <div className="flex flex-col sm:flex-row gap-3 mt-4">
-                    <Button variant="secondary" className="bg-background text-primary hover:bg-background/90">
-                      Download on iOS
-                    </Button>
-                    <Button variant="secondary" className="bg-background text-primary hover:bg-background/90">
-                      Download on Android
-                    </Button>
-                  </div>
-                </BentoCard>
-              </BentoGrid>
-            </ScrollReveal>
-
-            <ScrollReveal delay={400}>
-              <div className="text-center max-w-3xl mx-auto mt-16">
-                <p className="text-2xl md:text-3xl font-bold text-foreground">
-                  Because wellness isn't a luxury—it's a prerequisite for innovation.
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
+          <ScrollReveal delay={400}>
+            <div className="text-center max-w-3xl mx-auto mt-16">
+              <p className="text-2xl md:text-3xl font-bold text-foreground">
+                Because wellness isn't a luxury—it's a prerequisite for innovation.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
