@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselApi,
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Play, X } from "lucide-react";
 
 interface ComicPanel {
   image: string;
@@ -18,43 +21,137 @@ interface ComicCarouselProps {
   panels: ComicPanel[];
 }
 
-export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const TypewriterText = ({ text, delay = 50 }: { text: string; delay?: number }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    setDisplayedText("");
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < text.length) {
+        setDisplayedText((prev) => prev + text.charAt(index));
+        index++;
+      } else {
+        clearInterval(timer);
+        setShowCursor(false);
+      }
+    }, delay);
+
+    return () => clearInterval(timer);
+  }, [text, delay]);
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <span>
+      {displayedText}
+      {showCursor && <span className="animate-pulse">|</span>}
+    </span>
+  );
+};
+
+export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [api, setApi] = useState<CarouselApi>();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (!api) return;
+
+    api.on("select", () => {
+      setCurrentIndex(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  useEffect(() => {
+    if (isExpanded && audioRef.current) {
+      audioRef.current.play();
+    } else if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }, [isExpanded]);
+
+  const handleExpand = () => {
+    setIsExpanded(true);
+  };
+
+  const handleClose = () => {
+    setIsExpanded(false);
+  };
+
+  if (!isExpanded) {
+    return (
+      <div className="w-full max-w-6xl mx-auto text-center py-12">
+        <Button
+          onClick={handleExpand}
+          size="lg"
+          className="gap-2 text-lg px-8 py-6"
+        >
+          <Play className="w-6 h-6" />
+          Experience Our Visual Story
+        </Button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full max-w-6xl mx-auto relative">
+      <audio
+        ref={audioRef}
+        loop
+        src="https://assets.mixkit.co/active_storage/sfx/2495/2495-preview.mp3"
+      />
+      
+      <Button
+        onClick={handleClose}
+        variant="outline"
+        size="icon"
+        className="absolute top-4 right-4 z-50"
+      >
+        <X className="w-5 h-5" />
+      </Button>
+
       <Carousel
         opts={{
           align: "start",
           loop: true,
         }}
+        setApi={setApi}
         className="w-full"
       >
         <CarouselContent>
           {panels.map((panel, index) => (
             <CarouselItem key={index}>
-              <Card className="overflow-hidden border-2 border-primary/20">
-                <div className="relative aspect-[4/3] bg-gradient-to-br from-background to-muted">
+              <Card className="overflow-hidden border-2 border-primary/20 bg-black">
+                <div className="relative aspect-[16/9] bg-gradient-to-br from-background to-muted">
                   <img
                     src={panel.image}
                     alt={`Comic panel ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
-                </div>
-                <div className="p-6 bg-card space-y-3">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold text-primary">
-                      Panel {index + 1} of {panels.length}
-                    </span>
-                    {panel.data && (
-                      <span className="text-xs font-bold bg-primary/10 text-primary px-3 py-1 rounded-full">
-                        {panel.data}
+                  
+                  {/* Overlay gradient for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  
+                  {/* Text overlay */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-sm font-semibold bg-primary/90 text-white px-4 py-2 rounded-full">
+                        Panel {index + 1} of {panels.length}
                       </span>
-                    )}
+                      {panel.data && (
+                        <span className="text-sm font-bold bg-white/90 text-black px-4 py-2 rounded-full">
+                          {panel.data}
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-xl md:text-2xl font-medium leading-relaxed italic max-w-4xl">
+                      {currentIndex === index && (
+                        <TypewriterText text={`"${panel.narration}"`} delay={30} />
+                      )}
+                    </div>
                   </div>
-                  <p className="text-base text-foreground leading-relaxed italic">
-                    "{panel.narration}"
-                  </p>
                 </div>
               </Card>
             </CarouselItem>
@@ -74,7 +171,7 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
                 ? "bg-primary w-8"
                 : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
             }`}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => api?.scrollTo(index)}
             aria-label={`Go to panel ${index + 1}`}
           />
         ))}
