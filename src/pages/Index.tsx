@@ -81,6 +81,9 @@ const Index = () => {
 </span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Too much of today's tech and innovation systems were built without women, especially African women, in mind. We're here to flip that script.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               At Innofemme, we believe that innovation is incomplete without the voices, experiences, 
               and creative power of African women. We're pioneering <strong className="text-primary">Innofeminism</strong>—a 
               transformative approach that combines Afrofeminist 'motherist' principles with technological 
