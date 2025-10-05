@@ -71,41 +71,86 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Gradient Transition Zone */}
+      <div className="h-32 bg-gradient-to-b from-black/60 via-[hsl(var(--purple-deep))]/40 to-[hsl(var(--warm-bg))]"></div>
+
       {/* Introduction Section - Scroll-Triggered Story */}
-      <section className="py-32 bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section className="relative py-32 bg-gradient-to-b from-[hsl(var(--warm-bg))] via-background to-background overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 opacity-10">
+          <img src={heroCollage2} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--warm-bg))] via-background/95 to-background"></div>
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-20 w-64 h-64 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-40 left-10 w-96 h-96 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto space-y-32">
             
-            {/* Act 1: The Problem - 3D Animated Card */}
+            {/* Act 1: The Problem - Enhanced 3D Card with Particles */}
             <ScrollReveal delay={0}>
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
-                  <div className="inline-block px-4 py-2 bg-destructive/10 rounded-full border border-destructive/20">
-                    <span className="text-sm font-semibold text-destructive uppercase tracking-wider">The Reality</span>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[hsl(var(--coral))]/10 to-[hsl(var(--peach))]/10 rounded-full border border-[hsl(var(--coral))]/20 animate-pulse">
+                    <div className="w-2 h-2 rounded-full bg-[hsl(var(--coral))]"></div>
+                    <span className="text-sm font-semibold bg-gradient-to-r from-[hsl(var(--coral))] to-[hsl(var(--peach))] bg-clip-text text-transparent uppercase tracking-wider">The Reality</span>
                   </div>
-                  <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-                    Technology<br />
+                  <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+                    <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--coral-glow))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer" 
+                      style={{ 
+                        backgroundSize: '200% auto',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent'
+                      }}
+                    >
+                      Technology
+                    </span>
+                    <br />
                     <span className="text-muted-foreground">Isn't Neutral.</span>
                   </h2>
                 </div>
                 <div 
-                  className="group relative perspective-1000"
-                  style={{ perspective: "1000px" }}
+                  className="group relative"
+                  style={{ perspective: "1200px" }}
                 >
-                  <div className="relative bg-gradient-to-br from-destructive/5 to-destructive/10 border-l-4 border-destructive p-8 rounded-r-xl shadow-xl transform transition-all duration-700 hover:scale-105 hover:rotate-y-2 hover:shadow-2xl"
+                  {/* Floating Particles */}
+                  <div className="absolute -top-4 -left-4 w-3 h-3 rounded-full bg-[hsl(var(--coral))] animate-particle"></div>
+                  <div className="absolute top-10 -right-6 w-2 h-2 rounded-full bg-[hsl(var(--peach))] animate-particle" style={{ animationDelay: '1s' }}></div>
+                  <div className="absolute -bottom-6 left-10 w-4 h-4 rounded-full bg-[hsl(var(--coral-glow))] animate-particle" style={{ animationDelay: '2s' }}></div>
+                  <div className="absolute top-1/2 -left-8 w-2 h-2 rounded-full bg-[hsl(var(--teal))] animate-particle" style={{ animationDelay: '1.5s' }}></div>
+
+                  {/* 3D Card */}
+                  <div className="relative bg-gradient-to-br from-[hsl(var(--coral))]/5 via-[hsl(var(--peach))]/5 to-[hsl(var(--coral))]/10 border-l-4 border-[hsl(var(--coral))] p-10 rounded-r-2xl shadow-2xl transform transition-all duration-700 hover:scale-105 group-hover:shadow-[0_20px_60px_-10px_hsl(var(--coral-glow)/0.4)]"
                     style={{
                       transformStyle: "preserve-3d",
-                      transform: "rotateY(-5deg) rotateX(2deg)",
+                      transform: "rotateY(-3deg) rotateX(1deg)",
                     }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-destructive/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-r-xl"></div>
+                    {/* Shimmer Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--coral))]/20 via-transparent to-[hsl(var(--peach))]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-r-2xl animate-shimmer" 
+                      style={{ backgroundSize: '200% 200%' }}
+                    ></div>
+                    
+                    {/* Content */}
                     <p className="relative text-xl md:text-2xl text-foreground font-medium leading-relaxed"
-                      style={{ transform: "translateZ(20px)" }}
+                      style={{ transform: "translateZ(30px)" }}
                     >
                       Too much of today's tech was built without women—especially African women—in mind.
                     </p>
-                    <div className="absolute -right-2 -bottom-2 w-24 h-24 bg-destructive/10 rounded-full blur-2xl animate-pulse"></div>
+                    
+                    {/* Glow Elements */}
+                    <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-[hsl(var(--coral))]/20 rounded-full blur-3xl group-hover:blur-2xl group-hover:bg-[hsl(var(--coral-glow))]/30 transition-all duration-700"></div>
+                    <div className="absolute -left-4 -top-4 w-24 h-24 bg-[hsl(var(--peach))]/15 rounded-full blur-2xl"></div>
                   </div>
+
+                  {/* Decorative Lines */}
+                  <svg className="absolute -bottom-8 -right-8 w-24 h-24 text-[hsl(var(--coral))]/20" viewBox="0 0 100 100">
+                    <circle cx="10" cy="10" r="2" fill="currentColor" className="animate-pulse" />
+                    <circle cx="30" cy="20" r="2" fill="currentColor" className="animate-pulse" style={{ animationDelay: '0.5s' }} />
+                    <circle cx="20" cy="35" r="2" fill="currentColor" className="animate-pulse" style={{ animationDelay: '1s' }} />
+                  </svg>
                 </div>
               </div>
             </ScrollReveal>
