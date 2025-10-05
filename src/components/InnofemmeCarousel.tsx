@@ -167,20 +167,21 @@ export const InnofemmeCarousel = ({ onJoinAsFellow, onApplyAsStartup }: Innofemm
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--coral))] flex items-center justify-center shadow-lg">
                     <Code className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] bg-clip-text text-transparent">
+                  <h3 className="text-3xl md:text-4xl font-bold text-foreground">
                     How It Works
                   </h3>
                 </div>
                 
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  We recruit <strong className="text-foreground">Innofemme Fellows</strong>—software engineers, product designers, 
-                  AI engineers, data scientists, and other tech professionals—and provide them with cutting-edge training 
-                  and mentorship. Simultaneously, we open applications for women-led startups seeking to build software systems.
+                  Innofemme Labs operates on a dual-track model that creates value for both emerging tech talent and women-led startups. 
+                  We recruit talented technologists—including software engineers, product designers, AI engineers, and data scientists—and 
+                  provide them with industry-relevant training, mentorship, and hands-on project experience.
                 </p>
                 
-                <p className="text-lg md:text-xl font-semibold text-foreground leading-relaxed">
-                  Here's where the magic happens: Our fellows build these systems for startups completely free of charge, 
-                  gaining real-world experience while ensuring women entrepreneurs have access to the technology they need to succeed.
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  Concurrently, we partner with women-led startups that need technical systems built. Our fellows collaborate with these 
+                  startups to develop their software solutions at no cost, gaining real-world experience while helping women entrepreneurs 
+                  access the technology infrastructure essential for growth and success.
                 </p>
               </div>
 
