@@ -1,26 +1,126 @@
+import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-
-interface TeamMember {
-  name: string;
-  role: string;
-  initials: string;
-}
+import { TeamMemberCard } from "@/components/TeamMemberCard";
+import { TeamMemberDialog, TeamMember } from "@/components/TeamMemberDialog";
 
 const managementTeam: TeamMember[] = [
-  { name: "Ruthie Armah", role: "Executive Director", initials: "RA" },
-  { name: "Emmanuella Brown", role: "Director, Partnerships", initials: "EB" },
-  { name: "Grazia Graham", role: "Director, Research and Intelligence", initials: "GG" },
-  { name: "Gloria Graham", role: "Director, Product and Engineering", initials: "GG" },
-  { name: "Dr. Chantelle Kanamintie", role: "Director, Gurlz Wellness Program", initials: "CK" },
-  { name: "Diane Ndur-Buabeng", role: "Deputy Director, Gurlz Wellness Program", initials: "DN" },
-  { name: "Pearl Frempong-Smart", role: "Director, Hack4Equity", initials: "PF" },
-  { name: "Douglas Kofi Baidoo", role: "Creative Designer", initials: "DK" },
+  { 
+    name: "Ruthie Armah", 
+    role: "Executive Director", 
+    initials: "RA",
+    bio: "Ruthie Armah is a visionary leader dedicated to empowering women and girls across Africa through technology and innovation. With over a decade of experience in nonprofit leadership and social entrepreneurship, she has championed numerous initiatives that bridge the gender gap in STEM fields.\n\nUnder her leadership, InnoFemme has grown from a grassroots organization to a continent-wide movement, impacting thousands of lives through education, mentorship, and community building. Her approach combines strategic thinking with deep empathy, creating programs that are both scalable and deeply personal.\n\nRuthie believes that true innovation comes from diversity of thought and lived experience, and she works tirelessly to create spaces where African women can lead, innovate, and transform their communities.",
+    achievements: [
+      "Led InnoFemme to impact over 5,000 women and girls across 8 African countries",
+      "Established partnerships with major tech companies and international development organizations",
+      "Recognized as one of Africa's Top 40 Under 40 Social Innovators",
+      "Published research on women's empowerment and technology adoption in developing nations"
+    ],
+    specialization: ["Leadership", "Social Innovation", "Women's Empowerment", "Strategic Partnerships"],
+  },
+  { 
+    name: "Emmanuella Brown", 
+    role: "Director, Partnerships", 
+    initials: "EB",
+    bio: "Emmanuella Brown is a strategic partnership expert with a proven track record of building sustainable collaborations between nonprofit organizations, corporations, and government entities. Her work focuses on creating mutually beneficial relationships that advance InnoFemme's mission while delivering value to partner organizations.\n\nWith a background in international development and corporate social responsibility, Emmanuella brings a unique perspective to partnership development. She understands both the social impact sector and corporate landscape, enabling her to bridge these worlds effectively.\n\nHer collaborative approach has resulted in groundbreaking partnerships that have expanded InnoFemme's reach and resources, making our programs more accessible to women and girls across the continent.",
+    achievements: [
+      "Secured over $2M in partnership funding and in-kind support",
+      "Developed strategic alliances with 15+ major technology companies",
+      "Created innovative public-private partnership models for women's empowerment",
+      "Built a network of 50+ corporate mentors for InnoFemme programs"
+    ],
+    specialization: ["Strategic Partnerships", "Corporate Relations", "Fundraising", "Stakeholder Engagement"],
+  },
+  { 
+    name: "Grazia Graham", 
+    role: "Director, Research and Intelligence", 
+    initials: "GG",
+    bio: "Grazia Graham leads InnoFemme's research and intelligence efforts, ensuring that all our programs are grounded in rigorous data and evidence-based practices. Her work involves conducting impact assessments, analyzing trends in women's technology adoption, and translating complex data into actionable insights.\n\nWith a PhD in Development Studies and extensive experience in quantitative and qualitative research methodologies, Grazia brings academic rigor to our work while maintaining a practical focus on real-world impact. She is passionate about using data to tell stories that drive policy change and resource allocation.\n\nHer research has informed program design across InnoFemme and has been cited in policy documents by international development agencies and African governments.",
+    achievements: [
+      "Published 10+ peer-reviewed articles on women in technology and innovation",
+      "Led comprehensive impact studies across all InnoFemme programs",
+      "Developed monitoring and evaluation frameworks adopted by similar organizations",
+      "Presented research findings at international conferences and policy forums"
+    ],
+    specialization: ["Research Design", "Impact Assessment", "Data Analytics", "Policy Analysis"],
+  },
+  { 
+    name: "Gloria Graham", 
+    role: "Director, Product and Engineering", 
+    initials: "GG",
+    bio: "Gloria Graham is a seasoned software engineer and product leader who oversees the development of InnoFemme's digital platforms and technical training programs. Her expertise spans full-stack development, UX design, and agile product management.\n\nWith 12 years of experience in the tech industry, including roles at leading technology companies, Gloria brings cutting-edge technical knowledge to InnoFemme while ensuring our programs remain accessible and relevant to participants at all skill levels.\n\nShe is passionate about demystifying technology and creating pathways for women to enter and excel in the tech industry. Her leadership has transformed InnoFemme's technical offerings, making them some of the most comprehensive and effective in the region.",
+    achievements: [
+      "Built and scaled InnoFemme's digital learning platform to 10,000+ users",
+      "Developed curriculum for 8 technical training programs from beginner to advanced levels",
+      "Led engineering teams at Fortune 500 companies before joining InnoFemme",
+      "Mentored 200+ women into successful tech careers"
+    ],
+    specialization: ["Software Engineering", "Product Management", "Technical Training", "UX Design"],
+  },
+  { 
+    name: "Dr. Chantelle Kanamintie", 
+    role: "Director, Gurlz Wellness Program", 
+    initials: "CK",
+    bio: "Dr. Chantelle Kanamintie is a clinical psychologist and wellness advocate who founded and leads InnoFemme's Gurlz Wellness Program. Recognizing that mental health and overall wellbeing are critical to women's success in any field, she developed a holistic program that addresses physical health, mental wellness, and emotional resilience.\n\nWith extensive experience in adolescent psychology and community health, Dr. Kanamintie has created culturally appropriate wellness interventions that resonate with African women and girls. Her approach integrates traditional healing practices with evidence-based psychological interventions.\n\nUnder her leadership, the Gurlz Wellness Program has become a model for holistic women's empowerment, addressing not just skills and knowledge but also the mental and emotional foundation needed for lasting success.",
+    achievements: [
+      "Developed comprehensive wellness curriculum serving 3,000+ participants",
+      "Trained 50+ peer wellness counselors across 6 countries",
+      "Published groundbreaking research on mental health among young African women in STEM",
+      "Created culturally adapted mental health resources in 5 African languages"
+    ],
+    specialization: ["Clinical Psychology", "Wellness Program Design", "Mental Health Advocacy", "Youth Development"],
+  },
+  { 
+    name: "Diane Ndur-Buabeng", 
+    role: "Deputy Director, Gurlz Wellness Program", 
+    initials: "DN",
+    bio: "Diane Ndur-Buabeng works alongside Dr. Kanamintie to implement and scale the Gurlz Wellness Program across InnoFemme's operating countries. With a background in public health and community organizing, she brings operational excellence and grassroots connectivity to the wellness initiative.\n\nDiane's strength lies in building sustainable community-based wellness systems that continue to support women and girls long after formal programs end. She trains local facilitators, develops peer support networks, and creates resource materials that are accessible and culturally relevant.\n\nHer work ensures that wellness support reaches even the most marginalized communities, breaking down barriers to access and creating safe spaces for women to prioritize their health and wellbeing.",
+    achievements: [
+      "Established 25+ community wellness hubs across West Africa",
+      "Trained 100+ community health workers in mental health first aid",
+      "Created peer support networks reaching 2,000+ young women",
+      "Developed low-cost wellness intervention models replicable in resource-limited settings"
+    ],
+    specialization: ["Public Health", "Community Organizing", "Program Implementation", "Peer Support Systems"],
+  },
+  { 
+    name: "Pearl Frempong-Smart", 
+    role: "Director, Hack4Equity", 
+    initials: "PF",
+    bio: "Pearl Frempong-Smart leads InnoFemme's flagship innovation program, Hack4Equity, where participants tackle real-world challenges facing African communities through technology and creative problem-solving. Her vision is to position African women as leaders in social innovation and tech entrepreneurship.\n\nWith experience in startup ecosystems, venture capital, and technology education, Pearl has created a program that not only teaches technical skills but also fosters entrepreneurial mindset and provides pathways to funding and market access for participants' innovations.\n\nHer leadership has transformed Hack4Equity into a launchpad for women-led startups, with numerous alumni going on to secure funding, scale their ventures, and create employment in their communities.",
+    achievements: [
+      "Supported 50+ women-led startups through ideation to market launch",
+      "Secured $500K in seed funding for Hack4Equity alumni ventures",
+      "Organized 12 successful hackathons with 1,000+ participants",
+      "Created accelerator program with 85% participant success rate"
+    ],
+    specialization: ["Innovation Management", "Entrepreneurship", "Hackathon Design", "Startup Acceleration"],
+  },
+  { 
+    name: "Douglas Kofi Baidoo", 
+    role: "Creative Designer", 
+    initials: "DK",
+    bio: "Douglas Kofi Baidoo is InnoFemme's creative visionary, responsible for all visual communications, brand identity, and user experience design. His work ensures that InnoFemme's message is not only heard but felt, creating emotional connections that inspire action and engagement.\n\nWith a background in graphic design, digital media, and brand strategy, Douglas brings artistic excellence and strategic thinking to every project. He understands that powerful design can break down complex ideas, make information accessible, and create inclusive spaces where everyone feels welcome.\n\nHis creative work has elevated InnoFemme's brand, making it one of the most recognizable and respected women's empowerment organizations in Africa.",
+    achievements: [
+      "Redesigned InnoFemme brand identity, increasing recognition by 300%",
+      "Created award-winning campaign materials for major initiatives",
+      "Led design of digital platforms with 95% user satisfaction ratings",
+      "Mentored 30+ young designers through InnoFemme's creative labs"
+    ],
+    specialization: ["Graphic Design", "Brand Strategy", "UX/UI Design", "Digital Media"],
+  },
 ];
 
 const Team = () => {
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  const handleMemberClick = (member: TeamMember) => {
+    setSelectedMember(member);
+    setDialogOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -62,26 +162,14 @@ const Team = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {managementTeam.map((member, index) => (
               <ScrollReveal key={index}>
-                <div className="group relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--coral))]/20 to-[hsl(var(--peach))]/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
-                  <div className="relative bg-card p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                    <div className="flex flex-col items-center text-center space-y-4">
-                      <Avatar className="w-24 h-24 border-4 border-[hsl(var(--coral))]/20">
-                        <AvatarFallback className="bg-gradient-to-br from-[hsl(var(--coral))] to-[hsl(var(--peach))] text-white text-2xl font-bold">
-                          {member.initials}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <h3 className="text-xl font-bold text-foreground mb-2">
-                          {member.name}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {member.role}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <TeamMemberCard
+                  name={member.name}
+                  role={member.role}
+                  initials={member.initials}
+                  image={member.image}
+                  onClick={() => handleMemberClick(member)}
+                  index={index}
+                />
               </ScrollReveal>
             ))}
           </div>
@@ -106,6 +194,13 @@ const Team = () => {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Team Member Dialog */}
+      <TeamMemberDialog
+        member={selectedMember}
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+      />
 
       <Footer />
     </div>
