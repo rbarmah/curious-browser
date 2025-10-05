@@ -9,7 +9,8 @@ import {
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Play, X } from "lucide-react";
+import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ComicPanel {
   image: string;
@@ -51,17 +52,38 @@ const TypewriterText = ({ text, delay = 50 }: { text: string; delay?: number }) 
   );
 };
 
+const splitTextForMobile = (text: string, maxLength: number = 120): string[] => {
+  const words = text.split(' ');
+  const chunks: string[] = [];
+  let currentChunk = '';
+  
+  words.forEach((word) => {
+    if ((currentChunk + word).length <= maxLength) {
+      currentChunk += (currentChunk ? ' ' : '') + word;
+    } else {
+      if (currentChunk) chunks.push(currentChunk);
+      currentChunk = word;
+    }
+  });
+  
+  if (currentChunk) chunks.push(currentChunk);
+  return chunks;
+};
+
 export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [textPartIndex, setTextPartIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
   const [api, setApi] = useState<CarouselApi>();
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (!api) return;
 
     api.on("select", () => {
       setCurrentIndex(api.selectedScrollSnap());
+      setTextPartIndex(0); // Reset text part when changing panels
     });
   }, [api]);
 
@@ -80,6 +102,32 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
 
   const handleClose = () => {
     setIsExpanded(false);
+    setTextPartIndex(0);
+  };
+
+  const getCurrentText = (panel: ComicPanel) => {
+    if (!isMobile) return panel.narration;
+    
+    const textParts = splitTextForMobile(panel.narration);
+    return textParts[textPartIndex] || textParts[0];
+  };
+
+  const getTextPartsCount = (panel: ComicPanel) => {
+    if (!isMobile) return 1;
+    return splitTextForMobile(panel.narration).length;
+  };
+
+  const handleNextTextPart = (panel: ComicPanel) => {
+    const maxParts = getTextPartsCount(panel);
+    if (textPartIndex < maxParts - 1) {
+      setTextPartIndex(textPartIndex + 1);
+    }
+  };
+
+  const handlePrevTextPart = () => {
+    if (textPartIndex > 0) {
+      setTextPartIndex(textPartIndex - 1);
+    }
   };
 
   if (!isExpanded) {
@@ -149,11 +197,38 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
                           </span>
                         )}
                       </div>
-                      <div className="text-sm md:text-xl lg:text-2xl font-medium leading-relaxed italic text-center">
+                      <div className="text-base md:text-xl lg:text-2xl font-medium leading-relaxed italic text-center px-2">
                         {currentIndex === index && (
-                          <TypewriterText text={`"${panel.narration}"`} delay={30} />
+                          <TypewriterText text={`"${getCurrentText(panel)}"`} delay={30} />
                         )}
                       </div>
+                      
+                      {/* Text navigation for mobile */}
+                      {isMobile && getTextPartsCount(panel) > 1 && currentIndex === index && (
+                        <div className="flex items-center justify-center gap-4 mt-4">
+                          <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={handlePrevTextPart}
+                            disabled={textPartIndex === 0}
+                            className="h-8 w-8"
+                          >
+                            <ChevronLeft className="h-4 w-4" />
+                          </Button>
+                          <span className="text-xs bg-white/20 px-3 py-1 rounded-full">
+                            {textPartIndex + 1} / {getTextPartsCount(panel)}
+                          </span>
+                          <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={() => handleNextTextPart(panel)}
+                            disabled={textPartIndex === getTextPartsCount(panel) - 1}
+                            className="h-8 w-8"
+                          >
+                            <ChevronRight className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
