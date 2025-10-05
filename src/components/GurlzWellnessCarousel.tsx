@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, ChevronLeft, ChevronRight } from "lucide-react";
+import gurlzWellnessIntro from "@/assets/gurlz-wellness-intro.jpg";
 import gurlzConnect from "@/assets/gurlz-connect.jpg";
 import gurlzWellnessApp from "@/assets/gurlz-wellness-app.jpg";
 
@@ -39,59 +40,103 @@ export const GurlzWellnessCarousel = () => {
         {/* Intro Slide */}
         {activeIndex === 0 && (
           <div 
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] p-10 md:p-16 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center items-center text-center"
+            className="group relative overflow-hidden rounded-3xl transition-all duration-700"
             style={{ 
-              boxShadow: '0 4px 8px hsl(var(--primary), 0.08), 0 12px 24px hsl(var(--primary), 0.12), 0 24px 48px hsl(var(--primary), 0.16)',
+              boxShadow: '0 4px 8px hsl(var(--coral), 0.08), 0 12px 24px hsl(var(--coral), 0.12), 0 24px 48px hsl(var(--coral), 0.16)',
             }}
           >
-            {/* Decorative Pattern Overlay */}
-            <div className="absolute inset-0 opacity-10"
+            {/* Decorative Corner Accent - Top Left */}
+            <div className="absolute top-0 left-0 w-40 h-40 z-20 pointer-events-none">
+              <div className="absolute top-0 left-0 w-20 h-1 bg-gradient-to-r from-white/90 to-transparent"></div>
+              <div className="absolute top-0 left-0 w-1 h-20 bg-gradient-to-b from-white/90 to-transparent"></div>
+              <div className="absolute top-3 left-3 w-4 h-4 rounded-full bg-white/70 group-hover:scale-150 transition-transform duration-500"></div>
+            </div>
+
+            {/* Decorative Corner Accent - Bottom Right */}
+            <div className="absolute bottom-0 right-0 w-40 h-40 z-20 pointer-events-none">
+              <div className="absolute bottom-0 right-0 w-20 h-1 bg-gradient-to-l from-white/70 to-transparent"></div>
+              <div className="absolute bottom-0 right-0 w-1 h-20 bg-gradient-to-t from-white/70 to-transparent"></div>
+            </div>
+
+            {/* Background Image */}
+            <div className="absolute inset-0 overflow-hidden">
+              <img
+                src={gurlzWellnessIntro}
+                alt="Gurlz Wellness - Holistic support for African women"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 opacity-20 mix-blend-overlay"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                }}
+              ></div>
+            </div>
+
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--coral))]/95 via-[hsl(var(--coral))]/60 to-transparent"></div>
+
+            {/* Glassmorphism Layer */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent backdrop-blur-[0.5px]"></div>
+
+            {/* Shine Effect on Hover */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 overflow-hidden pointer-events-none">
+              <div className="absolute w-40 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -left-40 group-hover:left-full transition-all duration-1000 ease-out"></div>
+            </div>
+
+            {/* Border Glow on Hover */}
+            <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
               style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                boxShadow: '0 0 0 2px rgba(255, 255, 255, 0.15), 0 0 50px hsl(var(--coral), 0.5), inset 0 0 50px hsl(var(--coral), 0.15)',
               }}
             ></div>
 
-            {/* Floating Hearts */}
-            <div className="absolute top-20 left-20 w-8 h-8 opacity-30 animate-float">
-              <Heart className="w-full h-full text-white" fill="white" />
-            </div>
-            <div className="absolute bottom-32 right-24 w-6 h-6 opacity-20 animate-float" style={{ animationDelay: '1s' }}>
-              <Heart className="w-full h-full text-white" fill="white" />
-            </div>
-            <div className="absolute top-40 right-32 w-5 h-5 opacity-25 animate-float" style={{ animationDelay: '2s' }}>
-              <Heart className="w-full h-full text-white" fill="white" />
-            </div>
+            {/* Content */}
+            <div className="relative p-10 md:p-16 min-h-[500px] lg:min-h-[600px] flex flex-col justify-end text-white z-10">
+              {/* Decorative Accent Bar */}
+              <div className="w-24 h-1.5 bg-gradient-to-r from-white to-white/40 rounded-full mb-8 group-hover:w-40 transition-all duration-500"></div>
 
-            <div className="relative z-10 space-y-8 max-w-4xl text-white">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
-                <Heart className="w-5 h-5" />
-                <span className="text-sm font-semibold uppercase tracking-wider">
-                  Holistic Support
-                </span>
-              </div>
-              
-              <h2 className="text-5xl md:text-7xl font-bold leading-tight">
-                Gurlz Wellness
-              </h2>
-              
-              <div className="h-1 w-32 bg-white/60 mx-auto rounded-full"></div>
-              
-              <p className="text-xl md:text-2xl leading-relaxed text-white/95 max-w-3xl mx-auto">
-                Physical, mental, and sexual reproductive health barriers should never impede African women's 
-                ability to innovate. Gurlz Wellness ensures that women have the support they need to thrive 
-                in every dimension of their lives.
-              </p>
-
-              <div className="pt-4">
-                <p className="text-lg md:text-xl font-semibold text-white/90">
+              <div className="space-y-6 max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-4">
+                  <Heart className="w-5 h-5" />
+                  <span className="text-sm font-semibold uppercase tracking-wider">
+                    Holistic Support
+                  </span>
+                </div>
+                
+                <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight"
+                  style={{
+                    textShadow: '0 2px 10px rgba(0, 0, 0, 0.4), 0 4px 20px rgba(0, 0, 0, 0.3)',
+                  }}
+                >
+                  Gurlz Wellness
+                </h3>
+                
+                <p className="text-xl md:text-2xl text-white/95 leading-relaxed font-medium"
+                  style={{
+                    textShadow: '0 1px 4px rgba(0, 0, 0, 0.4)',
+                  }}
+                >
+                  Physical, mental, and sexual reproductive health barriers should never impede African women's 
+                  ability to innovate. Gurlz Wellness ensures that women have the support they need to thrive 
+                  in every dimension of their lives.
+                </p>
+                
+                <p className="text-lg md:text-xl text-white/90 leading-relaxed"
+                  style={{
+                    textShadow: '0 1px 4px rgba(0, 0, 0, 0.4)',
+                  }}
+                >
                   Because wellness isn't a luxury—it's a prerequisite for innovation.
                 </p>
               </div>
+
+              {/* Floating Decorative Elements */}
+              <div className="absolute bottom-12 right-12 w-3 h-3 rounded-full bg-white/40 animate-pulse"></div>
+              <div className="absolute top-1/2 right-16 w-2 h-2 rounded-full bg-white/30 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
             </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute bottom-12 right-12 w-3 h-3 rounded-full bg-white/40 animate-pulse"></div>
-            <div className="absolute top-1/2 right-16 w-2 h-2 rounded-full bg-white/30 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            {/* Bottom Inner Shadow for Depth */}
+            <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
           </div>
         )}
 
