@@ -3,9 +3,8 @@ import { Footer } from "@/components/Footer";
 import { PillarCard } from "@/components/PillarCard";
 import { ProgramCard } from "@/components/ProgramCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { ManifestoCard } from "@/components/ManifestoCard";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Lightbulb, RefreshCw, Sparkles } from "lucide-react";
 import heroCollage1 from "@/assets/hero-collage-1.jpg";
 import heroCollage2 from "@/assets/hero-collage-2.jpg";
 import heroCollage3 from "@/assets/hero-collage-3.jpg";
@@ -171,9 +170,25 @@ const Index = () => {
               </div>
             </ScrollReveal>
 
-            {/* Act 3: The Methodology - Manifesto Card */}
+            {/* Act 3: The Methodology - Featured Card */}
             <ScrollReveal delay={300}>
-              <ManifestoCard />
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-[hsl(var(--coral))]/20 to-[hsl(var(--teal))]/20 blur-3xl"></div>
+                <div className="relative bg-gradient-to-br from-background to-muted border border-primary/20 rounded-3xl p-12 md:p-16 shadow-2xl">
+                  <div className="text-center space-y-8">
+                    <div className="inline-flex items-center gap-3 px-8 py-3 bg-primary rounded-full shadow-lg">
+                      <Sparkles className="w-5 h-5 text-primary-foreground" />
+                      <span className="text-xl font-bold text-primary-foreground">Innofeminism</span>
+                      <Sparkles className="w-5 h-5 text-primary-foreground" />
+                    </div>
+                    <p className="text-2xl md:text-3xl text-foreground max-w-4xl mx-auto leading-relaxed">
+                      Our transformative approach combines{" "}
+                      <strong className="text-primary">Afrofeminist 'motherist' principles</strong>{" "}
+                      with technological innovation to create systems that truly serve everyone.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </ScrollReveal>
 
             {/* Act 4: The Vision - Grand Finale */}
