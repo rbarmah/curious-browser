@@ -1,72 +1,72 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PillarCard } from "@/components/PillarCard";
-// import { ComicCarousel } from "@/components/ComicCarousel";
+import { ComicCarousel } from "@/components/ComicCarousel";
 import { RefreshCw, Lightbulb, Heart } from "lucide-react";
 import handsCollaborate from "@/assets/hands-collaborate.svg";
 import handsIdea from "@/assets/hands-idea.svg";
 import handsHeart from "@/assets/hands-heart.svg";
-// import comicPanel1 from "@/assets/comic-panel-1.jpg";
-// import comicPanel2 from "@/assets/comic-panel-2.jpg";
-// import comicPanel3 from "@/assets/comic-panel-3.jpg";
-// import comicPanel4 from "@/assets/comic-panel-4.jpg";
-// import comicPanel5 from "@/assets/comic-panel-5.jpg";
-// import comicPanel6 from "@/assets/comic-panel-6.jpg";
-// import comicPanel7 from "@/assets/comic-panel-7.jpg";
-// import comicPanel8 from "@/assets/comic-panel-8.jpg";
-// import comicPanel9 from "@/assets/comic-panel-9.jpg";
-// import comicPanel10 from "@/assets/comic-panel-10.jpg";
+import comicPanel1 from "@/assets/comic-panel-1.jpg";
+import comicPanel2 from "@/assets/comic-panel-2.jpg";
+import comicPanel3 from "@/assets/comic-panel-3.jpg";
+import comicPanel4 from "@/assets/comic-panel-4.jpg";
+import comicPanel5 from "@/assets/comic-panel-5.jpg";
+import comicPanel6 from "@/assets/comic-panel-6.jpg";
+import comicPanel7 from "@/assets/comic-panel-7.jpg";
+import comicPanel8 from "@/assets/comic-panel-8.jpg";
+import comicPanel9 from "@/assets/comic-panel-9.jpg";
+import comicPanel10 from "@/assets/comic-panel-10.jpg";
 
-// const comicPanels = [
-//   {
-//     image: comicPanel1,
-//     narration: "Let me tell you about the algorithms that run our world. They decide who gets hired, who receives healthcare, who gets a loan, whose voice is heard online. They're supposed to be neutral, objective, fair. They're none of those things. And I can prove it.",
-//   },
-//   {
-//     image: comicPanel2,
-//     narration: "Facial recognition. The technology fails to recognize Black women 35% of the time. For white men? Less than 1%. That's not a small bug. That's a 43-fold difference. When the tech can't see you, you become invisible to systems that use it - from your phone to police surveillance.",
-//     data: "35% vs 0.8% error rate",
-//   },
-//   {
-//     image: comicPanel3,
-//     narration: "Amazon built an AI to hire software engineers. It trained on ten years of resumes - mostly from men. Know what it learned? That male equals qualified. It automatically rejected resumes with the word 'women's' anywhere on them. Women's chess club. Women's college. Automatic rejection.",
-//     data: "Trained on male-dominated data = Gender bias at scale",
-//   },
-//   {
-//     image: comicPanel4,
-//     narration: "Healthcare algorithms predict who needs help. But they use spending as a proxy for sickness. Here's the problem: Black patients spend less not because they're healthier, but because they have less access to care. Result? The algorithm denies care to the people who need it most. Over 50% of eligible Black patients are excluded.",
-//     data: "Millions denied care by biased algorithms",
-//   },
-//   {
-//     image: comicPanel5,
-//     narration: "Social media algorithms are supposed to remove hate speech. Instead, they flag Black people's speech as 'toxic' twice as often. Indigenous activists sharing stories about Missing and Murdered Indigenous Women? Deleted. Black creators posting about their experiences? Suppressed by 50%. The algorithm silences the very voices that need amplifying.",
-//     data: "2x more likely to be flagged | 50% less reach",
-//   },
-//   {
-//     image: comicPanel6,
-//     narration: "Credit algorithms decide who gets loans. Same income, same job, better credit score? Women still get denied more often. Why? The algorithm learned from decades of banks discriminating against women. Now it just automates the bias. There's a 1.7 trillion dollar financing gap between male and female-owned businesses.",
-//     data: "$1.7 trillion gap",
-//   },
-//   {
-//     image: comicPanel7,
-//     narration: "So why are all these systems broken? Look at who's building them. Women make up only 22% of AI professionals globally. At the leadership level? Just 10%. When 88% of AI researchers are men, and most are white, they build systems that work for people like them. Everyone else becomes an afterthought.",
-//     data: "22% women in AI | 10% in leadership",
-//   },
-//   {
-//     image: comicPanel8,
-//     narration: "It's a cycle. Historical discrimination creates biased data. Teams that all look the same build algorithms on that data. Those algorithms discriminate at massive scale. That creates new biased data. And the cycle continues, getting worse with each loop. This isn't accidental. This is algorithmic oppression.",
-//     data: "The cycle amplifies itself",
-//   },
-//   {
-//     image: comicPanel9,
-//     narration: "But here's the hope: When diverse teams build algorithms, bias drops by 84%. Not because we're magical. Because we ask different questions. We test on different faces. We remember that real people are affected by these systems. The solution isn't complicated. It's about who's in the room.",
-//     data: "84% bias reduction with diverse teams",
-//   },
-//   {
-//     image: comicPanel10,
-//     narration: "This is why Innofemme exists. African women aren't the problem with technology - we're the solution. We're not asking for seats at their broken tables. We're building new ones. Tables where everyone is seen, heard, and valued. The future of technology can't be coded without us. Join us.",
-//   },
-// ];
+const comicPanels = [
+  {
+    image: comicPanel1,
+    narration: "Let me tell you about the algorithms that run our world. They decide who gets hired, who receives healthcare, who gets a loan, whose voice is heard online. They're supposed to be neutral, objective, fair. They're none of those things. And I can prove it.",
+  },
+  {
+    image: comicPanel2,
+    narration: "Facial recognition. The technology fails to recognize Black women 35% of the time. For white men? Less than 1%. That's not a small bug. That's a 43-fold difference. When the tech can't see you, you become invisible to systems that use it - from your phone to police surveillance.",
+    data: "35% vs 0.8% error rate",
+  },
+  {
+    image: comicPanel3,
+    narration: "Amazon built an AI to hire software engineers. It trained on ten years of resumes - mostly from men. Know what it learned? That male equals qualified. It automatically rejected resumes with the word 'women's' anywhere on them. Women's chess club. Women's college. Automatic rejection.",
+    data: "Trained on male-dominated data = Gender bias at scale",
+  },
+  {
+    image: comicPanel4,
+    narration: "Healthcare algorithms predict who needs help. But they use spending as a proxy for sickness. Here's the problem: Black patients spend less not because they're healthier, but because they have less access to care. Result? The algorithm denies care to the people who need it most. Over 50% of eligible Black patients are excluded.",
+    data: "Millions denied care by biased algorithms",
+  },
+  {
+    image: comicPanel5,
+    narration: "Social media algorithms are supposed to remove hate speech. Instead, they flag Black people's speech as 'toxic' twice as often. Indigenous activists sharing stories about Missing and Murdered Indigenous Women? Deleted. Black creators posting about their experiences? Suppressed by 50%. The algorithm silences the very voices that need amplifying.",
+    data: "2x more likely to be flagged | 50% less reach",
+  },
+  {
+    image: comicPanel6,
+    narration: "Credit algorithms decide who gets loans. Same income, same job, better credit score? Women still get denied more often. Why? The algorithm learned from decades of banks discriminating against women. Now it just automates the bias. There's a 1.7 trillion dollar financing gap between male and female-owned businesses.",
+    data: "$1.7 trillion gap",
+  },
+  {
+    image: comicPanel7,
+    narration: "So why are all these systems broken? Look at who's building them. Women make up only 22% of AI professionals globally. At the leadership level? Just 10%. When 88% of AI researchers are men, and most are white, they build systems that work for people like them. Everyone else becomes an afterthought.",
+    data: "22% women in AI | 10% in leadership",
+  },
+  {
+    image: comicPanel8,
+    narration: "It's a cycle. Historical discrimination creates biased data. Teams that all look the same build algorithms on that data. Those algorithms discriminate at massive scale. That creates new biased data. And the cycle continues, getting worse with each loop. This isn't accidental. This is algorithmic oppression.",
+    data: "The cycle amplifies itself",
+  },
+  {
+    image: comicPanel9,
+    narration: "But here's the hope: When diverse teams build algorithms, bias drops by 84%. Not because we're magical. Because we ask different questions. We test on different faces. We remember that real people are affected by these systems. The solution isn't complicated. It's about who's in the room.",
+    data: "84% bias reduction with diverse teams",
+  },
+  {
+    image: comicPanel10,
+    narration: "This is why Innofemme exists. African women aren't the problem with technology - we're the solution. We're not asking for seats at their broken tables. We're building new ones. Tables where everyone is seen, heard, and valued. The future of technology can't be coded without us. Join us.",
+  },
+];
 
 const About = () => {
   return (
@@ -86,8 +86,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Comic Strip Section - Temporarily commented out until images are uploaded */}
-      {/* <section className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))]">
+      {/* Comic Strip Section */}
+      <section className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">The Algorithm Knows</h2>
@@ -97,7 +97,7 @@ const About = () => {
           </div>
           <ComicCarousel panels={comicPanels} />
         </div>
-      </section> */}
+      </section>
 
       {/* Mission Section */}
       <section className="py-20 bg-background">
