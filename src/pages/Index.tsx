@@ -253,12 +253,7 @@ const Index = () => {
                 "Our flagship training and incubation program connecting talented women technologists with women-led startups that need them. We provide mentorship, resources, and a community of support to help women excel in their tech careers.",
               image: innofemmeLabs,
               accentColor: "hsl(var(--primary))",
-              icon: <Sparkles className="w-full h-full" />,
-              stats: [
-                { value: "500+", label: "Fellows" },
-                { value: "50+", label: "Startups" },
-                { value: "95%", label: "Success Rate" },
-              ],
+              stats: [],
               buttons: [
                 { label: "Join as a Fellow", variant: "default" },
                 { label: "Apply as a Startup", variant: "outline" },
@@ -271,12 +266,7 @@ const Index = () => {
                 "Targeted hackathons designed to bring women together to address the issues they face using their collective skills and lived experiences. We create spaces where innovation meets social justice.",
               image: hack4equity,
               accentColor: "hsl(var(--coral))",
-              icon: <Zap className="w-full h-full" />,
-              stats: [
-                { value: "20+", label: "Hackathons" },
-                { value: "1000+", label: "Participants" },
-                { value: "150+", label: "Solutions" },
-              ],
+              stats: [],
               buttons: [
                 { label: "View Events", variant: "default" },
                 { label: "Past Hackathons", variant: "outline" },
@@ -284,38 +274,18 @@ const Index = () => {
             },
             {
               id: 3,
-              title: "Wellness & Community",
+              title: "Explore All Programs",
               description:
-                "Holistic support programs ensuring mental wellness, community building, and sustainable growth for women in tech. Because innovation thrives when innovators are supported and empowered.",
+                "Discover our full range of programs, initiatives, and opportunities designed to empower African women in technology. From workshops to mentorship, we have something for everyone.",
               image: innofemmeLabs,
               accentColor: "hsl(var(--peach))",
-              icon: <Heart className="w-full h-full" />,
-              stats: [
-                { value: "300+", label: "Members" },
-                { value: "50+", label: "Events" },
-                { value: "24/7", label: "Support" },
-              ],
+              stats: [],
               buttons: [
-                { label: "Join Community", variant: "default" },
-                { label: "Wellness Resources", variant: "outline" },
+                { label: "View All Programs", variant: "default" },
               ],
             },
           ]}
         />
-
-        {/* Bottom CTA */}
-        <div className="container mx-auto px-4 pb-20">
-          <ScrollReveal>
-            <div className="text-center">
-              <Button variant="hero" size="lg" asChild>
-                <a href="/programs" className="group">
-                  Explore All Programs
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </a>
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
       </section>
 
       <Footer />

@@ -123,27 +123,6 @@ export const StackedCardCarousel = ({ programs }: StackedCardCarouselProps) => {
 
                   {/* Content */}
                   <div className="relative h-full flex flex-col justify-end p-8 md:p-12 lg:p-16">
-                    {/* Icon Badge */}
-                    {program.icon && (
-                      <div
-                        className={cn(
-                          "absolute top-8 right-8 w-16 h-16 md:w-20 md:h-20 rounded-2xl backdrop-blur-xl flex items-center justify-center border transition-all duration-700",
-                          isActive
-                            ? "opacity-100 scale-100"
-                            : "opacity-0 scale-75"
-                        )}
-                        style={{
-                          background: `linear-gradient(135deg, ${program.accentColor}70, ${program.accentColor}40)`,
-                          borderColor: `${program.accentColor}50`,
-                          boxShadow: `0 8px 32px ${program.accentColor}40`,
-                          transitionDelay: isActive ? "300ms" : "0ms",
-                        }}
-                      >
-                        <div className="text-3xl md:text-4xl text-white">
-                          {program.icon}
-                        </div>
-                      </div>
-                    )}
 
                     {/* Program Number */}
                     <div
@@ -202,32 +181,6 @@ export const StackedCardCarousel = ({ programs }: StackedCardCarouselProps) => {
                       {program.description}
                     </p>
 
-                    {/* Stats */}
-                    <div
-                      className={cn(
-                        "grid grid-cols-3 gap-6 mb-8 transition-all duration-700",
-                        isActive
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-4"
-                      )}
-                      style={{
-                        transitionDelay: isActive ? "400ms" : "0ms",
-                      }}
-                    >
-                      {program.stats.map((stat, idx) => (
-                        <div key={idx} className="text-center">
-                          <div
-                            className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1"
-                            style={{ color: program.accentColor }}
-                          >
-                            {stat.value}
-                          </div>
-                          <div className="text-xs md:text-sm text-white/70 uppercase tracking-wide">
-                            {stat.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
 
                     {/* Buttons */}
                     <div
