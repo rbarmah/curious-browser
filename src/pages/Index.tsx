@@ -12,9 +12,9 @@ import heroCollage5 from "@/assets/hero-collage-5.jpg";
 import heroCollage6 from "@/assets/hero-collage-6.jpg";
 import heroCollage7 from "@/assets/hero-collage-7.jpg";
 import heroCollage8 from "@/assets/hero-collage-8.jpg";
-import handsCollaborate from "@/assets/hands-collaborate.svg";
-import handsIdea from "@/assets/hands-idea.svg";
-import handsHeart from "@/assets/hands-heart.svg";
+import pillarDuplicate from "@/assets/pillar-duplicate.png";
+import pillarReform from "@/assets/pillar-reform.png";
+import pillarJustice from "@/assets/pillar-justice.png";
 import innofemmeLabs from "@/assets/innofemme-labs.jpg";
 import hack4equity from "@/assets/hack4equity.jpg";
 
@@ -107,17 +107,17 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <PillarCard
-              icon={<img src={handsCollaborate} alt="Collaborate" className="w-full h-full" />}
+              icon={<img src={pillarDuplicate} alt="Duplicate and Upgrade" className="w-full h-full object-cover rounded-full" />}
               title="Duplicate and Upgrade"
               description="We empower women to create alternatives to existing tech systems—alternatives built without the biases, exclusions, and oppressions embedded in current platforms."
             />
             <PillarCard
-              icon={<RefreshCw className="w-16 h-16 text-primary" />}
+              icon={<img src={pillarReform} alt="Reform from Within" className="w-full h-full object-cover rounded-full" />}
               title="Reform from Within"
               description="We equip women working in tech with the tools, networks, and confidence to demand change in how systems are built, pushing for equity from the inside out."
             />
             <PillarCard
-              icon={<img src={handsIdea} alt="Innovation" className="w-full h-full" />}
+              icon={<img src={pillarJustice} alt="Invent for Justice" className="w-full h-full object-cover rounded-full" />}
               title="Invent for Justice"
               description="We ensure African women can create innovations that address neglected social issues—the problems others overlook because they're not 'marketable.'"
             />
