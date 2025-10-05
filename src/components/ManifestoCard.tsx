@@ -87,7 +87,7 @@ export const ManifestoCard = () => {
             />
             <path 
               d="M50,250 Q150,300 250,250 T450,250" 
-              stroke="hsl(var(--teal))" 
+              stroke="hsl(var(--peach))" 
               strokeWidth="1" 
               fill="none" 
               opacity="0.3"
@@ -99,7 +99,7 @@ export const ManifestoCard = () => {
         {/* RIGHT SIDE: Content */}
         <div className="relative p-6 md:p-12 lg:p-16 flex flex-col justify-center space-y-6 md:space-y-8">
           {/* Decorative Accent Line */}
-          <div className="w-16 h-1 bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--peach))] to-[hsl(var(--teal))] rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--peach))] to-primary rounded-full"></div>
           
           {/* Main Typography - "Innofeminism" */}
           <div className="space-y-4">

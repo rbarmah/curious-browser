@@ -120,7 +120,7 @@ const Index = () => {
                   <div className="absolute -top-4 -left-4 w-3 h-3 rounded-full bg-[hsl(var(--coral))] animate-particle"></div>
                   <div className="absolute top-10 -right-6 w-2 h-2 rounded-full bg-[hsl(var(--peach))] animate-particle" style={{ animationDelay: '1s' }}></div>
                   <div className="absolute -bottom-6 left-10 w-4 h-4 rounded-full bg-[hsl(var(--coral-glow))] animate-particle" style={{ animationDelay: '2s' }}></div>
-                  <div className="absolute top-1/2 -left-8 w-2 h-2 rounded-full bg-[hsl(var(--teal))] animate-particle" style={{ animationDelay: '1.5s' }}></div>
+                  <div className="absolute top-1/2 -left-8 w-2 h-2 rounded-full bg-[hsl(var(--peach))] animate-particle" style={{ animationDelay: '1.5s' }}></div>
 
                   {/* 3D Card */}
                   <div className="relative bg-gradient-to-br from-[hsl(var(--coral))]/5 via-[hsl(var(--peach))]/5 to-[hsl(var(--coral))]/10 border-l-4 border-[hsl(var(--coral))] p-10 rounded-r-2xl shadow-2xl transform transition-all duration-700 hover:scale-105 group-hover:shadow-[0_20px_60px_-10px_hsl(var(--coral-glow)/0.4)]"
@@ -163,7 +163,7 @@ const Index = () => {
                   <h3 className="text-5xl md:text-7xl font-bold text-foreground leading-tight">
                     It's Time to<br />Rebuild It.
                   </h3>
-                  <div className="h-1 w-32 bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--teal))] mx-auto rounded-full"></div>
+                  <div className="h-1 w-32 bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] mx-auto rounded-full"></div>
                 </div>
                 <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
                   At Innofemme, innovation is incomplete without the voices, experiences, and creative power of African women.
@@ -180,18 +180,19 @@ const Index = () => {
             <ScrollReveal delay={400}>
               <div className="text-center py-16 space-y-8">
                 <h3 className="text-4xl md:text-7xl font-bold leading-tight">
-                  <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--teal))] bg-clip-text text-transparent">
-                    Technology reclaimed.
-                  </span>
+                  <span className="text-[hsl(var(--coral))]">Technology</span>{" "}
+                  <span className="text-[hsl(var(--peach))]">reclaimed.</span>
                   <br />
-                  <span className="text-foreground">By women.</span>
+                  <span className="text-primary">By</span>{" "}
+                  <span className="text-[hsl(var(--coral-light))]">women.</span>
                   <br />
-                  <span className="text-muted-foreground">For everyone.</span>
+                  <span className="text-[hsl(var(--purple-light))]">For</span>{" "}
+                  <span className="text-foreground">everyone.</span>
                 </h3>
                 <div className="flex justify-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-[hsl(var(--coral))] animate-pulse"></div>
                   <div className="w-3 h-3 rounded-full bg-primary animate-pulse" style={{ animationDelay: "0.2s" }}></div>
-                  <div className="w-3 h-3 rounded-full bg-[hsl(var(--teal))] animate-pulse" style={{ animationDelay: "0.4s" }}></div>
+                  <div className="w-3 h-3 rounded-full bg-[hsl(var(--peach))] animate-pulse" style={{ animationDelay: "0.4s" }}></div>
                 </div>
               </div>
             </ScrollReveal>
@@ -243,7 +244,7 @@ const Index = () => {
               title="Innofemme Labs"
               description="Our flagship training and incubation program connecting talented women technologists with women-led startups that need them."
               image={innofemmeLabs}
-              gradient="bg-gradient-to-t from-[hsl(var(--teal-deep))]/95 via-[hsl(var(--teal-deep))]/70 to-transparent"
+              gradient="bg-gradient-to-t from-primary/95 via-primary/70 to-transparent"
               buttons={[
                 { label: "Join as a Fellow", variant: "coral" },
                 { label: "Apply as a Startup", variant: "outline" },

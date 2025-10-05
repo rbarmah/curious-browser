@@ -8,7 +8,7 @@ const GetInvolved = () => {
     <div className="min-h-screen">
       <Navbar />
 
-      <section className="py-20 bg-gradient-to-b from-primary to-[hsl(var(--teal-light))] text-primary-foreground">
+      <section className="py-20 bg-gradient-to-b from-primary to-[hsl(var(--purple-light))] text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="hero-text">Get Involved</h1>

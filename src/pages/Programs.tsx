@@ -12,7 +12,7 @@ const Programs = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-primary to-[hsl(var(--teal-light))] text-primary-foreground">
+      <section className="py-20 bg-gradient-to-b from-primary to-[hsl(var(--purple-light))] text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="hero-text">Our Programs</h1>
@@ -219,7 +219,7 @@ const Programs = () => {
               </div>
 
               {/* Gurlz Wellness App */}
-              <div className="bg-gradient-to-br from-primary to-[hsl(var(--teal-light))] p-8 rounded-2xl shadow-lg text-primary-foreground">
+              <div className="bg-gradient-to-br from-primary to-[hsl(var(--purple-light))] p-8 rounded-2xl shadow-lg text-primary-foreground">
                 <h3 className="text-2xl font-bold mb-4">Gurlz Wellness App</h3>
                 <p className="text-primary-foreground/90 leading-relaxed mb-6">
                   Your anonymous companion for holistic health. The Gurlz Wellness app provides:
