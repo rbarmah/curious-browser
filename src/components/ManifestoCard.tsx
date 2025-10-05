@@ -16,10 +16,10 @@ export const ManifestoCard = () => {
       <div className="absolute inset-0 backdrop-blur-xl bg-gradient-to-br from-background/40 via-background/30 to-background/40"></div>
       
       {/* Grid Layout: Left Visual | Right Content */}
-      <div className="relative grid md:grid-cols-2 gap-0 min-h-[500px]">
+      <div className="relative grid md:grid-cols-2 gap-0 min-h-[400px] md:min-h-[500px]">
         
         {/* LEFT SIDE: Abstract Visual with Flowing Shapes */}
-        <div className="relative overflow-hidden p-12 flex items-center justify-center">
+        <div className="relative overflow-hidden p-6 md:p-12 flex items-center justify-center min-h-[300px] md:min-h-0">
           {/* Flowing SVG Blobs with Images */}
           <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -97,13 +97,13 @@ export const ManifestoCard = () => {
         </div>
 
         {/* RIGHT SIDE: Content */}
-        <div className="relative p-12 md:p-16 flex flex-col justify-center space-y-8">
+        <div className="relative p-6 md:p-12 lg:p-16 flex flex-col justify-center space-y-6 md:space-y-8">
           {/* Decorative Accent Line */}
           <div className="w-16 h-1 bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--peach))] to-[hsl(var(--teal))] rounded-full"></div>
           
           {/* Main Typography - "Innofeminism" */}
           <div className="space-y-4">
-            <h3 className="text-6xl md:text-7xl font-bold leading-none text-foreground">
+            <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-none text-foreground">
               Innofeminism
             </h3>
             
@@ -122,7 +122,7 @@ export const ManifestoCard = () => {
 
           {/* Definition Text */}
           <div className="space-y-6">
-            <p className="text-xl md:text-2xl text-foreground leading-relaxed">
+            <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
               Our transformative approach combines{" "}
               <strong className="text-[hsl(var(--coral))] font-semibold">
                 Afrofeminist 'motherist' principles
