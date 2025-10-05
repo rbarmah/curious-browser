@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PillarCard } from "@/components/PillarCard";
 import { ProgramCard } from "@/components/ProgramCard";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Lightbulb, RefreshCw, Sparkles } from "lucide-react";
 import heroCollage1 from "@/assets/hero-collage-1.jpg";
@@ -70,49 +71,86 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Introduction Section - Animated Reveal */}
-      <section className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))] overflow-hidden">
+      {/* Introduction Section - Scroll-Triggered Story */}
+      <section className="py-32 bg-gradient-to-b from-background via-[hsl(var(--warm-bg))] to-background overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto space-y-20">
+          <div className="max-w-6xl mx-auto space-y-32">
             
-            {/* First Reveal - The Problem */}
-            <div className="text-center space-y-6 animate-fade-in">
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-                Technology Isn't Neutral.
-              </h2>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-                Too much of today's tech was built without women—especially African women—in mind.
-              </p>
-            </div>
-
-            {/* Second Reveal - The Solution */}
-            <div className="text-center space-y-6 animate-fade-in">
-              <h3 className="text-2xl md:text-4xl font-bold emphasized">
-                It's Time to Rebuild It.
-              </h3>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                At Innofemme, innovation is incomplete without the voices and creative power of African women.
-              </p>
-            </div>
-
-            {/* Third Reveal - The Approach */}
-            <div className="bg-gradient-to-r from-primary/10 via-[hsl(var(--coral))]/10 to-[hsl(var(--teal))]/10 rounded-2xl p-8 md:p-12 animate-fade-in">
-              <div className="text-center space-y-6">
-                <div className="inline-block px-6 py-2 bg-primary/20 rounded-full">
-                  <span className="text-lg font-semibold text-primary">Innofeminism</span>
+            {/* Act 1: The Problem - Large Impact */}
+            <ScrollReveal delay={0}>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6">
+                  <div className="inline-block px-4 py-2 bg-destructive/10 rounded-full border border-destructive/20">
+                    <span className="text-sm font-semibold text-destructive uppercase tracking-wider">The Reality</span>
+                  </div>
+                  <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+                    Technology<br />
+                    <span className="text-muted-foreground">Isn't Neutral.</span>
+                  </h2>
                 </div>
-                <p className="text-lg md:text-xl text-foreground max-w-3xl mx-auto">
-                  Our transformative approach combines <strong className="text-primary">Afrofeminist 'motherist' principles</strong> with technological innovation to create systems that truly serve everyone.
+                <div className="bg-muted/50 border-l-4 border-destructive p-8 rounded-r-xl">
+                  <p className="text-xl md:text-2xl text-foreground font-medium">
+                    Too much of today's tech was built without women—especially African women—in mind.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Act 2: The Solution - Bold Statement */}
+            <ScrollReveal delay={200}>
+              <div className="text-center space-y-8 py-16">
+                <div className="space-y-4">
+                  <h3 className="text-5xl md:text-7xl font-bold emphasized leading-tight">
+                    It's Time to<br />Rebuild It.
+                  </h3>
+                  <div className="h-1 w-32 bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--teal))] mx-auto rounded-full"></div>
+                </div>
+                <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                  At Innofemme, innovation is incomplete without the voices, experiences, and creative power of African women.
                 </p>
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Fourth Reveal - The Vision */}
-            <div className="text-center animate-fade-in">
-              <h3 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--primary))] to-[hsl(var(--teal))] bg-clip-text text-transparent">
-                Technology reclaimed. By women. For everyone.
-              </h3>
-            </div>
+            {/* Act 3: The Methodology - Featured Card */}
+            <ScrollReveal delay={300}>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-[hsl(var(--coral))]/20 to-[hsl(var(--teal))]/20 blur-3xl"></div>
+                <div className="relative bg-gradient-to-br from-background to-muted border border-primary/20 rounded-3xl p-12 md:p-16 shadow-2xl">
+                  <div className="text-center space-y-8">
+                    <div className="inline-flex items-center gap-3 px-8 py-3 bg-primary rounded-full shadow-lg">
+                      <Sparkles className="w-5 h-5 text-primary-foreground" />
+                      <span className="text-xl font-bold text-primary-foreground">Innofeminism</span>
+                      <Sparkles className="w-5 h-5 text-primary-foreground" />
+                    </div>
+                    <p className="text-2xl md:text-3xl text-foreground max-w-4xl mx-auto leading-relaxed">
+                      Our transformative approach combines{" "}
+                      <strong className="text-primary">Afrofeminist 'motherist' principles</strong>{" "}
+                      with technological innovation to create systems that truly serve everyone.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Act 4: The Vision - Grand Finale */}
+            <ScrollReveal delay={400}>
+              <div className="text-center py-16 space-y-8">
+                <h3 className="text-4xl md:text-7xl font-bold leading-tight">
+                  <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--teal))] bg-clip-text text-transparent">
+                    Technology reclaimed.
+                  </span>
+                  <br />
+                  <span className="text-foreground">By women.</span>
+                  <br />
+                  <span className="text-muted-foreground">For everyone.</span>
+                </h3>
+                <div className="flex justify-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-[hsl(var(--coral))] animate-pulse"></div>
+                  <div className="w-3 h-3 rounded-full bg-primary animate-pulse" style={{ animationDelay: "0.2s" }}></div>
+                  <div className="w-3 h-3 rounded-full bg-[hsl(var(--teal))] animate-pulse" style={{ animationDelay: "0.4s" }}></div>
+                </div>
+              </div>
+            </ScrollReveal>
 
           </div>
         </div>
