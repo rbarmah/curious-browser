@@ -134,24 +134,26 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
                   />
                   
                   {/* Overlay gradient for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/80" />
                   
-                  {/* Text overlay */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-sm font-semibold bg-primary/90 text-white px-4 py-2 rounded-full">
-                        Panel {index + 1} of {panels.length}
-                      </span>
-                      {panel.data && (
-                        <span className="text-sm font-bold bg-white/90 text-black px-4 py-2 rounded-full">
-                          {panel.data}
+                  {/* Text overlay - centered */}
+                  <div className="absolute inset-0 flex flex-col justify-center items-center p-4 md:p-8 text-white">
+                    <div className="w-full max-w-4xl space-y-4">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-xs md:text-sm font-semibold bg-primary/90 text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full">
+                          Panel {index + 1} of {panels.length}
                         </span>
-                      )}
-                    </div>
-                    <div className="text-xl md:text-2xl font-medium leading-relaxed italic max-w-4xl">
-                      {currentIndex === index && (
-                        <TypewriterText text={`"${panel.narration}"`} delay={30} />
-                      )}
+                        {panel.data && (
+                          <span className="text-xs md:text-sm font-bold bg-white/90 text-black px-3 md:px-4 py-1.5 md:py-2 rounded-full">
+                            {panel.data}
+                          </span>
+                        )}
+                      </div>
+                      <div className="text-sm md:text-xl lg:text-2xl font-medium leading-relaxed italic text-center">
+                        {currentIndex === index && (
+                          <TypewriterText text={`"${panel.narration}"`} delay={30} />
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
