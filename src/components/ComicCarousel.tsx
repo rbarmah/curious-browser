@@ -33,16 +33,16 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
         <CarouselContent>
           {panels.map((panel, index) => (
             <CarouselItem key={index}>
-              <Card className="overflow-hidden border-2 border-primary/20">
-                <div className="relative aspect-[4/3] bg-gradient-to-br from-background to-muted">
+              <Card className="overflow-hidden border-2 border-primary/20 h-[70vh] flex flex-col">
+                <div className="relative h-[50%] bg-gradient-to-br from-background to-muted flex-shrink-0">
                   <img
                     src={panel.image}
                     alt={`Comic panel ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6 bg-card space-y-3">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="p-6 bg-card flex flex-col h-[50%] overflow-y-auto">
+                  <div className="flex items-center justify-between mb-3 flex-shrink-0">
                     <span className="text-sm font-semibold text-primary">
                       Panel {index + 1} of {panels.length}
                     </span>
