@@ -2,9 +2,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PillarCard } from "@/components/PillarCard";
 import { ComicCarousel } from "@/components/ComicCarousel";
-import { StatCard } from "@/components/StatCard";
+import { AnimatedStatCard } from "@/components/AnimatedStatCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Lightbulb, Sparkles, Users, Heart, Zap } from "lucide-react";
+import { Lightbulb, Sparkles, Users, Heart, Zap, TrendingUp, Target, Rocket } from "lucide-react";
 import pillarDuplicate from "@/assets/pillar-duplicate.png";
 import pillarReform from "@/assets/pillar-reform.png";
 import pillarJustice from "@/assets/pillar-justice.png";
@@ -288,26 +288,49 @@ const About = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <StatCard
-              number="4"
-              label="Active Programs"
-              description="Comprehensive initiatives empowering women in tech"
-            />
-            <StatCard
+          {/* Bento Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[280px] gap-6 max-w-7xl mx-auto">
+            {/* Featured Stat - 400+ Participants */}
+            <AnimatedStatCard
               number="400+"
               label="Research Participants"
-              description="Women engaged in product market research"
+              description="Women actively engaged in product market research, shaping the future of tech innovation"
+              icon={Users}
+              size="featured"
+              accentColor="from-[hsl(var(--coral))]/30 to-[hsl(var(--peach))]/30"
+              delay={0}
             />
-            <StatCard
+            
+            {/* Medium Stats - Row 1 */}
+            <AnimatedStatCard
+              number="4"
+              label="Active Programs"
+              description="Comprehensive initiatives across education, innovation, and advocacy"
+              icon={Target}
+              size="medium"
+              accentColor="from-primary/20 to-[hsl(var(--coral))]/20"
+              delay={200}
+            />
+            
+            <AnimatedStatCard
               number="150+"
               label="Wellness Outreach"
-              description="Women supported through wellness initiatives"
+              description="Women supported through holistic wellness and empowerment initiatives"
+              icon={Heart}
+              size="medium"
+              accentColor="from-[hsl(var(--peach))]/20 to-secondary/20"
+              delay={300}
             />
-            <StatCard
+            
+            {/* Large Stat - Bottom */}
+            <AnimatedStatCard
               number="2"
               label="Tech Products Launched"
-              description="Innovation-driven solutions built by African women"
+              description="Justice-driven technology solutions built by and for African women"
+              icon={Rocket}
+              size="large"
+              accentColor="from-secondary/20 to-primary/20"
+              delay={400}
             />
           </div>
         </div>
