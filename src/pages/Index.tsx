@@ -45,25 +45,25 @@ const Index = () => {
         <div className="absolute bottom-12 left-0 container mx-auto px-4">
           <div className="max-w-5xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-typing">
+              <span className="inline-block text-[hsl(var(--purple-deep))] animate-typing">
                 Centering
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "0.5s" }}>
+              <span className="inline-block text-[hsl(var(--coral))] animate-typing" style={{ animationDelay: "0.5s" }}>
                 African
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "1s" }}>
+              <span className="inline-block text-[hsl(var(--peach))] animate-typing" style={{ animationDelay: "1s" }}>
                 Women
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "1.5s" }}>
+              <span className="inline-block text-[hsl(var(--purple-medium))] animate-typing" style={{ animationDelay: "1.5s" }}>
                 at the
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "2s" }}>
+              <span className="inline-block text-[hsl(var(--coral-light))] animate-typing" style={{ animationDelay: "2s" }}>
                 Heart
               </span>{" "}
-              <span className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "2.5s" }}>
+              <span className="inline-block text-[hsl(var(--peach-light))] animate-typing" style={{ animationDelay: "2.5s" }}>
                 of Innovation
               </span>
-              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent animate-typing" style={{ animationDelay: "3s" }}>
+              <span className="inline-block text-[hsl(var(--purple-light))] animate-typing" style={{ animationDelay: "3s" }}>
                 .
               </span>
             </h1>
