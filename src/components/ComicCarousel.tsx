@@ -126,11 +126,11 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
           {panels.map((panel, index) => (
             <CarouselItem key={index}>
               <Card className="overflow-hidden border-2 border-primary/20">
-                <div className="relative w-full max-h-[70vh] bg-gradient-to-br from-background to-muted">
+                <div className="relative w-full">
                   <img
                     src={panel.image}
                     alt={`Comic panel ${index + 1}`}
-                    className="w-full h-full max-h-[70vh] object-contain"
+                    className="w-full h-auto object-contain"
                   />
                   
                   {/* Overlay gradient for text readability */}
@@ -138,17 +138,7 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
                   
                   {/* Text overlay - bottom positioned */}
                   <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-8 text-white">
-                    <div className="w-full max-w-4xl space-y-4">
-                      <div className="hidden md:flex items-center justify-between mb-4">
-                        <span className="text-sm font-semibold bg-primary/90 text-white px-4 py-2 rounded-full">
-                          Panel {index + 1} of {panels.length}
-                        </span>
-                        {panel.data && (
-                          <span className="text-sm font-bold bg-white/90 text-black px-4 py-2 rounded-full">
-                            {panel.data}
-                          </span>
-                        )}
-                      </div>
+                    <div className="w-full max-w-4xl">
                       <div className="text-xs md:text-xl lg:text-2xl font-medium leading-relaxed italic px-2">
                         {currentIndex === index && (
                           <TypewriterText text={`"${panel.narration}"`} delay={30} />
@@ -161,25 +151,7 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden md:flex left-4" />
-        <CarouselNext className="hidden md:flex right-4" />
       </Carousel>
-      
-      {/* Dot indicators */}
-      <div className="flex justify-center gap-2 mt-6">
-        {panels.map((_, index) => (
-          <button
-            key={index}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentIndex
-                ? "bg-primary w-8"
-                : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-            }`}
-            onClick={() => api?.scrollTo(index)}
-            aria-label={`Go to panel ${index + 1}`}
-          />
-        ))}
-      </div>
     </div>
   );
 };
