@@ -100,7 +100,7 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
       <audio
         ref={audioRef}
         loop
-        src="https://assets.mixkit.co/active_storage/sfx/2495/2495-preview.mp3"
+        src="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3"
       />
       
       <Button
