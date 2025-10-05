@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { StatCard } from "@/components/StatCard";
 import { PillarCard } from "@/components/PillarCard";
 import { ProgramCard } from "@/components/ProgramCard";
 import { Button } from "@/components/ui/button";
@@ -92,29 +91,6 @@ const Index = () => {
             <p className="text-2xl font-bold text-primary">
               Technology reclaimed. By women. For everyone.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 bg-[hsl(var(--warm-bg))]">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <StatCard
-              number="5"
-              label="Advisory Board"
-              description="Distinguished members guiding our vision"
-            />
-            <StatCard
-              number="8"
-              label="Team Members"
-              description="Dedicated professionals transforming innovation"
-            />
-            <StatCard
-              number="3"
-              label="Core Programs"
-              description="Labs, Hackathons, and Wellness initiatives"
-            />
           </div>
         </div>
       </section>
