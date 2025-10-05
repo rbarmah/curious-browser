@@ -72,17 +72,17 @@ export const AnimatedStatCard = ({
   }, [isVisible, numericValue]);
 
   const sizeClasses = {
-    small: "col-span-1 row-span-1 p-6",
-    medium: "col-span-1 row-span-1 p-8",
-    large: "col-span-1 md:col-span-2 row-span-1 p-10",
-    featured: "col-span-1 md:col-span-2 row-span-2 p-12"
+    small: "col-span-1 row-span-1 p-4",
+    medium: "col-span-1 row-span-1 p-5",
+    large: "col-span-1 md:col-span-2 row-span-1 p-6",
+    featured: "col-span-1 md:col-span-2 row-span-2 p-6 md:p-8"
   };
 
   const numberSizes = {
-    small: "text-4xl md:text-5xl",
-    medium: "text-5xl md:text-6xl",
-    large: "text-6xl md:text-7xl",
-    featured: "text-7xl md:text-8xl"
+    small: "text-3xl md:text-4xl",
+    medium: "text-4xl md:text-5xl",
+    large: "text-5xl md:text-6xl",
+    featured: "text-6xl md:text-7xl"
   };
 
   return (
@@ -102,22 +102,22 @@ export const AnimatedStatCard = ({
       <div className="absolute inset-0 border border-border/50 rounded-3xl"></div>
       
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-between">
+      <div className="relative z-10 h-full flex flex-col justify-between overflow-hidden">
         {/* Image badge */}
-        <div className="flex justify-between items-start mb-4">
-          <div className="rounded-2xl overflow-hidden transition-all duration-500 group-hover:scale-110">
+        <div className="flex justify-between items-start mb-3 flex-shrink-0">
+          <div className="rounded-2xl overflow-hidden transition-all duration-500 group-hover:scale-110 flex-shrink-0">
             <img src={image} alt="" className={cn(
               "transition-all duration-500 object-cover",
-              size === "featured" ? "w-16 h-16" : size === "large" ? "w-14 h-14" : "w-12 h-12"
+              size === "featured" ? "w-12 h-12 md:w-14 md:h-14" : size === "large" ? "w-10 h-10 md:w-12 md:h-12" : "w-10 h-10"
             )} />
           </div>
           
           {/* Decorative line */}
-          <div className="h-px flex-1 ml-4 mt-6 bg-border"></div>
+          <div className="h-px flex-1 ml-4 mt-5 bg-border"></div>
         </div>
 
         {/* Number with counter animation */}
-        <div className="space-y-3">
+        <div className="space-y-2 flex-grow overflow-hidden flex flex-col justify-end">
           <div className={cn(
             "font-bold text-foreground",
             "transition-all duration-700 group-hover:scale-105",
@@ -138,15 +138,15 @@ export const AnimatedStatCard = ({
           </div>
           
           <div className={cn(
-            "font-semibold text-foreground transition-colors",
-            size === "featured" ? "text-2xl" : size === "large" ? "text-xl" : "text-lg"
+            "font-semibold text-foreground transition-colors line-clamp-2",
+            size === "featured" ? "text-lg md:text-xl" : size === "large" ? "text-base md:text-lg" : "text-base"
           )}>
             {label}
           </div>
           
           <p className={cn(
-            "text-muted-foreground leading-relaxed",
-            size === "featured" ? "text-base" : "text-sm"
+            "text-muted-foreground leading-relaxed line-clamp-3",
+            size === "featured" ? "text-sm md:text-base" : "text-xs md:text-sm"
           )}>
             {description}
           </p>
