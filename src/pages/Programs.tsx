@@ -41,47 +41,6 @@ const Programs = () => {
       {/* Gradient Transition Zone */}
       <div className="h-32 bg-gradient-to-b from-black/40 via-[hsl(var(--purple-deep))]/20 to-background"></div>
 
-      {/* Programs Overview Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
-        {/* Decorative Elements */}
-        <div className="absolute top-20 right-20 w-64 h-64 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-40 left-10 w-96 h-96 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <ScrollReveal>
-            <div className="max-w-4xl mx-auto text-center space-y-8 mb-20">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[hsl(var(--coral))]/10 to-[hsl(var(--peach))]/10 rounded-full border border-[hsl(var(--coral))]/20">
-                <Sparkles className="w-5 h-5 text-[hsl(var(--coral))]" />
-                <span className="text-sm font-semibold bg-gradient-to-r from-[hsl(var(--coral))] to-[hsl(var(--peach))] bg-clip-text text-transparent uppercase tracking-wider">
-                  Transformative Initiatives
-                </span>
-              </div>
-              
-              <h2 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--coral-glow))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-shimmer"
-                  style={{ 
-                    backgroundSize: '200% auto',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}
-                >
-                  Programs That
-                </span>
-                <br />
-                <span className="text-foreground">Empower Change</span>
-              </h2>
-              
-              <div className="h-1 w-32 bg-gradient-to-r from-[hsl(var(--coral))] via-primary to-[hsl(var(--peach))] mx-auto rounded-full"></div>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Three flagship initiatives designed to unlock the innovative potential of African women 
-                through hands-on training, community problem-solving, and holistic wellness support.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* Innofemme Labs - Featured Program */}
       <section id="innofemme-labs" className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))] relative overflow-hidden">
         {/* Decorative floating orbs */}
@@ -145,42 +104,6 @@ const Programs = () => {
                     {/* Glow Elements */}
                     <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-[hsl(var(--primary))]/20 rounded-full blur-3xl group-hover:blur-2xl group-hover:bg-[hsl(var(--coral-glow))]/30 transition-all duration-700"></div>
                   </div>
-                </div>
-
-                {/* Current Project: Inploy - Bento Grid */}
-                <div className="space-y-8">
-                  <div className="text-center">
-                    <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                      <span className="text-primary">Current Project:</span> Inploy
-                    </h3>
-                    <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-                      A revolutionary job search and applicant tracking portal built for transparency and equity
-                    </p>
-                  </div>
-
-                  <BentoGrid className="max-w-6xl mx-auto">
-                    <BentoCard
-                      size="small"
-                      title="Transparency"
-                      description="Applicants can see their qualification scores and keyword matches exactly as employers see them"
-                      icon={<CheckCircle className="w-8 h-8 text-[hsl(var(--coral))]" />}
-                      accentColor="hsl(var(--coral))"
-                    />
-                    <BentoCard
-                      size="small"
-                      title="Bias Evaluation"
-                      description="Understand how your demographics might disadvantage you in the hiring process"
-                      icon={<Target className="w-8 h-8 text-[hsl(var(--peach))]" />}
-                      accentColor="hsl(var(--peach))"
-                    />
-                    <BentoCard
-                      size="small"
-                      title="Equity by Design"
-                      description="Built from the ground up to expose and combat systemic biases in recruitment"
-                      icon={<Sparkles className="w-8 h-8 text-[hsl(var(--primary))]" />}
-                      accentColor="hsl(var(--primary))"
-                    />
-                  </BentoGrid>
                 </div>
               </div>
             </ScrollReveal>
