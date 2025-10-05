@@ -76,7 +76,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto space-y-32">
             
-            {/* Act 1: The Problem - Large Impact */}
+            {/* Act 1: The Problem - 3D Animated Card */}
             <ScrollReveal delay={0}>
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
@@ -88,10 +88,24 @@ const Index = () => {
                     <span className="text-muted-foreground">Isn't Neutral.</span>
                   </h2>
                 </div>
-                <div className="bg-muted/50 border-l-4 border-destructive p-8 rounded-r-xl">
-                  <p className="text-xl md:text-2xl text-foreground font-medium">
-                    Too much of today's tech was built without women—especially African women—in mind.
-                  </p>
+                <div 
+                  className="group relative perspective-1000"
+                  style={{ perspective: "1000px" }}
+                >
+                  <div className="relative bg-gradient-to-br from-destructive/5 to-destructive/10 border-l-4 border-destructive p-8 rounded-r-xl shadow-xl transform transition-all duration-700 hover:scale-105 hover:rotate-y-2 hover:shadow-2xl"
+                    style={{
+                      transformStyle: "preserve-3d",
+                      transform: "rotateY(-5deg) rotateX(2deg)",
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-destructive/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-r-xl"></div>
+                    <p className="relative text-xl md:text-2xl text-foreground font-medium leading-relaxed"
+                      style={{ transform: "translateZ(20px)" }}
+                    >
+                      Too much of today's tech was built without women—especially African women—in mind.
+                    </p>
+                    <div className="absolute -right-2 -bottom-2 w-24 h-24 bg-destructive/10 rounded-full blur-2xl animate-pulse"></div>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

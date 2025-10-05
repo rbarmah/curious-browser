@@ -19,16 +19,17 @@ export const ScrollReveal = ({ children, delay = 0, className = "" }: ScrollReve
           }, delay);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.2, rootMargin: "0px 0px -100px 0px" }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, [delay]);
@@ -36,8 +37,10 @@ export const ScrollReveal = ({ children, delay = 0, className = "" }: ScrollReve
   return (
     <div
       ref={elementRef}
-      className={`transition-all duration-1000 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      className={`transition-all duration-[1200ms] ease-out ${
+        isVisible 
+          ? "opacity-100 translate-y-0 scale-100" 
+          : "opacity-0 translate-y-16 scale-95"
       } ${className}`}
     >
       {children}
