@@ -5,7 +5,7 @@ import { PillarCard } from "@/components/PillarCard";
 import { ProgramCard } from "@/components/ProgramCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Lightbulb, RefreshCw, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-innovation.jpg";
+import heroImage from "@/assets/hero-women-engineers.jpg";
 import handsCollaborate from "@/assets/hands-collaborate.svg";
 import handsIdea from "@/assets/hands-idea.svg";
 import handsHeart from "@/assets/hands-heart.svg";
@@ -22,33 +22,33 @@ const Index = () => {
         <div className="absolute inset-0">
           <img
             src={heroImage}
-            alt="African women innovating with technology"
+            alt="African women engineers in different professions"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent"></div>
         </div>
         
         <div className="relative container mx-auto px-4 py-32 md:py-48">
-          <div className="max-w-3xl">
-            <h1 className="hero-text text-primary-foreground mb-6">
-              Centering African Women at the{" "}
-              <span className="emphasized inline-block bg-gradient-to-r from-[hsl(var(--coral))] to-[hsl(var(--yellow))] bg-clip-text text-transparent">
-                Heart of Innovation
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+              <span className="inline-block bg-gradient-to-r from-[hsl(var(--purple-deep))] to-[hsl(var(--primary))] bg-clip-text text-transparent animate-[fade-in_0.5s_ease-out]">
+                Centering
+              </span>{" "}
+              <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] to-[hsl(var(--peach))] bg-clip-text text-transparent animate-[fade-in_0.7s_ease-out]">
+                African
+              </span>{" "}
+              <span className="inline-block bg-gradient-to-r from-[hsl(var(--yellow))] to-[hsl(var(--coral))] bg-clip-text text-transparent animate-[fade-in_0.9s_ease-out]">
+                Women
+              </span>{" "}
+              <span className="inline-block bg-gradient-to-r from-[hsl(var(--teal-deep))] to-[hsl(var(--teal))] bg-clip-text text-transparent animate-[fade-in_1.1s_ease-out]">
+                at the
+              </span>{" "}
+              <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] to-[hsl(var(--purple-deep))] bg-clip-text text-transparent animate-[fade-in_1.3s_ease-out]">
+                Heart
+              </span>{" "}
+              <span className="inline-block bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--yellow))] bg-clip-text text-transparent animate-[fade-in_1.5s_ease-out]">
+                of Innovation
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 mb-10 leading-relaxed">
-              Building a future where technology works for everyone through the power of Innofeminism
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="coral" size="lg">
-                Join Our Programs
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-                Learn About Innofeminism
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
           </div>
         </div>
       </section>
