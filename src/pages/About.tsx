@@ -74,14 +74,40 @@ const About = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-primary to-[hsl(var(--purple-light))] text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="hero-text">About Innofemme</h1>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
+      <section className="relative overflow-hidden min-h-[60vh] flex items-center">
+        {/* Background with gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--purple-deep))] via-primary to-[hsl(var(--coral))]"></div>
+        
+        {/* Animated decorative elements */}
+        <div className="absolute top-20 right-20 w-64 h-64 bg-[hsl(var(--peach))]/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[hsl(var(--coral))]/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+              <div className="w-2 h-2 rounded-full bg-[hsl(var(--peach))]"></div>
+              <span className="text-sm font-semibold text-primary-foreground uppercase tracking-wider">Our Story</span>
+            </div>
+            
+            <h1 className="hero-text text-primary-foreground">
+              <span className="inline-block animate-typing">About</span>{" "}
+              <span className="inline-block bg-gradient-to-r from-[hsl(var(--peach-light))] to-[hsl(var(--coral-light))] bg-clip-text text-transparent animate-typing" style={{ animationDelay: "0.5s" }}>
+                Innofemme
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto">
               A non-profit organization committed to centering the innovative capacity of women, 
               ensuring that technology and innovation works for everyone—not just the privileged few.
             </p>
+            
+            {/* Animated dots */}
+            <div className="flex justify-center gap-2 pt-4">
+              <div className="w-2 h-2 rounded-full bg-[hsl(var(--peach))] animate-pulse"></div>
+              <div className="w-2 h-2 rounded-full bg-[hsl(var(--coral))] animate-pulse" style={{ animationDelay: "0.2s" }}></div>
+              <div className="w-2 h-2 rounded-full bg-primary-foreground animate-pulse" style={{ animationDelay: "0.4s" }}></div>
+            </div>
           </div>
         </div>
       </section>
