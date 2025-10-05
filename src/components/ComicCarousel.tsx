@@ -174,7 +174,7 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
           {panels.map((panel, index) => (
             <CarouselItem key={index}>
               <Card className="overflow-hidden border-2 border-primary/20 bg-black">
-                <div className="relative aspect-[16/9] bg-gradient-to-br from-background to-muted">
+                <div className="relative aspect-video max-h-[70vh] bg-gradient-to-br from-background to-muted">
                   <img
                     src={panel.image}
                     alt={`Comic panel ${index + 1}`}
@@ -182,10 +182,10 @@ export const ComicCarousel = ({ panels }: ComicCarouselProps) => {
                   />
                   
                   {/* Overlay gradient for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                   
-                  {/* Text overlay - centered */}
-                  <div className="absolute inset-0 flex flex-col justify-center items-center p-4 md:p-8 text-white">
+                  {/* Text overlay - bottom positioned */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-8 text-white">
                     <div className="w-full max-w-4xl space-y-4">
                       <div className="flex items-center justify-between mb-4">
                         <span className="text-xs md:text-sm font-semibold bg-primary/90 text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full">
