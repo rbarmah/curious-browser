@@ -1,5 +1,7 @@
-import { Heart, Zap, Users } from "lucide-react";
 import { useState } from "react";
+import heroCollage1 from "@/assets/hero-collage-1.jpg";
+import heroCollage2 from "@/assets/hero-collage-2.jpg";
+import heroCollage3 from "@/assets/hero-collage-3.jpg";
 
 export const ManifestoCard = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -18,99 +20,60 @@ export const ManifestoCard = () => {
         
         {/* LEFT SIDE: Abstract Visual with Flowing Shapes */}
         <div className="relative overflow-hidden p-12 flex items-center justify-center">
-          {/* Flowing SVG Blobs */}
+          {/* Flowing SVG Blobs with Images */}
           <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="blob-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{ stopColor: 'hsl(var(--coral))', stopOpacity: 0.3 }} />
-                <stop offset="100%" style={{ stopColor: 'hsl(var(--peach))', stopOpacity: 0.2 }} />
-              </linearGradient>
-              <linearGradient id="blob-gradient-2" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style={{ stopColor: 'hsl(var(--teal))', stopOpacity: 0.3 }} />
-                <stop offset="100%" style={{ stopColor: 'hsl(var(--coral-light))', stopOpacity: 0.2 }} />
-              </linearGradient>
-              <linearGradient id="blob-gradient-3" x1="50%" y1="0%" x2="50%" y2="100%">
-                <stop offset="0%" style={{ stopColor: 'hsl(var(--peach-light))', stopOpacity: 0.25 }} />
-                <stop offset="100%" style={{ stopColor: 'hsl(var(--coral-glow))', stopOpacity: 0.15 }} />
-              </linearGradient>
+              {/* Clip paths for images */}
+              <clipPath id="blob-clip-1">
+                <path d="M150,50 Q250,80 280,150 T200,280 Q120,260 80,180 T150,50" />
+              </clipPath>
+              <clipPath id="blob-clip-2">
+                <path d="M280,100 Q350,140 340,220 T240,340 Q160,320 120,240 T280,100" />
+              </clipPath>
+              <clipPath id="blob-clip-3">
+                <path d="M200,150 Q260,180 250,240 T180,320 Q120,300 100,230 T200,150" />
+              </clipPath>
             </defs>
             
-            {/* Blob 1 - Coral/Peach */}
-            <path 
-              d="M150,50 Q250,80 280,150 T200,280 Q120,260 80,180 T150,50" 
-              fill="url(#blob-gradient-1)"
-              className="animate-[float_8s_ease-in-out_infinite]"
-              style={{ transformOrigin: 'center' }}
-            />
+            {/* Blob 1 with Image */}
+            <g className="animate-[float_8s_ease-in-out_infinite]" style={{ transformOrigin: 'center' }}>
+              <image 
+                href={heroCollage1}
+                x="50" 
+                y="20" 
+                width="250" 
+                height="280" 
+                clipPath="url(#blob-clip-1)"
+                preserveAspectRatio="xMidYMid slice"
+              />
+            </g>
             
-            {/* Blob 2 - Teal */}
-            <path 
-              d="M280,100 Q350,140 340,220 T240,340 Q160,320 120,240 T280,100" 
-              fill="url(#blob-gradient-2)"
-              className="animate-[float_10s_ease-in-out_infinite_reverse]"
-              style={{ transformOrigin: 'center', animationDelay: '1s' }}
-            />
+            {/* Blob 2 with Image */}
+            <g className="animate-[float_10s_ease-in-out_infinite_reverse]" style={{ transformOrigin: 'center', animationDelay: '1s' }}>
+              <image 
+                href={heroCollage2}
+                x="90" 
+                y="70" 
+                width="280" 
+                height="300" 
+                clipPath="url(#blob-clip-2)"
+                preserveAspectRatio="xMidYMid slice"
+              />
+            </g>
             
-            {/* Blob 3 - Peach Light */}
-            <path 
-              d="M200,150 Q260,180 250,240 T180,320 Q120,300 100,230 T200,150" 
-              fill="url(#blob-gradient-3)"
-              className="animate-[float_12s_ease-in-out_infinite]"
-              style={{ transformOrigin: 'center', animationDelay: '2s' }}
-            />
+            {/* Blob 3 with Image */}
+            <g className="animate-[float_12s_ease-in-out_infinite]" style={{ transformOrigin: 'center', animationDelay: '2s' }}>
+              <image 
+                href={heroCollage3}
+                x="70" 
+                y="120" 
+                width="210" 
+                height="220" 
+                clipPath="url(#blob-clip-3)"
+                preserveAspectRatio="xMidYMid slice"
+              />
+            </g>
           </svg>
-
-          {/* Floating Icon Elements with Parallax */}
-          <div className="relative z-10 space-y-8">
-            {/* Hands/Connection Icon */}
-            <div 
-              className="transition-transform duration-700"
-              style={{ 
-                transform: isHovered ? 'translateX(-10px) translateY(-5px)' : 'translateX(0) translateY(0)'
-              }}
-            >
-              <div className="relative">
-                <Users className="w-24 h-24 text-[hsl(var(--coral))]" strokeWidth={1.5} />
-                {/* Connecting Lines */}
-                <svg className="absolute -right-8 top-1/2 w-16 h-16" viewBox="0 0 60 60">
-                  <path 
-                    d="M10,30 Q30,10 50,30" 
-                    stroke="hsl(var(--coral-light))" 
-                    strokeWidth="2" 
-                    fill="none"
-                    className="animate-pulse"
-                  />
-                </svg>
-              </div>
-            </div>
-
-            {/* Heart/Circuit Icon */}
-            <div 
-              className="transition-transform duration-700 pl-16"
-              style={{ 
-                transform: isHovered ? 'translateX(10px) translateY(-8px)' : 'translateX(0) translateY(0)',
-                transitionDelay: '100ms'
-              }}
-            >
-              <div className="relative">
-                <Heart className="w-20 h-20 text-[hsl(var(--peach))] fill-[hsl(var(--peach))]/20" strokeWidth={1.5} />
-                {/* Circuit Lines */}
-                <div className="absolute -left-6 top-1/2 w-6 h-0.5 bg-gradient-to-r from-transparent to-[hsl(var(--peach))]"></div>
-                <div className="absolute -left-6 top-1/2 w-2 h-2 rounded-full bg-[hsl(var(--peach))] animate-pulse"></div>
-              </div>
-            </div>
-
-            {/* Innovation/Energy Icon */}
-            <div 
-              className="transition-transform duration-700 pl-8"
-              style={{ 
-                transform: isHovered ? 'translateX(-5px) translateY(10px)' : 'translateX(0) translateY(0)',
-                transitionDelay: '200ms'
-              }}
-            >
-              <Zap className="w-16 h-16 text-[hsl(var(--teal))] fill-[hsl(var(--teal))]/20" strokeWidth={1.5} />
-            </div>
-          </div>
 
           {/* Flowing Animated Lines */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 400">
