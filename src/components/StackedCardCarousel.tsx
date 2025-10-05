@@ -1,6 +1,6 @@
 import { useState, ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 
 interface ProgramCard {
@@ -12,6 +12,8 @@ interface ProgramCard {
   icon?: ReactNode;
   stats: { value: string; label: string }[];
   buttons: { label: string; variant?: "default" | "outline" | "secondary" }[];
+  type?: "program" | "cta";
+  collageImages?: string[];
 }
 
 interface StackedCardCarouselProps {
@@ -93,7 +95,140 @@ export const StackedCardCarousel = ({ programs }: StackedCardCarouselProps) => {
                 className="absolute inset-0 w-full"
                 style={style}
               >
-                <div
+                {program.type === "cta" ? (
+                  // CTA Card - Explore All Programs
+                  <div
+                    className={cn(
+                      "relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-2",
+                      "transition-all duration-500"
+                    )}
+                    style={{
+                      transformStyle: "preserve-3d",
+                      borderColor: isActive ? program.accentColor : "transparent",
+                      boxShadow: isActive
+                        ? `0 30px 90px -20px ${program.accentColor}60`
+                        : "0 20px 60px -15px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    {/* Collage Background */}
+                    <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-1 p-1 bg-black">
+                      {program.collageImages?.map((img, idx) => (
+                        <div
+                          key={idx}
+                          className={cn(
+                            "relative overflow-hidden transition-all duration-700",
+                            isActive && "scale-100 opacity-100",
+                            !isActive && "scale-95 opacity-60"
+                          )}
+                          style={{
+                            transitionDelay: isActive ? `${idx * 50}ms` : "0ms",
+                          }}
+                        >
+                          <img
+                            src={img}
+                            alt=""
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/60 to-black/80" />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Glassmorphism Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent backdrop-blur-[2px]" />
+
+                    {/* Content */}
+                    <div className="relative h-full flex flex-col justify-center items-center text-center p-8 md:p-12 lg:p-16">
+                      {/* Decorative Element */}
+                      <div
+                        className={cn(
+                          "w-20 h-20 md:w-24 md:h-24 rounded-full mb-6 flex items-center justify-center transition-all duration-700 border-2",
+                          isActive
+                            ? "opacity-100 scale-100"
+                            : "opacity-0 scale-75"
+                        )}
+                        style={{
+                          background: `linear-gradient(135deg, ${program.accentColor}30, ${program.accentColor}10)`,
+                          borderColor: program.accentColor,
+                          boxShadow: `0 0 40px ${program.accentColor}60`,
+                        }}
+                      >
+                        <ArrowRight
+                          className="w-10 h-10 md:w-12 md:h-12"
+                          style={{ color: program.accentColor }}
+                        />
+                      </div>
+
+                      {/* Title */}
+                      <h3
+                        className={cn(
+                          "text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 transition-all duration-700",
+                          isActive
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-4"
+                        )}
+                        style={{
+                          transitionDelay: isActive ? "200ms" : "0ms",
+                        }}
+                      >
+                        {program.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p
+                        className={cn(
+                          "text-lg md:text-xl text-white/90 mb-8 max-w-2xl leading-relaxed transition-all duration-700",
+                          isActive
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-4"
+                        )}
+                        style={{
+                          transitionDelay: isActive ? "300ms" : "0ms",
+                        }}
+                      >
+                        {program.description}
+                      </p>
+
+                      {/* Button */}
+                      <div
+                        className={cn(
+                          "transition-all duration-700",
+                          isActive
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-4"
+                        )}
+                        style={{
+                          transitionDelay: isActive ? "400ms" : "0ms",
+                        }}
+                      >
+                        {program.buttons.map((button, idx) => (
+                          <Button
+                            key={idx}
+                            variant={button.variant || "default"}
+                            size="lg"
+                            className="text-lg px-8 py-6"
+                            asChild
+                          >
+                            <a href="/programs" className="group">
+                              {button.label}
+                              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                            </a>
+                          </Button>
+                        ))}
+                      </div>
+
+                      {/* Decorative Grid Pattern */}
+                      <div className="absolute inset-0 opacity-5 pointer-events-none">
+                        <div className="w-full h-full" style={{
+                          backgroundImage: `radial-gradient(circle, ${program.accentColor} 1px, transparent 1px)`,
+                          backgroundSize: "40px 40px"
+                        }} />
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  // Regular Program Card
+                  <div
                   className={cn(
                     "relative w-full h-full rounded-3xl overflow-hidden shadow-2xl",
                     "transition-shadow duration-500",
@@ -216,8 +351,9 @@ export const StackedCardCarousel = ({ programs }: StackedCardCarouselProps) => {
                         background: `radial-gradient(circle, ${program.accentColor} 0%, transparent 70%)`,
                       }}
                     />
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             );
           })}

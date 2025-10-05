@@ -276,10 +276,22 @@ const Index = () => {
               id: 3,
               title: "Explore All Programs",
               description:
-                "Discover our full range of programs, initiatives, and opportunities designed to empower African women in technology. From workshops to mentorship, we have something for everyone.",
+                "Discover our full range of programs, initiatives, and opportunities designed to empower African women in technology.",
               image: innofemmeLabs,
               accentColor: "hsl(var(--peach))",
               stats: [],
+              type: "cta",
+              collageImages: [
+                heroCollage1,
+                heroCollage2,
+                heroCollage3,
+                heroCollage4,
+                heroCollage5,
+                heroCollage6,
+                heroCollage7,
+                heroCollage8,
+                innofemmeLabs,
+              ],
               buttons: [
                 { label: "View All Programs", variant: "default" },
               ],
