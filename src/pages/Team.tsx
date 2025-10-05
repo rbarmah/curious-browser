@@ -124,30 +124,50 @@ const Team = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--warm-bg))]/30 via-background to-background"></div>
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[hsl(var(--coral))]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-[hsl(var(--peach))]/10 rounded-full blur-3xl"></div>
+      <section className="relative overflow-hidden h-screen">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--purple-deep))] via-[hsl(var(--coral))] to-[hsl(var(--peach))]"></div>
         
-        <div className="container mx-auto relative z-10">
-          <ScrollReveal>
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-6xl md:text-8xl font-bold mb-8">
-                <span className="inline-block bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--coral-glow))] to-[hsl(var(--peach))] bg-clip-text text-transparent">
-                  Our Team
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Meet the passionate leaders driving innovation and empowerment across Africa
-              </p>
+        {/* Overlay Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 20% 50%, hsl(var(--coral)) 1px, transparent 1px),
+                              radial-gradient(circle at 80% 80%, hsl(var(--peach)) 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
+          }}></div>
+        </div>
+        
+        {/* Text Overlay at Left */}
+        <div className="absolute inset-y-0 left-0 flex items-center container mx-auto px-4">
+          <div className="max-w-5xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+              <div className="w-2 h-2 rounded-full bg-[hsl(var(--peach))]"></div>
+              <span className="text-sm font-semibold text-white uppercase tracking-wider">Meet Our Team</span>
             </div>
-          </ScrollReveal>
+            
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+              <span className="inline-block text-[hsl(var(--peach-light))] animate-typing">
+                The Leaders
+              </span>{" "}
+              <span className="inline-block text-white animate-typing" style={{ animationDelay: "0.5s" }}>
+                Behind the Mission
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
+              Meet the passionate leaders driving innovation and empowerment across Africa, 
+              dedicated to creating opportunities for women in technology and beyond.
+            </p>
+          </div>
         </div>
       </section>
+
+      {/* Gradient Transition Zone */}
+      <div className="h-32 bg-gradient-to-b from-[hsl(var(--peach))]/40 via-[hsl(var(--purple-deep))]/20 to-background"></div>
 
       {/* Management Team Section */}
       <section className="py-20 px-4">
