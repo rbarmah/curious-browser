@@ -70,27 +70,50 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))]">
+      {/* Introduction Section - Animated Reveal */}
+      <section className="py-20 bg-gradient-to-b from-background to-[hsl(var(--warm-bg))] overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="section-title text-foreground">
-              Technology Isn't Neutral. {" "}
-              <span className="emphasized">It's Time to Rebuild It.
-</span>
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Too much of today's tech and innovation systems were built without women, especially African women, in mind. We're here to flip that script.
-            </p>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              At Innofemme, we believe that innovation is incomplete without the voices, experiences, 
-              and creative power of African women. We're pioneering <strong className="text-primary">Innofeminism</strong>—a 
-              transformative approach that combines Afrofeminist 'motherist' principles with technological 
-              innovation to create systems that truly serve everyone.
-            </p>
-            <p className="text-2xl font-bold text-primary">
-              Technology reclaimed. By women. For everyone.
-            </p>
+          <div className="max-w-5xl mx-auto space-y-20">
+            
+            {/* First Reveal - The Problem */}
+            <div className="text-center space-y-6 animate-fade-in opacity-0" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+                Technology Isn't Neutral.
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+                Too much of today's tech was built without women—especially African women—in mind.
+              </p>
+            </div>
+
+            {/* Second Reveal - The Solution */}
+            <div className="text-center space-y-6 animate-fade-in opacity-0" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
+              <h3 className="text-2xl md:text-4xl font-bold emphasized">
+                It's Time to Rebuild It.
+              </h3>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                At Innofemme, innovation is incomplete without the voices and creative power of African women.
+              </p>
+            </div>
+
+            {/* Third Reveal - The Approach */}
+            <div className="bg-gradient-to-r from-primary/10 via-[hsl(var(--coral))]/10 to-[hsl(var(--teal))]/10 rounded-2xl p-8 md:p-12 animate-fade-in opacity-0" style={{ animationDelay: "1s", animationFillMode: "forwards" }}>
+              <div className="text-center space-y-6">
+                <div className="inline-block px-6 py-2 bg-primary/20 rounded-full">
+                  <span className="text-lg font-semibold text-primary">Innofeminism</span>
+                </div>
+                <p className="text-lg md:text-xl text-foreground max-w-3xl mx-auto">
+                  Our transformative approach combines <strong className="text-primary">Afrofeminist 'motherist' principles</strong> with technological innovation to create systems that truly serve everyone.
+                </p>
+              </div>
+            </div>
+
+            {/* Fourth Reveal - The Vision */}
+            <div className="text-center animate-fade-in opacity-0" style={{ animationDelay: "1.4s", animationFillMode: "forwards" }}>
+              <h3 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[hsl(var(--coral))] via-[hsl(var(--primary))] to-[hsl(var(--teal))] bg-clip-text text-transparent">
+                Technology reclaimed. By women. For everyone.
+              </h3>
+            </div>
+
           </div>
         </div>
       </section>
