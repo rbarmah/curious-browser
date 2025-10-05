@@ -98,63 +98,19 @@ const Programs = () => {
                 Our series of targeted hackathons designed to bring women together to address the issues 
                 they face using their collective skills and lived experiences.
               </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <Button variant="coral" size="lg">
+                  Nominate a Challenge
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button variant="outline" size="lg">
+                  Participate as Mentor
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
             </div>
           </ScrollReveal>
-
-          <div className="max-w-6xl mx-auto space-y-12">
-            <ScrollReveal delay={200}>
-              <BentoGrid>
-                {/* Mobile Money Fraud Hackathon */}
-                <BentoCard
-                  size="medium"
-                  title="Mobile Money Fraud Hackathon"
-                  description="Mobile money has transformed financial inclusion across Africa, but with it comes new vulnerabilities. This hackathon challenges participants to develop innovative solutions to combat mobile money fraud, protecting the financial security of millions of African women."
-                  icon={<Zap className="w-10 h-10 text-[hsl(var(--coral))]" />}
-                  accentColor="hsl(var(--coral))"
-                  className="bg-gradient-to-br from-card to-[hsl(var(--coral))]/5"
-                >
-                  <div className="flex flex-wrap gap-3 mt-4">
-                    <span className="px-4 py-2 bg-primary/10 rounded-full text-sm font-semibold text-primary">
-                      When: April 2026
-                    </span>
-                    <span className="px-4 py-2 bg-secondary/10 rounded-full text-sm font-semibold text-secondary">
-                      Partner: MTN Mobile Money Ltd.
-                    </span>
-                  </div>
-                </BentoCard>
-
-                {/* Rural Women Hackathon */}
-                <BentoCard
-                  size="medium"
-                  title="Rural Women Hackathon"
-                  description="We reject the assumption that women with little to no formal education lack the understanding to solve their own problems. We identify pressing challenges facing rural women and pair them with women who have formal training in relevant fields. Together, they build viable, community-centered solutions."
-                  icon={<Users className="w-10 h-10 text-secondary" />}
-                  accentColor="hsl(var(--yellow))"
-                  className="bg-gradient-to-br from-secondary/5 to-[hsl(var(--yellow))]/5"
-                >
-                  <div className="flex flex-col sm:flex-row gap-3 mt-4">
-                    <Button variant="coral" size="lg">
-                      Nominate a Challenge
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                    <Button variant="outline" size="lg">
-                      Participate as Mentor
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </div>
-                </BentoCard>
-              </BentoGrid>
-            </ScrollReveal>
-
-            <ScrollReveal delay={400}>
-              <div className="text-center max-w-3xl mx-auto">
-                <p className="text-xl md:text-2xl font-semibold text-foreground">
-                  This isn't charity. This is recognition that rural women are innovators, problem-solvers, 
-                  and experts in their own lives.
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
         </div>
       </section>
 
