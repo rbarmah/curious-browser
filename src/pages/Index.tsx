@@ -180,14 +180,14 @@ const Index = () => {
             <ScrollReveal delay={400}>
               <div className="text-center py-16 space-y-8">
                 <h3 className="text-4xl md:text-7xl font-bold leading-tight">
-                  <span className="text-[hsl(var(--coral))]">Technology</span>{" "}
-                  <span className="text-[hsl(var(--peach))]">reclaimed.</span>
+                  <span className="text-primary">Technology</span>{" "}
+                  <span className="text-primary">reclaimed.</span>
                   <br />
-                  <span className="text-primary">By</span>{" "}
-                  <span className="text-[hsl(var(--coral-light))]">women.</span>
+                  <span className="text-[hsl(var(--coral))]">By</span>{" "}
+                  <span className="text-[hsl(var(--coral))]">women.</span>
                   <br />
-                  <span className="text-[hsl(var(--purple-light))]">For</span>{" "}
-                  <span className="text-foreground">everyone.</span>
+                  <span className="text-[hsl(var(--peach))]">For</span>{" "}
+                  <span className="text-[hsl(var(--peach))]">everyone.</span>
                 </h3>
                 <div className="flex justify-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-[hsl(var(--coral))] animate-pulse"></div>
