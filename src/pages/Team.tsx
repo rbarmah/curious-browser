@@ -5,61 +5,43 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
 import { TeamMemberDialog, TeamMember } from "@/components/TeamMemberDialog";
 import ruthieArmahPhoto from "@/assets/ruthie-armah.png";
+import emmanuellaAsieduPhoto from "@/assets/emmanuella-asiedu.png";
+import gloriaGyamfiPhoto from "@/assets/gloria-gyamfi.png";
+import graziaAmenuPhoto from "@/assets/grazia-amenu.png";
 import teamHeroAbstract from "@/assets/team-hero-abstract.jpg";
 
 const managementTeam: TeamMember[] = [
   { 
     name: "Ruthie Armah", 
-    role: "Executive Director", 
+    role: "Executive Director & AI/ML Engineer", 
     initials: "RA",
     image: ruthieArmahPhoto,
-    bio: "Ruthie Armah is a visionary leader dedicated to empowering women and girls across Africa through technology and innovation. With over a decade of experience in nonprofit leadership and social entrepreneurship, she has championed numerous initiatives that bridge the gender gap in STEM fields.\n\nUnder her leadership, InnoFemme has grown from a grassroots organization to a continent-wide movement, impacting thousands of lives through education, mentorship, and community building. Her approach combines strategic thinking with deep empathy, creating programs that are both scalable and deeply personal.\n\nRuthie believes that true innovation comes from diversity of thought and lived experience, and she works tirelessly to create spaces where African women can lead, innovate, and transform their communities.",
-    achievements: [
-      "Led InnoFemme to impact over 5,000 women and girls across 8 African countries",
-      "Established partnerships with major tech companies and international development organizations",
-      "Recognized as one of Africa's Top 40 Under 40 Social Innovators",
-      "Published research on women's empowerment and technology adoption in developing nations"
-    ],
-    specialization: ["Leadership", "Social Innovation", "Women's Empowerment", "Strategic Partnerships"],
+    bio: "Ruthie is an AI/ML Engineer in the Fintech space. She is a PhD student with KNUST and the Technical University of Munich. She also has an Executive Education in Business Administration from the Accra Business School. With over 5 years of project-management experience, she has designed and scaled digital interventions for government agencies, health-service providers, and research institutions, and driven technology solutions across a number of startups. As a committed mentor, Ruthie has guided many women into tech careers. At InnoFemme, she brings her cross-sectoral expertise to drive the team towards accelerated innovation for equity in technology and innovation.",
+    specialization: ["AI/ML Engineering", "Fintech", "Project Management", "Mentorship"],
   },
   { 
-    name: "Emmanuella Brown", 
-    role: "Director, Partnerships", 
-    initials: "EB",
-    bio: "Emmanuella Brown is a strategic partnership expert with a proven track record of building sustainable collaborations between nonprofit organizations, corporations, and government entities. Her work focuses on creating mutually beneficial relationships that advance InnoFemme's mission while delivering value to partner organizations.\n\nWith a background in international development and corporate social responsibility, Emmanuella brings a unique perspective to partnership development. She understands both the social impact sector and corporate landscape, enabling her to bridge these worlds effectively.\n\nHer collaborative approach has resulted in groundbreaking partnerships that have expanded InnoFemme's reach and resources, making our programs more accessible to women and girls across the continent.",
-    achievements: [
-      "Secured over $2M in partnership funding and in-kind support",
-      "Developed strategic alliances with 15+ major technology companies",
-      "Created innovative public-private partnership models for women's empowerment",
-      "Built a network of 50+ corporate mentors for InnoFemme programs"
-    ],
-    specialization: ["Strategic Partnerships", "Corporate Relations", "Fundraising", "Stakeholder Engagement"],
+    name: "Emmanuella Asiedu", 
+    role: "Business Development Lead", 
+    initials: "EA",
+    image: emmanuellaAsieduPhoto,
+    bio: "Emmanuella is InnoFemme's Business Development Lead & currently an Renewable Energy Intern at the World Bank Group, Namibia. Trained in sustainable business modeling and strategic planning at the Technical University of Munich's School of Management. An expert in lead generation, partnership negotiation, and market expansion in Africa, she is building our go-to-market framework: driving early visibility, forging strategic alliances, and mapping revenue pathways to ensure InnoFemme's scalable growth and lasting impact.",
+    specialization: ["Business Development", "Strategic Planning", "Partnership Negotiation", "Market Expansion"],
   },
   { 
-    name: "Grazia Graham", 
-    role: "Director, Research and Intelligence", 
+    name: "Grazia Amenu", 
+    role: "Data Lead", 
+    initials: "GA",
+    image: graziaAmenuPhoto,
+    bio: "Grazia is a Certified Data Scientist, who was a GIZ-Blossom Academy AI Fellow, and the Womanium Quantum AI Fellowship. With experience as a Technical Project Manager, Data Analyst, and Data Management Associate, she's designed end-to-end data pipelines, overseen research analytics, and turned complex datasets into clear, actionable insights. As InnoFemme's Data Lead, Grazia applies market-research and analytics to inform project planning, prioritization, and shape partner engagement.",
+    specialization: ["Data Science", "AI", "Technical Project Management", "Research Analytics"],
+  },
+  { 
+    name: "Gloria Gyamfi", 
+    role: "Technology Lead", 
     initials: "GG",
-    bio: "Grazia Graham leads InnoFemme's research and intelligence efforts, ensuring that all our programs are grounded in rigorous data and evidence-based practices. Her work involves conducting impact assessments, analyzing trends in women's technology adoption, and translating complex data into actionable insights.\n\nWith a PhD in Development Studies and extensive experience in quantitative and qualitative research methodologies, Grazia brings academic rigor to our work while maintaining a practical focus on real-world impact. She is passionate about using data to tell stories that drive policy change and resource allocation.\n\nHer research has informed program design across InnoFemme and has been cited in policy documents by international development agencies and African governments.",
-    achievements: [
-      "Published 10+ peer-reviewed articles on women in technology and innovation",
-      "Led comprehensive impact studies across all InnoFemme programs",
-      "Developed monitoring and evaluation frameworks adopted by similar organizations",
-      "Presented research findings at international conferences and policy forums"
-    ],
-    specialization: ["Research Design", "Impact Assessment", "Data Analytics", "Policy Analysis"],
-  },
-  { 
-    name: "Gloria Graham", 
-    role: "Director, Product and Engineering", 
-    initials: "GG",
-    bio: "Gloria Graham is a seasoned software engineer and product leader who oversees the development of InnoFemme's digital platforms and technical training programs. Her expertise spans full-stack development, UX design, and agile product management.\n\nWith 12 years of experience in the tech industry, including roles at leading technology companies, Gloria brings cutting-edge technical knowledge to InnoFemme while ensuring our programs remain accessible and relevant to participants at all skill levels.\n\nShe is passionate about demystifying technology and creating pathways for women to enter and excel in the tech industry. Her leadership has transformed InnoFemme's technical offerings, making them some of the most comprehensive and effective in the region.",
-    achievements: [
-      "Built and scaled InnoFemme's digital learning platform to 10,000+ users",
-      "Developed curriculum for 8 technical training programs from beginner to advanced levels",
-      "Led engineering teams at Fortune 500 companies before joining InnoFemme",
-      "Mentored 200+ women into successful tech careers"
-    ],
-    specialization: ["Software Engineering", "Product Management", "Technical Training", "UX Design"],
+    image: gloriaGyamfiPhoto,
+    bio: "Gloria is a computer engineer and researcher specializing in biomedical signal processing, assistive robotics, and inclusive technology design. A graduate researcher at KNUST's Responsible AI Lab and ETH Zurich, she has sharpened her skills through prestigious fellowships, most notably the ETH Zurich Robotics Students Fellowship, where she optimized real-time sensor-signal pipelines, designed artifact-removal algorithms, and co-developed a feature-extraction toolbox for activity recognition. At Innofemme, she leads initiatives to repurpose and imagine tech tools.",
+    specialization: ["Computer Engineering", "Biomedical Signal Processing", "Assistive Robotics", "AI Research"],
   },
   { 
     name: "Dr. Chantelle Kanamintie", 
