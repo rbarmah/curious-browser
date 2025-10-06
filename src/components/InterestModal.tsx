@@ -95,7 +95,7 @@ export const InterestModal = ({ open, onOpenChange, type }: InterestModalProps) 
               type="tel"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="+234 XXX XXX XXXX"
+              placeholder="+233 541 625 107"
             />
           </div>
 
