@@ -30,7 +30,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification email to InnoFemme
     const notificationResponse = await resend.emails.send({
-      from: "InnoFemme Contact Form <onboarding@resend.dev>",
+      from: "InnoFemme Contact Form <contact@innofemme.org>",
       to: ["info@innofemme.org"],
       replyTo: email,
       subject: `New Contact Form Submission: ${interest}`,
@@ -67,7 +67,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to the user
     const confirmationResponse = await resend.emails.send({
-      from: "InnoFemme <onboarding@resend.dev>",
+      from: "InnoFemme <hello@innofemme.org>",
       to: [email],
       subject: "We received your message - InnoFemme",
       html: `
