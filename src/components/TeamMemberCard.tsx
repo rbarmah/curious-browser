@@ -7,6 +7,7 @@ interface TeamMemberCardProps {
   role: string;
   initials: string;
   image?: string;
+  imagePosition?: string;
   onClick: () => void;
   index: number;
 }
@@ -16,6 +17,7 @@ export const TeamMemberCard = ({
   role, 
   initials, 
   image,
+  imagePosition = "center",
   onClick, 
   index 
 }: TeamMemberCardProps) => {
@@ -151,7 +153,12 @@ export const TeamMemberCard = ({
               "shadow-[var(--shadow-medium)]"
             )}>
               {image ? (
-                <AvatarImage src={image} alt={name} className="object-cover" />
+                <AvatarImage 
+                  src={image} 
+                  alt={name} 
+                  className="object-cover" 
+                  style={{ objectPosition: imagePosition }}
+                />
               ) : null}
               <AvatarFallback className="bg-gradient-to-br from-[hsl(var(--coral))] to-[hsl(var(--peach))] text-white text-5xl font-bold">
                 {initials}

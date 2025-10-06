@@ -161,6 +161,7 @@ const Team = () => {
                   role={member.role}
                   initials={member.initials}
                   image={member.image}
+                  imagePosition={member.name === "Douglas Kofi Baidoo" ? "center 65%" : "center"}
                   onClick={() => handleMemberClick(member)}
                   index={index}
                 />
