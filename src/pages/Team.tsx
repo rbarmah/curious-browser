@@ -20,7 +20,7 @@ const managementTeam: TeamMember[] = [
     specialization: ["AI/ML Engineering", "Fintech", "Project Management", "Mentorship"],
   },
   { 
-    name: "Emmanuella Asiedu", 
+    name: "Emmanuella Brown", 
     role: "Business Development Lead", 
     initials: "EA",
     image: emmanuellaAsieduPhoto,
@@ -28,7 +28,7 @@ const managementTeam: TeamMember[] = [
     specialization: ["Business Development", "Strategic Planning", "Partnership Negotiation", "Market Expansion"],
   },
   { 
-    name: "Grazia Amenu", 
+    name: "Grazia Graham", 
     role: "Data Lead", 
     initials: "GA",
     image: graziaAmenuPhoto,
@@ -36,7 +36,7 @@ const managementTeam: TeamMember[] = [
     specialization: ["Data Science", "AI", "Technical Project Management", "Research Analytics"],
   },
   { 
-    name: "Gloria Gyamfi", 
+    name: "Gloria Graham", 
     role: "Technology Lead", 
     initials: "GG",
     image: gloriaGyamfiPhoto,
