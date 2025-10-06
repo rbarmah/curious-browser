@@ -19,29 +19,29 @@ export const LoadingTransition = ({ onComplete }: LoadingTransitionProps) => {
       return;
     }
 
-    // Show skip button after 1.5s
-    const skipTimer = setTimeout(() => setShowSkip(true), 1500);
+    // Show skip button after 2s
+    const skipTimer = setTimeout(() => setShowSkip(true), 2000);
 
-    // Logo phase: 0-800ms
-    const logoTimer = setTimeout(() => setPhase("text"), 800);
+    // Logo phase: 0-1200ms
+    const logoTimer = setTimeout(() => setPhase("text"), 1200);
 
-    // Text typing phase: 800-3200ms (slower character typing)
+    // Text typing phase: 1200-5700ms (much slower character typing)
     const textTimers: NodeJS.Timeout[] = [];
     fullText.split("").forEach((char, index) => {
       const timer = setTimeout(() => {
         setDisplayedText((prev) => prev + char);
-      }, 800 + index * 75);
+      }, 1200 + index * 120);
       textTimers.push(timer);
     });
 
-    // Ready phase: 3200-4500ms
-    const readyTimer = setTimeout(() => setPhase("ready"), 3200);
+    // Ready phase: 6200ms (500ms pause after text completes)
+    const readyTimer = setTimeout(() => setPhase("ready"), 6200);
 
-    // Exit phase: 4500-5500ms
-    const exitTimer = setTimeout(() => setPhase("exit"), 4500);
+    // Exit phase: 7800ms
+    const exitTimer = setTimeout(() => setPhase("exit"), 7800);
 
-    // Complete: 5500ms
-    const completeTimer = setTimeout(() => onComplete(), 5500);
+    // Complete: 9000ms
+    const completeTimer = setTimeout(() => onComplete(), 9000);
 
     return () => {
       clearTimeout(skipTimer);
@@ -96,7 +96,7 @@ export const LoadingTransition = ({ onComplete }: LoadingTransitionProps) => {
 
         {/* Text */}
         {phase !== "logo" && (
-          <div className="space-y-4">
+          <div className="space-y-6">
             <p className="text-4xl md:text-5xl font-bold text-white leading-tight">
               {displayedText.split("").map((char, index) => (
                 <span
@@ -110,7 +110,7 @@ export const LoadingTransition = ({ onComplete }: LoadingTransitionProps) => {
             </p>
 
             {phase === "ready" && (
-              <p className="text-5xl md:text-6xl font-black text-white animate-pulse-ready">
+              <p className="text-5xl md:text-6xl font-black text-white animate-pulse-ready mt-8">
                 Ready?
               </p>
             )}
