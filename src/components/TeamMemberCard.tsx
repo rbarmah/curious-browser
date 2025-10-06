@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
 interface TeamMemberCardProps {
@@ -114,71 +113,40 @@ export const TeamMemberCard = ({
           }}
         />
 
-        {/* Content container */}
-        <div className="relative p-8 flex flex-col items-center text-center h-full">
-          {/* Large profile photo with sophisticated frame */}
-          <div className="relative mb-6">
-            {/* Outer rotating gradient ring */}
-            <div 
+        {/* Full-size cartoonized profile image */}
+        <div className="relative w-full h-80 overflow-hidden">
+          {/* Gradient overlay for depth */}
+          <div 
+            className={cn(
+              "absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-card/50",
+              "transition-opacity duration-700",
+              "group-hover:to-card/30 z-10"
+            )}
+          />
+          
+          {image ? (
+            <img 
+              src={image} 
+              alt={name}
               className={cn(
-                "absolute -inset-3 rounded-full",
-                "bg-gradient-to-br from-[hsl(var(--coral))] via-[hsl(var(--peach))] to-[hsl(var(--coral-light))]",
-                "transition-all duration-700",
-                "group-hover:scale-110 group-hover:-inset-4"
+                "w-full h-full object-cover transition-all duration-700",
+                "group-hover:scale-110"
               )}
-              style={{
-                animation: isHovered ? "spin 6s linear infinite" : "none",
-                opacity: isHovered ? 0.6 : 0.3,
+              style={{ 
+                objectPosition: imagePosition,
+                filter: "contrast(1.2) saturate(1.3) brightness(1.05)",
+                imageRendering: "crisp-edges"
               }}
             />
-            
-            {/* Middle glow layer */}
-            <div 
-              className={cn(
-                "absolute -inset-2 rounded-full blur-xl",
-                "bg-gradient-to-br from-[hsl(var(--coral))] to-[hsl(var(--peach))]",
-                "transition-all duration-700 opacity-0",
-                "group-hover:opacity-40"
-              )}
-            />
-
-            {/* Inner white border */}
-            <div className="absolute -inset-1 rounded-full bg-card shadow-lg" />
-            
-            {/* Avatar */}
-            <Avatar className={cn(
-              "relative w-48 h-48 border-4 border-card",
-              "transition-all duration-700",
-              "group-hover:scale-105",
-              "shadow-[var(--shadow-medium)]"
-            )}>
-              {image ? (
-                <AvatarImage 
-                  src={image} 
-                  alt={name} 
-                  className="object-cover" 
-                  style={{ objectPosition: imagePosition }}
-                />
-              ) : null}
-              <AvatarFallback className="bg-gradient-to-br from-[hsl(var(--coral))] to-[hsl(var(--peach))] text-white text-5xl font-bold">
-                {initials}
-              </AvatarFallback>
-            </Avatar>
-
-            {/* Decorative corner accent on avatar */}
-            <div 
-              className={cn(
-                "absolute -top-2 -right-2 w-6 h-6 rounded-full",
-                "bg-gradient-to-br from-[hsl(var(--coral))] to-[hsl(var(--peach))]",
-                "shadow-[var(--shadow-glow)]",
-                "transition-all duration-500",
-                "group-hover:scale-125",
-                "flex items-center justify-center"
-              )}
-            >
-              <div className="w-2 h-2 rounded-full bg-white/90" />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-[hsl(var(--coral))] to-[hsl(var(--peach))] flex items-center justify-center">
+              <span className="text-white text-7xl font-bold">{initials}</span>
             </div>
-          </div>
+          )}
+        </div>
+
+        {/* Content container */}
+        <div className="relative p-8 flex flex-col items-center text-center flex-1">
 
           {/* Name and role with elegant spacing */}
           <div className="space-y-3 mb-4">
