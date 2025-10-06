@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -42,13 +43,18 @@ const Contact = () => {
 
       setIsSubmitting(true);
 
-      // Here you would normally send to your backend
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Call the edge function to send emails
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData,
+      });
+
+      if (error) {
+        throw error;
+      }
 
       toast({
         title: "Message sent successfully!",
-        description: "We'll get back to you as soon as possible.",
+        description: "We'll get back to you as soon as possible. Check your email for confirmation.",
       });
 
       // Reset form
@@ -69,9 +75,10 @@ const Contact = () => {
         });
         setErrors(fieldErrors);
       } else {
+        console.error("Error sending message:", error);
         toast({
           title: "Error",
-          description: "Something went wrong. Please try again.",
+          description: "Something went wrong. Please try again or email us directly at info@innofemme.org",
           variant: "destructive",
         });
       }
