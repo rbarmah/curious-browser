@@ -19,29 +19,29 @@ export const LoadingTransition = ({ onComplete }: LoadingTransitionProps) => {
       return;
     }
 
-    // Show skip button after 1s
-    const skipTimer = setTimeout(() => setShowSkip(true), 1000);
+    // Show skip button after 1.5s
+    const skipTimer = setTimeout(() => setShowSkip(true), 1500);
 
-    // Logo phase: 0-500ms
-    const logoTimer = setTimeout(() => setPhase("text"), 500);
+    // Logo phase: 0-800ms
+    const logoTimer = setTimeout(() => setPhase("text"), 800);
 
-    // Text typing phase: 500-2000ms
+    // Text typing phase: 800-3200ms (slower character typing)
     const textTimers: NodeJS.Timeout[] = [];
     fullText.split("").forEach((char, index) => {
       const timer = setTimeout(() => {
         setDisplayedText((prev) => prev + char);
-      }, 500 + index * 50);
+      }, 800 + index * 75);
       textTimers.push(timer);
     });
 
-    // Ready phase: 2000-2800ms
-    const readyTimer = setTimeout(() => setPhase("ready"), 2000);
+    // Ready phase: 3200-4500ms
+    const readyTimer = setTimeout(() => setPhase("ready"), 3200);
 
-    // Exit phase: 2800-3500ms
-    const exitTimer = setTimeout(() => setPhase("exit"), 2800);
+    // Exit phase: 4500-5500ms
+    const exitTimer = setTimeout(() => setPhase("exit"), 4500);
 
-    // Complete: 3500ms
-    const completeTimer = setTimeout(() => onComplete(), 3500);
+    // Complete: 5500ms
+    const completeTimer = setTimeout(() => onComplete(), 5500);
 
     return () => {
       clearTimeout(skipTimer);
