@@ -148,7 +148,7 @@ export const TeamMemberDialog = ({ member, open, onOpenChange }: TeamMemberDialo
             </div>
           </ScrollArea>
 
-          {/* Right Column - Bio & Achievements */}
+          {/* Right Column - Bio */}
           <ScrollArea className="h-full">
             <div className="p-8 space-y-8">
               {/* Biography */}
@@ -161,38 +161,6 @@ export const TeamMemberDialog = ({ member, open, onOpenChange }: TeamMemberDialo
                   {member.bio}
                 </p>
               </div>
-
-              {/* Achievements */}
-              {member.achievements && member.achievements.length > 0 && (
-                <div className="space-y-4">
-                  <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
-                    <div className="w-1 h-6 bg-gradient-to-b from-[hsl(var(--coral))] to-[hsl(var(--peach))] rounded-full" />
-                    Key Achievements
-                  </h3>
-                  <div className="space-y-3">
-                    {member.achievements.map((achievement, index) => (
-                      <div
-                        key={index}
-                        className={cn(
-                          "p-4 rounded-lg",
-                          "bg-gradient-to-br from-[hsl(var(--coral))]/5 to-[hsl(var(--peach))]/5",
-                          "border border-[hsl(var(--coral))]/10",
-                          "hover:border-[hsl(var(--coral))]/20",
-                          "transition-all duration-300",
-                          "group"
-                        )}
-                      >
-                        <div className="flex gap-3">
-                          <div className="mt-1 w-1.5 h-1.5 rounded-full bg-gradient-to-br from-[hsl(var(--coral))] to-[hsl(var(--peach))] flex-shrink-0 group-hover:scale-150 transition-transform" />
-                          <p className="text-sm text-foreground/90 leading-relaxed">
-                            {achievement}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           </ScrollArea>
         </div>
