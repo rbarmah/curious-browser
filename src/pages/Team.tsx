@@ -13,7 +13,7 @@ import teamHeroAbstract from "@/assets/team-hero-abstract.jpg";
 const managementTeam: TeamMember[] = [
   { 
     name: "Ruthie Armah", 
-    role: "Executive Director & AI/ML Engineer", 
+    role: "Executive Director", 
     initials: "RA",
     image: ruthieArmahPhoto,
     bio: "Ruthie is an AI/ML Engineer in the Fintech space. She is a PhD student with KNUST and the Technical University of Munich. She also has an Executive Education in Business Administration from the Accra Business School. With over 5 years of project-management experience, she has designed and scaled digital interventions for government agencies, health-service providers, and research institutions, and driven technology solutions across a number of startups. As a committed mentor, Ruthie has guided many women into tech careers. At InnoFemme, she brings her cross-sectoral expertise to drive the team towards accelerated innovation for equity in technology and innovation.",
@@ -21,23 +21,23 @@ const managementTeam: TeamMember[] = [
   },
   { 
     name: "Emmanuella Brown", 
-    role: "Business Development Lead", 
-    initials: "EA",
+    role: "Director, Partnerships", 
+    initials: "EB",
     image: emmanuellaAsieduPhoto,
     bio: "Emmanuella is InnoFemme's Business Development Lead & currently an Renewable Energy Intern at the World Bank Group, Namibia. Trained in sustainable business modeling and strategic planning at the Technical University of Munich's School of Management. An expert in lead generation, partnership negotiation, and market expansion in Africa, she is building our go-to-market framework: driving early visibility, forging strategic alliances, and mapping revenue pathways to ensure InnoFemme's scalable growth and lasting impact.",
     specialization: ["Business Development", "Strategic Planning", "Partnership Negotiation", "Market Expansion"],
   },
   { 
     name: "Grazia Graham", 
-    role: "Data Lead", 
-    initials: "GA",
+    role: "Director, Research and Data Intelligence", 
+    initials: "GG",
     image: graziaAmenuPhoto,
     bio: "Grazia is a Certified Data Scientist, who was a GIZ-Blossom Academy AI Fellow, and the Womanium Quantum AI Fellowship. With experience as a Technical Project Manager, Data Analyst, and Data Management Associate, she's designed end-to-end data pipelines, overseen research analytics, and turned complex datasets into clear, actionable insights. As InnoFemme's Data Lead, Grazia applies market-research and analytics to inform project planning, prioritization, and shape partner engagement.",
     specialization: ["Data Science", "AI", "Technical Project Management", "Research Analytics"],
   },
   { 
     name: "Gloria Graham", 
-    role: "Technology Lead", 
+    role: "Director, Products and Engineering", 
     initials: "GG",
     image: gloriaGyamfiPhoto,
     bio: "Gloria is a computer engineer and researcher specializing in biomedical signal processing, assistive robotics, and inclusive technology design. A graduate researcher at KNUST's Responsible AI Lab and ETH Zurich, she has sharpened her skills through prestigious fellowships, most notably the ETH Zurich Robotics Students Fellowship, where she optimized real-time sensor-signal pipelines, designed artifact-removal algorithms, and co-developed a feature-extraction toolbox for activity recognition. At Innofemme, she leads initiatives to repurpose and imagine tech tools.",
