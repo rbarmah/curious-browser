@@ -11,7 +11,7 @@ interface ProgramCard {
   accentColor: string;
   icon?: ReactNode;
   stats: { value: string; label: string }[];
-  buttons: { label: string; variant?: "default" | "outline" | "secondary" }[];
+  buttons: { label: string; variant?: "default" | "outline" | "secondary"; onClick?: () => void }[];
   type?: "program" | "cta";
   collageImages?: string[];
 }
@@ -201,18 +201,26 @@ export const StackedCardCarousel = ({ programs }: StackedCardCarouselProps) => {
                           transitionDelay: isActive ? "400ms" : "0ms",
                         }}
                       >
-                        {program.buttons.map((button, idx) => (
+                       {program.buttons.map((button, idx) => (
                           <Button
                             key={idx}
                             variant={button.variant || "default"}
                             size="lg"
                             className="text-lg px-8 py-6"
-                            asChild
+                            onClick={button.onClick}
+                            asChild={!button.onClick}
                           >
-                            <a href="/programs" className="group">
-                              {button.label}
-                              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                            </a>
+                            {button.onClick ? (
+                              <span className="flex items-center">
+                                {button.label}
+                                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                              </span>
+                            ) : (
+                              <a href="/programs" className="group">
+                                {button.label}
+                                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                              </a>
+                            )}
                           </Button>
                         ))}
                       </div>
@@ -329,7 +337,7 @@ export const StackedCardCarousel = ({ programs }: StackedCardCarouselProps) => {
                         transitionDelay: isActive ? "500ms" : "0ms",
                       }}
                     >
-                      {program.buttons.map((button, idx) => (
+                       {program.buttons.map((button, idx) => (
                         <Button
                           key={idx}
                           variant={button.variant || "default"}
@@ -338,6 +346,7 @@ export const StackedCardCarousel = ({ programs }: StackedCardCarouselProps) => {
                             button.variant === "outline" &&
                               "border-white text-white hover:bg-white hover:text-foreground"
                           )}
+                          onClick={button.onClick}
                         >
                           {button.label}
                         </Button>

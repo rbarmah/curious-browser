@@ -2,9 +2,12 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Briefcase, Heart, HandHeart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import getInvolvedHeroAbstract from "@/assets/get-involved-hero-abstract.jpg";
 
 const GetInvolved = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -40,7 +43,7 @@ const GetInvolved = () => {
               <p className="text-muted-foreground mb-6">
                 Are you a software engineer, product designer, AI specialist, data scientist, or tech professional?
               </p>
-              <Button variant="hero">
+              <Button variant="hero" onClick={() => navigate('/contact')}>
                 Become a Fellow
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -52,7 +55,7 @@ const GetInvolved = () => {
               <p className="text-muted-foreground mb-6">
                 Building a women-led startup and need technical support?
               </p>
-              <Button variant="coral">
+              <Button variant="coral" onClick={() => navigate('/contact')}>
                 Apply to Innofemme Labs
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -64,7 +67,7 @@ const GetInvolved = () => {
               <p className="text-muted-foreground mb-6">
                 Support programs that center African women's innovation.
               </p>
-              <Button variant="outline">
+              <Button variant="outline" onClick={() => navigate('/contact')}>
                 Partner with Us
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

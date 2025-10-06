@@ -6,6 +6,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { ManifestoCard } from "@/components/ManifestoCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Lightbulb, RefreshCw, Sparkles, Users, Heart, Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroCollage1 from "@/assets/hero-collage-1.jpg";
 import heroCollage2 from "@/assets/hero-collage-2.jpg";
 import heroCollage3 from "@/assets/hero-collage-3.jpg";
@@ -21,6 +22,8 @@ import innofemmeLabs from "@/assets/innofemme-labs.jpg";
 import hack4equity from "@/assets/hack4equity.jpg";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -255,8 +258,8 @@ const Index = () => {
               accentColor: "hsl(var(--primary))",
               stats: [],
               buttons: [
-                { label: "Join as a Fellow", variant: "default" },
-                { label: "Apply as a Startup", variant: "outline" },
+                { label: "Join as a Fellow", variant: "default", onClick: () => navigate('/contact') },
+                { label: "Apply as a Startup", variant: "outline", onClick: () => navigate('/contact') },
               ],
             },
             {
@@ -268,8 +271,8 @@ const Index = () => {
               accentColor: "hsl(var(--coral))",
               stats: [],
               buttons: [
-                { label: "View Events", variant: "default" },
-                { label: "Past Hackathons", variant: "outline" },
+                { label: "View Events", variant: "default", onClick: () => navigate('/contact') },
+                { label: "Past Hackathons", variant: "outline", onClick: () => navigate('/contact') },
               ],
             },
             {
