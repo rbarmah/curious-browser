@@ -8,6 +8,9 @@ import ruthieArmahPhoto from "@/assets/ruthie-armah.png";
 import emmanuellaAsieduPhoto from "@/assets/emmanuella-asiedu.png";
 import gloriaGyamfiPhoto from "@/assets/gloria-gyamfi.png";
 import graziaAmenuPhoto from "@/assets/grazia-amenu.png";
+import chantelleKanamintiePhoto from "@/assets/chantelle-kanamintie.jpg";
+import dianaNdurBuabengPhoto from "@/assets/diana-ndur-buabeng.jpg";
+import pearlFrempongSmartPhoto from "@/assets/pearl-frempong-smart.png";
 import teamHeroAbstract from "@/assets/team-hero-abstract.jpg";
 
 const managementTeam: TeamMember[] = [
@@ -44,56 +47,35 @@ const managementTeam: TeamMember[] = [
     specialization: ["Computer Engineering", "Biomedical Signal Processing", "Assistive Robotics", "AI Research"],
   },
   { 
-    name: "Dr. Chantelle Kanamintie", 
+    name: "Dr. Deborah Chantelle Terkperkie Kanamitie", 
     role: "Director, Gurlz Wellness Program", 
     initials: "CK",
-    bio: "Dr. Chantelle Kanamintie is a clinical psychologist and wellness advocate who founded and leads InnoFemme's Gurlz Wellness Program. Recognizing that mental health and overall wellbeing are critical to women's success in any field, she developed a holistic program that addresses physical health, mental wellness, and emotional resilience.\n\nWith extensive experience in adolescent psychology and community health, Dr. Kanamintie has created culturally appropriate wellness interventions that resonate with African women and girls. Her approach integrates traditional healing practices with evidence-based psychological interventions.\n\nUnder her leadership, the Gurlz Wellness Program has become a model for holistic women's empowerment, addressing not just skills and knowledge but also the mental and emotional foundation needed for lasting success.",
-    achievements: [
-      "Developed comprehensive wellness curriculum serving 3,000+ participants",
-      "Trained 50+ peer wellness counselors across 6 countries",
-      "Published groundbreaking research on mental health among young African women in STEM",
-      "Created culturally adapted mental health resources in 5 African languages"
-    ],
-    specialization: ["Clinical Psychology", "Wellness Program Design", "Mental Health Advocacy", "Youth Development"],
+    image: chantelleKanamintiePhoto,
+    bio: "Dr. Deborah Chantelle Terkperkie Kanamitie is a public health and patient safety specialist and implementation lead (Director) for the Gurlz Wellness programme at InnoFemme. She coordinates the program's rollout across Ghana, ensuring culturally grounded, data-driven SRH and wellness services reach young women. Deborah brings over five years' clinical experience, a pioneer in telemedicine and integrated care. As a digital health advocate, she champions user safety, community engagement, and quality in Gurlz's safe spaces.",
+    specialization: ["Public Health", "Patient Safety", "Telemedicine", "Digital Health"],
   },
   { 
-    name: "Diane Ndur-Buabeng", 
-    role: "Deputy Director, Gurlz Wellness Program", 
+    name: "Diana Ndur-Buabeng", 
+    role: "Co-Implementation Lead, Gurlz Wellness Program", 
     initials: "DN",
-    bio: "Diane Ndur-Buabeng works alongside Dr. Kanamintie to implement and scale the Gurlz Wellness Program across InnoFemme's operating countries. With a background in public health and community organizing, she brings operational excellence and grassroots connectivity to the wellness initiative.\n\nDiane's strength lies in building sustainable community-based wellness systems that continue to support women and girls long after formal programs end. She trains local facilitators, develops peer support networks, and creates resource materials that are accessible and culturally relevant.\n\nHer work ensures that wellness support reaches even the most marginalized communities, breaking down barriers to access and creating safe spaces for women to prioritize their health and wellbeing.",
-    achievements: [
-      "Established 25+ community wellness hubs across West Africa",
-      "Trained 100+ community health workers in mental health first aid",
-      "Created peer support networks reaching 2,000+ young women",
-      "Developed low-cost wellness intervention models replicable in resource-limited settings"
-    ],
-    specialization: ["Public Health", "Community Organizing", "Program Implementation", "Peer Support Systems"],
+    image: dianaNdurBuabengPhoto,
+    bio: "Diana Ndur-Buabeng is a Registered Midwife and Sexual Reproductive Health (SRH) specialist, serving as Co-Implementation Lead for the Gurlz Wellness Programme at InnoFemme. She brings extensive experience in adolescent health and family planning, having led workshops and clinical sessions that reached hundreds of young people across Ghana. Her empathy, expertise, and trusted communication style make her a respected voice in the SRH community. As an advocate for youth-friendly healthcare, Diana focuses on creating safe, judgment-free spaces where young women can access accurate information and support through the Gurlz Wellness programme.",
+    specialization: ["Midwifery", "Sexual Reproductive Health", "Adolescent Health", "Family Planning"],
   },
   { 
     name: "Pearl Frempong-Smart", 
-    role: "Director, Hack4Equity", 
+    role: "Implementation Lead, Hack4Equity", 
     initials: "PF",
-    bio: "Pearl Frempong-Smart leads InnoFemme's flagship innovation program, Hack4Equity, where participants tackle real-world challenges facing African communities through technology and creative problem-solving. Her vision is to position African women as leaders in social innovation and tech entrepreneurship.\n\nWith experience in startup ecosystems, venture capital, and technology education, Pearl has created a program that not only teaches technical skills but also fosters entrepreneurial mindset and provides pathways to funding and market access for participants' innovations.\n\nHer leadership has transformed Hack4Equity into a launchpad for women-led startups, with numerous alumni going on to secure funding, scale their ventures, and create employment in their communities.",
-    achievements: [
-      "Supported 50+ women-led startups through ideation to market launch",
-      "Secured $500K in seed funding for Hack4Equity alumni ventures",
-      "Organized 12 successful hackathons with 1,000+ participants",
-      "Created accelerator program with 85% participant success rate"
-    ],
-    specialization: ["Innovation Management", "Entrepreneurship", "Hackathon Design", "Startup Acceleration"],
+    image: pearlFrempongSmartPhoto,
+    bio: "Pearl Frempong-Smart is the Implementation lead for Hack 4 Equity at InnoFemme. In this role, she is spearheading the development of InnoFemme's Hack 4 Equity programme, which will serve as a platform for women and male allies to collaborate, innovate, and build solutions that address barriers to equity and inclusion. Pearl brings her skills in user research, innovation, and community-centered design to shape hackathons that are impactful and youth-driven. Her vision is to create inclusive spaces where young women and underrepresented groups can engage in problem-solving, share ideas, and co-create tools that advance fairness and equity.",
+    specialization: ["User Research", "Innovation", "Community-Centered Design", "Hackathon Design"],
   },
   { 
     name: "Douglas Kofi Baidoo", 
     role: "Creative Designer", 
     initials: "DK",
-    bio: "Douglas Kofi Baidoo is InnoFemme's creative visionary, responsible for all visual communications, brand identity, and user experience design. His work ensures that InnoFemme's message is not only heard but felt, creating emotional connections that inspire action and engagement.\n\nWith a background in graphic design, digital media, and brand strategy, Douglas brings artistic excellence and strategic thinking to every project. He understands that powerful design can break down complex ideas, make information accessible, and create inclusive spaces where everyone feels welcome.\n\nHis creative work has elevated InnoFemme's brand, making it one of the most recognizable and respected women's empowerment organizations in Africa.",
-    achievements: [
-      "Redesigned InnoFemme brand identity, increasing recognition by 300%",
-      "Created award-winning campaign materials for major initiatives",
-      "Led design of digital platforms with 95% user satisfaction ratings",
-      "Mentored 30+ young designers through InnoFemme's creative labs"
-    ],
-    specialization: ["Graphic Design", "Brand Strategy", "UX/UI Design", "Digital Media"],
+    bio: "Douglas Kofi Baidoo is a creative designer and visual communicator with a strong background in branding, digital media, and marketing design. At InnoFemme, he serves as the Creative Designer, producing visuals that reflect the team's vision of addressing biases and communicating its message with clarity. His work ensures that every design supports brand goals, engages audiences, and maintains consistent quality across platforms.",
+    specialization: ["Branding", "Digital Media", "Marketing Design", "Visual Communication"],
   },
 ];
 
