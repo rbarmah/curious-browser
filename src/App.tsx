@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,20 +17,9 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [showLoading, setShowLoading] = useState(true);
-  const [hasSeenLoading, setHasSeenLoading] = useState(false);
-
-  useEffect(() => {
-    const loadingSeen = sessionStorage.getItem("innofemme-loading-shown");
-    if (loadingSeen) {
-      setShowLoading(false);
-      setHasSeenLoading(true);
-    }
-  }, []);
 
   const handleLoadingComplete = () => {
-    sessionStorage.setItem("innofemme-loading-shown", "true");
     setShowLoading(false);
-    setHasSeenLoading(true);
   };
 
   return (
@@ -38,21 +27,22 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        {showLoading && !hasSeenLoading && (
+        {showLoading ? (
           <LoadingTransition onComplete={handleLoadingComplete} />
+        ) : (
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/programs" element={<Programs />} />
+              <Route path="/get-involved" element={<GetInvolved />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/contact" element={<Contact />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
         )}
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/programs" element={<Programs />} />
-            <Route path="/get-involved" element={<GetInvolved />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
   );
