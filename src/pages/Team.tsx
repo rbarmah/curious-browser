@@ -11,6 +11,7 @@ import graziaAmenuPhoto from "@/assets/grazia-amenu.png";
 import chantelleKanamintiePhoto from "@/assets/chantelle-kanamintie.jpg";
 import dianaNdurBuabengPhoto from "@/assets/diana-ndur-buabeng.jpg";
 import pearlFrempongSmartPhoto from "@/assets/pearl-frempong-smart.png";
+import douglasBaidooPhoto from "@/assets/douglas-baidoo.jpg";
 import teamHeroAbstract from "@/assets/team-hero-abstract.jpg";
 
 const managementTeam: TeamMember[] = [
@@ -74,6 +75,7 @@ const managementTeam: TeamMember[] = [
     name: "Douglas Kofi Baidoo", 
     role: "Creative Designer", 
     initials: "DK",
+    image: douglasBaidooPhoto,
     bio: "Douglas Kofi Baidoo is a creative designer and visual communicator with a strong background in branding, digital media, and marketing design. At InnoFemme, he serves as the Creative Designer, producing visuals that reflect the team's vision of addressing biases and communicating its message with clarity. His work ensures that every design supports brand goals, engages audiences, and maintains consistent quality across platforms.",
     specialization: ["Branding", "Digital Media", "Marketing Design", "Visual Communication"],
   },
