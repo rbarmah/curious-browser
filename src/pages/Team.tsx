@@ -56,7 +56,7 @@ const managementTeam: TeamMember[] = [
   },
   { 
     name: "Diana Ndur-Buabeng", 
-    role: "Co-Implementation Lead, Gurlz Wellness Program", 
+    role: "Deputy Director, Gurlz Wellness Program", 
     initials: "DN",
     image: dianaNdurBuabengPhoto,
     bio: "Diana Ndur-Buabeng is a Registered Midwife and Sexual Reproductive Health (SRH) specialist, serving as Co-Implementation Lead for the Gurlz Wellness Programme at InnoFemme. She brings extensive experience in adolescent health and family planning, having led workshops and clinical sessions that reached hundreds of young people across Ghana. Her empathy, expertise, and trusted communication style make her a respected voice in the SRH community. As an advocate for youth-friendly healthcare, Diana focuses on creating safe, judgment-free spaces where young women can access accurate information and support through the Gurlz Wellness programme.",
@@ -64,7 +64,7 @@ const managementTeam: TeamMember[] = [
   },
   { 
     name: "Pearl Frempong-Smart", 
-    role: "Implementation Lead, Hack4Equity", 
+    role: "Director, Hack4Equity", 
     initials: "PF",
     image: pearlFrempongSmartPhoto,
     bio: "Pearl Frempong-Smart is the Implementation lead for Hack 4 Equity at InnoFemme. In this role, she is spearheading the development of InnoFemme's Hack 4 Equity programme, which will serve as a platform for women and male allies to collaborate, innovate, and build solutions that address barriers to equity and inclusion. Pearl brings her skills in user research, innovation, and community-centered design to shape hackathons that are impactful and youth-driven. Her vision is to create inclusive spaces where young women and underrepresented groups can engage in problem-solving, share ideas, and co-create tools that advance fairness and equity.",
