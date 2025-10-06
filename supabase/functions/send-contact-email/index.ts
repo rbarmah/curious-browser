@@ -58,7 +58,12 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    console.log("Notification email sent to InnoFemme:", notificationResponse);
+    if (notificationResponse.error) {
+      console.error("Failed to send notification email:", notificationResponse.error);
+      throw new Error(`Email delivery failed: ${notificationResponse.error.message}. Please verify your domain at resend.com/domains`);
+    }
+
+    console.log("Notification email sent successfully:", notificationResponse.data);
 
     // Send confirmation email to the user
     const confirmationResponse = await resend.emails.send({
@@ -110,7 +115,12 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    console.log("Confirmation email sent to user:", confirmationResponse);
+    if (confirmationResponse.error) {
+      console.error("Failed to send confirmation email:", confirmationResponse.error);
+      // Don't throw here - notification email is more important
+    } else {
+      console.log("Confirmation email sent successfully:", confirmationResponse.data);
+    }
 
     return new Response(
       JSON.stringify({ 
