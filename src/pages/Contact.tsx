@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
 
@@ -23,6 +24,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 const Contact = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
@@ -103,6 +105,18 @@ const Contact = () => {
       <section className="relative overflow-hidden py-24 bg-gradient-to-br from-[hsl(var(--peach))]/10 via-background to-[hsl(var(--coral))]/5">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
+            {/* Back Button */}
+            <div className="flex justify-start mb-4">
+              <Button
+                variant="ghost"
+                onClick={() => navigate(-1)}
+                className="group flex items-center gap-2 text-muted-foreground hover:text-foreground"
+              >
+                <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                Back
+              </Button>
+            </div>
+            
             <h1 className="text-4xl md:text-6xl font-bold">
               <span className="bg-gradient-to-r from-[hsl(var(--coral))] to-[hsl(var(--peach))] bg-clip-text text-transparent">
                 Get in Touch
