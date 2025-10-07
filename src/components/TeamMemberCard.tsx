@@ -133,9 +133,7 @@ export const TeamMemberCard = ({
                 "group-hover:scale-110"
               )}
               style={{ 
-                objectPosition: imagePosition,
-                filter: "contrast(1.2) saturate(1.3) brightness(1.05)",
-                imageRendering: "crisp-edges"
+                objectPosition: imagePosition
               }}
             />
           ) : (
