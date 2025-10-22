@@ -121,6 +121,19 @@ export const GurlzWellnessCarousel = () => {
                 >
                   Because wellness isn't a luxury—it's a prerequisite for innovation.
                 </p>
+
+                <div className="pt-6">
+                  <a href="https://gurlz.innofemme.org" target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="bg-white text-[hsl(var(--coral))] border-2 border-white hover:bg-[hsl(var(--coral))] hover:text-white hover:border-white transition-all duration-300 shadow-lg text-base"
+                    >
+                      Read More
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </a>
+                </div>
               </div>
 
               {/* Floating Decorative Elements */}
