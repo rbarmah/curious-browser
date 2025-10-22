@@ -129,7 +129,7 @@ export const GurlzWellnessCarousel = () => {
                       size="lg"
                       className="bg-white text-[hsl(var(--coral))] border-2 border-white hover:bg-[hsl(var(--coral))] hover:text-white hover:border-white transition-all duration-300 shadow-lg text-base"
                     >
-                      Read More
+                      Learn More
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </a>
